@@ -69,10 +69,7 @@ const HeroCarousel = () => {
       {/* Content Overlay */}
       <div className="absolute inset-0 z-10 flex items-center">
         <div className="mx-auto max-w-6xl px-6 text-center text-white">
-          <div className="mb-6 inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium backdrop-blur-sm">
-            <span className="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-smvit-accent"></span>
-            IEEE Bangalore Section
-          </div>
+  
           <h1 className="font-display text-5xl font-bold leading-tight tracking-tight drop-shadow-2xl md:text-6xl lg:text-7xl">
             <span className="bg-gradient-to-r from-white via-white to-white/90 bg-clip-text text-transparent">
               MVIT-TECHCON 2026

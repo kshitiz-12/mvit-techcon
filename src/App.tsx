@@ -45,8 +45,8 @@ const AppContent = () => {
   return (
     <>
     <div className="min-h-screen bg-slate-50 font-body text-slate-900 selection:bg-smvit-accent/30">
-      <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
-        <nav className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 lg:flex-row lg:items-center lg:justify-between">
+      <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur relative">
+        <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4 lg:flex-row">
           <a href="/" className="flex items-center gap-4 text-smvit-slate">
             <img
               src="/SIR-LOGO.webp"
@@ -55,33 +55,32 @@ const AppContent = () => {
             />
             <span className="font-display text-2xl font-semibold">MVIT-TECHCON 2026</span>
           </a>
-          <div className="flex items-center justify-between lg:hidden">
-            <button
-              type="button"
-              className="rounded-2xl border border-slate-300 bg-white p-3 text-slate-700 shadow"
-              onClick={() => setMobileOpen((prev) => !prev)}
-              aria-label="Toggle navigation"
+          <button
+            type="button"
+            className="lg:hidden rounded-2xl border border-slate-300 bg-white p-3 text-slate-700 shadow transition hover:bg-slate-50"
+            onClick={() => setMobileOpen((prev) => !prev)}
+            aria-label="Toggle navigation"
+            aria-expanded={mobileOpen}
+          >
+            <span className="sr-only">Toggle menu</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="2"
             >
-              <span className="sr-only">Toggle menu</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                {mobileOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
-          </div>
+              {mobileOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
           <div
-            className={`nav-shell order-2 w-full flex-col gap-3 lg:order-none lg:w-auto lg:flex lg:flex-row ${
-              mobileOpen ? 'flex' : 'hidden'
+            className={`nav-shell absolute left-0 right-0 top-full w-full flex-col gap-3 border-t border-slate-200 bg-slate-900/95 px-6 py-4 text-white shadow-lg shadow-slate-900/20 lg:relative lg:top-0 lg:flex lg:w-auto lg:flex-row lg:border-0 lg:bg-transparent lg:p-0 lg:text-inherit ${
+              mobileOpen ? 'flex' : 'hidden lg:flex'
             }`}
           >
             {navLinks.map((link) => (
@@ -95,11 +94,7 @@ const AppContent = () => {
                 <span>{link.label}</span>
               </NavLink>
             ))}
-            <div
-              className="relative"
-              onMouseEnter={() => setDropdownOpen(true)}
-              onMouseLeave={() => setDropdownOpen(false)}
-            >
+            <div className="relative w-full lg:w-auto">
               <button
                 type="button"
                 className={`nav-link flex items-center gap-2 ${dropdownOpen ? 'active' : ''}`}
@@ -120,7 +115,11 @@ const AppContent = () => {
                 </svg>
               </button>
               {dropdownOpen && (
-                <div className="absolute right-0 mt-2 w-48 rounded-2xl border border-slate-700/60 bg-slate-900/95 p-2 shadow-lg shadow-cyan-500/30">
+                <div
+                  className={`rounded-2xl border border-slate-700/60 bg-slate-900/95 p-2 shadow-lg shadow-cyan-500/30 ${
+                    mobileOpen ? 'mt-2 w-full' : 'absolute right-0 mt-2 w-48'
+                  }`}
+                >
                   {secondaryLinks.map((link) => (
                     <NavLink
                       key={link.path}

@@ -9,50 +9,6 @@ const stats = [
   { label: 'Global Delegates', value: '25+', detail: 'Across 4 continents (2025 data)' },
 ]
 
-const tracks = [
-  {
-    title: 'Intelligent Infrastructure & Networks',
-    description:
-      'Resilient mobility stacks, 6G-ready architectures, and secure edge deployments designed for civic resilience.',
-    highlights: ['Autonomous mobility twins', 'Secure maritime grids', 'UAV corridors'],
-    icon: '🔗',
-  },
-  {
-    title: 'Immersive Media & Sensing',
-    description: 'Spatial computing, volumetric media, and sensing pipelines for human-centric decision support.',
-    highlights: ['Bio-inspired sensing', 'Holographic classrooms', 'Signal intelligence'],
-    icon: '🛰️',
-  },
-  {
-    title: 'Trusted Intelligence & Systems',
-    description: 'Applied AI, responsible automation, and dependable software for public-good deployments.',
-    highlights: ['Green cloud-native stacks', 'Multi-agent safety', 'Explainable public platforms'],
-    icon: '🛡️',
-  },
-]
-
-const focusAreas = [
-  {
-    title: 'Campus AI Hub',
-    detail: 'NVIDIA-powered GPU pods, data stewards, and publishing-ready workflows for accepted cohorts.',
-  },
-  {
-    title: 'Industry Studio Hours',
-    detail: 'One-on-one design reviews with alumni at ISRO, BEL, and frontier startups.',
-  },
-  {
-    title: 'Scholars in Residence',
-    detail: 'Residency for doctoral fellows to co-design masterclasses with SMVIT faculty.',
-  },
-]
-
-const timeline = [
-  { phase: 'Call for Papers Opens', date: '15 December 2025', detail: 'Abstract mentoring desk active' },
-  { phase: 'Full Paper Deadline', date: '15 March 2026', detail: '6-page IEEE format, double blind review' },
-  { phase: 'Camera Ready', date: '25 April 2026', detail: 'Workshops & demos confirmed' },
-  { phase: 'Conference Week', date: '5-7 June 2026', detail: 'Hybrid experience from Bengaluru campus' },
-]
-
 const Home = () => {
   return (
     <>
@@ -86,130 +42,127 @@ const Home = () => {
         ))}
       </MotionSection>
 
-      <MotionSection id="about" className="mt-24 grid gap-12 md:grid-cols-[1.1fr_0.9fr] md:items-center">
-        <div>
-          <p className="eyebrow">Why SMVIT 2026</p>
-          <h2 className="mt-3 font-display text-4xl font-bold leading-tight text-slate-900 md:text-5xl">
-            A campus engineered for immersive research exchanges.
-          </h2>
-          <p className="mt-6 text-lg leading-relaxed text-slate-600">
-            Sir M. Visvesvaraya Institute of Technology blends four decades of engineering excellence with a student-led innovation
-            ecosystem. Expect curated lab tours, IEEE student branch showcases, and mentorship pairings that turn submissions into
-            journal-ready outcomes.
-          </p>
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
-            {focusAreas.map((area, index) => (
-              <motion.div
-                key={area.title}
-                className="group relative overflow-hidden rounded-2xl border border-slate-200/80 bg-gradient-to-br from-white to-slate-50/50 p-6 transition-all duration-300 hover:scale-[1.02] hover:border-smvit-primary/30 hover:shadow-glow"
-                style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)' }}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+      <MotionSection className="mt-24">
+        <div className="bg-white p-8 md:p-12">
+          <div className="mb-10 text-center">
+            <h2 className="font-display text-4xl font-bold text-slate-900 md:text-5xl">ABOUT US</h2>
+            <div className="mx-auto mt-3 h-1 w-20 bg-red-600"></div>
+          </div>
+          
+          <div className="grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+            <div>
+              <p className="text-base leading-relaxed text-slate-700 md:text-lg">
+                Sir M. Visvesvaraya Institute of Technology (SMVIT) was established in 1986 and has been a beacon of excellence in engineering education for over four decades. Located in the vibrant city of Bengaluru, the institute spans across a sprawling green campus and has established itself as a premier institution for technical education.
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-slate-700 md:text-lg">
+                The institute offers a comprehensive range of undergraduate, postgraduate, and doctoral programs across various engineering disciplines. With state-of-the-art infrastructure, modern laboratories, and experienced faculty, SMVIT is committed to nurturing innovation, research, and academic excellence. The institute is recognized by AICTE, UGC, and NAAC accredited, ensuring the highest standards of education.
+              </p>
+              <a
+                href="/about-conference"
+                className="mt-8 inline-block rounded-lg bg-red-600 px-8 py-3 font-semibold text-white transition-all duration-300 hover:bg-red-700 hover:shadow-lg"
               >
-                <div className="absolute right-0 top-0 h-24 w-24 -translate-y-1/2 translate-x-1/2 rounded-full bg-smvit-accent/10 blur-2xl"></div>
-                <h3 className="relative text-lg font-bold text-smvit-slate">{area.title}</h3>
-                <p className="relative mt-3 text-sm leading-relaxed text-slate-600">{area.detail}</p>
-              </motion.div>
-            ))}
+                Read More
+              </a>
+            </div>
+            
+            <div className="relative overflow-hidden rounded-2xl">
+              <img
+                src="/Sirmvit-About-Header-img-500x350.jpg"
+                alt="Sir M. Visvesvaraya Institute of Technology Campus"
+                className="h-full w-full object-cover shadow-lg"
+              />
+            </div>
           </div>
         </div>
-        <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-gradient-to-br from-smvit-cream via-white to-slate-50/50 p-8 shadow-glow-lg">
-          <div className="absolute right-0 top-0 h-64 w-64 -translate-y-1/2 translate-x-1/2 rounded-full bg-smvit-accent/10 blur-3xl"></div>
-          <h3 className="relative font-display text-3xl font-bold text-smvit-slate">What to expect</h3>
-          <ul className="relative mt-6 space-y-5 text-slate-700">
-            <li className="flex items-start gap-4">
-              <div className="mt-1.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-smvit-accent/20">
-                <span className="h-2 w-2 rounded-full bg-smvit-accent"></span>
-              </div>
-              <span className="leading-relaxed">Experiential studios pairing faculty with civic partners for live prototyping.</span>
+      </MotionSection>
+
+      <MotionSection className="mt-24">
+        <div className="bg-white p-8 md:p-12">
+          <div className="mb-10 text-center md:text-right">
+            <h2 className="font-display text-4xl font-bold text-slate-900 md:text-5xl">OBJECTIVE OF THE CONFERENCE</h2>
+            <div className="mx-auto mt-3 h-1 w-20 bg-red-600 md:ml-auto md:mr-0"></div>
+          </div>
+          
+          <div className="grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
+            <div className="relative overflow-hidden rounded-2xl order-2 md:order-1">
+              <img
+                src="/sir-m-visvesvaraya-institute-of-technology-mvit-bengaluru-500x300.jpg"
+                alt="Sir M. Visvesvaraya Institute of Technology Campus Entrance"
+                className="h-full w-full object-cover shadow-lg"
+              />
+            </div>
+            
+            <div className="order-1 md:order-2">
+              <p className="text-base leading-relaxed text-slate-700 md:text-lg">
+                MVIT-TECHCON 2026 serves as a premier platform for researchers, scientists, academicians, and industry experts to share opinions, new ideas, frameworks, and innovative technologies in intelligent computing and information technology. The conference aims to address critical problems in engineering sciences and healthcare, making a revolutionary contribution to social welfare through science and technology.
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-slate-700 md:text-lg">
+                The conference has a high impact on the IEEE Bangalore Section regarding advances in intelligent computing for engineering, sciences, healthcare, energy, and environment. The scope includes interdisciplinary, emerging, and thrust areas focusing on cognitive computing for complex problem-solving, deeper understanding of current trends in intelligent computation, and multi-disciplinary research on national growth towards healthcare solutions.
+              </p>
+              <a
+                href="/about-conference"
+                className="mt-8 inline-block rounded-lg bg-red-600 px-8 py-3 font-semibold text-white transition-all duration-300 hover:bg-red-700 hover:shadow-lg"
+              >
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+      </MotionSection>
+
+      <MotionSection className="mt-24">
+        <div className="bg-white p-8 md:p-12">
+          <div className="mb-10 text-center">
+            <h2 className="font-display text-4xl font-bold text-slate-900 md:text-5xl">CONFERENCE HIGHLIGHTS, SCOPE AND EXPECTED OUTCOMES</h2>
+            <div className="mx-auto mt-3 h-1 w-20 bg-red-600"></div>
+          </div>
+          
+          <ul className="space-y-3 text-base leading-relaxed text-slate-700 md:text-lg">
+            <li className="flex items-start gap-3">
+              <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-slate-900"></span>
+              <span>This Conference is a distinctive effort to explore, enhance and empower multi-disciplinary and multi-institutional research based on Network Technologies, Multimedia Systems, and Information Technology in contemporary engineering and computing domains.</span>
             </li>
-            <li className="flex items-start gap-4">
-              <div className="mt-1.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-smvit-accent/20">
-                <span className="h-2 w-2 rounded-full bg-smvit-accent"></span>
-              </div>
-              <span className="leading-relaxed">Curated mentorship hours focusing on storytelling, policy, and fundraising.</span>
+            <li className="flex items-start gap-3">
+              <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-slate-900"></span>
+              <span>This conference will provide recent developments in the area of intelligent networks, multimedia processing, and information systems in emerging fields of Engineering & Technology.</span>
             </li>
-            <li className="flex items-start gap-4">
-              <div className="mt-1.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-smvit-accent/20">
-                <span className="h-2 w-2 rounded-full bg-smvit-accent"></span>
-              </div>
-              <span className="leading-relaxed">Publication-ready templates, design systems, and data visualization support.</span>
+            <li className="flex items-start gap-3">
+              <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-slate-900"></span>
+              <span>The convergence of network architectures, multimedia technologies, data analytics, and high-performance computing provides the capability to solve complex problems.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-slate-900"></span>
+              <span>Neoteric and latest developments in the area of intelligent computing in engineering, network systems, and multimedia domains.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-slate-900"></span>
+              <span>Focuses on identifying challenges and solutions through an integrated approach, shaping the path for new research dimensions.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-slate-900"></span>
+              <span>Cognitive computing techniques for solving various problems in the field of engineering, network systems, and multimedia applications.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-slate-900"></span>
+              <span>An advanced procedure to address and enhance available methods in network optimization, multimedia processing, and information management.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-slate-900"></span>
+              <span>A deeper understanding of current trends in intelligent computing techniques within the domain of engineering, network technologies, and multimedia systems.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-slate-900"></span>
+              <span>Future prospect of intelligent computing in engineering and technology through best practices and innovative solutions.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-slate-900"></span>
+              <span>Intelligent systems based on knowledge engineering and data-driven approaches for network and multimedia applications.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-slate-900"></span>
+              <span>This conference will provide an open forum to researchers, academicians, industry professionals, and students to share knowledge and collaborate on cutting-edge research.</span>
             </li>
           </ul>
-          <div className="relative mt-8 rounded-2xl border border-slate-200/80 bg-white/90 p-5 text-sm leading-relaxed text-slate-600 shadow-sm">
-            IEEE-compliant peer-review is powered by Microsoft CMT with dedicated accessibility desks and asynchronous review sprints
-            for global members.
-          </div>
-        </div>
-      </MotionSection>
-
-      <MotionSection id="tracks" className="mt-24 space-y-12">
-        <div className="max-w-3xl">
-          <p className="eyebrow">Program Architecture</p>
-          <h2 className="mt-3 font-display text-4xl font-bold leading-tight text-slate-900 md:text-5xl">
-            Curated tracks with executive feedback loops.
-          </h2>
-          <p className="mt-6 text-lg leading-relaxed text-slate-600">
-            Authors are encouraged to align submissions with the following research constellations. Interdisciplinary proposals gain
-            priority for plenary storytelling.
-          </p>
-        </div>
-        <div className="grid gap-8 md:grid-cols-3">
-          {tracks.map((track, index) => (
-            <motion.div
-              key={track.title}
-              className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200/80 bg-gradient-to-br from-white to-slate-50/50 p-8 transition-all duration-300 hover:scale-[1.02] hover:border-smvit-primary/30 hover:shadow-glow-lg"
-              style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)' }}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.15 }}
-            >
-              <div className="absolute right-0 top-0 h-40 w-40 -translate-y-1/2 translate-x-1/2 rounded-full bg-smvit-accent/10 blur-3xl"></div>
-              <div className="relative mb-6 text-5xl">{track.icon}</div>
-              <h3 className="relative text-2xl font-bold text-smvit-slate">{track.title}</h3>
-              <p className="relative mt-4 text-sm leading-relaxed text-slate-600">{track.description}</p>
-              <ul className="relative mt-6 space-y-3 text-sm font-medium text-smvit-primary">
-                {track.highlights.map((highlight) => (
-                  <li key={highlight} className="flex items-center gap-3">
-                    <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-smvit-accent/20">
-                      <span className="h-1.5 w-1.5 rounded-full bg-smvit-accent"></span>
-                    </div>
-                    <span>{highlight}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
-      </MotionSection>
-
-      <MotionSection id="timeline" className="mt-24 space-y-10">
-        <div className="max-w-3xl">
-          <p className="eyebrow">Important Dates</p>
-          <h2 className="mt-3 font-display text-4xl font-bold leading-tight text-slate-900 md:text-5xl">
-            High-touch review cadence with rolling updates.
-          </h2>
-        </div>
-        <div className="grid gap-6 md:grid-cols-2">
-          {timeline.map((item, index) => (
-            <motion.div
-              key={item.phase}
-              className="group relative overflow-hidden rounded-3xl border border-slate-200/80 bg-gradient-to-br from-white to-slate-50/50 p-8 transition-all duration-300 hover:scale-[1.02] hover:border-smvit-primary/30 hover:shadow-glow"
-              style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)' }}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <div className="absolute right-0 top-0 h-32 w-32 -translate-y-1/2 translate-x-1/2 rounded-full bg-smvit-accent/10 blur-3xl"></div>
-              <p className="relative text-sm font-semibold uppercase tracking-wide text-smvit-accent">{item.phase}</p>
-              <p className="relative mt-4 text-3xl font-bold text-smvit-primary">{item.date}</p>
-              <p className="relative mt-4 text-sm leading-relaxed text-slate-600">{item.detail}</p>
-            </motion.div>
-          ))}
         </div>
       </MotionSection>
       </div>

@@ -327,8 +327,57 @@ const AppContent = () => {
         </Routes>
       </main>
 
-      <footer className="border-t border-slate-200 bg-white py-6 text-center text-sm text-slate-500">
-        © {new Date().getFullYear()} Sir M. Visvesvaraya Institute of Technology · Bengaluru, India.
+      <footer className="border-t border-smvit-primary/20 bg-gradient-to-r from-smvit-primary via-smvit-primaryDark to-smvit-primary py-12 text-white">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid gap-8 md:grid-cols-3">
+            <div>
+              <h3 className="mb-4 font-display text-lg font-semibold text-white">MVIT-TECHCON 2026</h3>
+              <p className="text-sm leading-relaxed text-white/90">
+                Conference on Network, Multimedia and Information Technology
+              </p>
+              <p className="mt-2 text-sm text-white/80">
+                5–7 June 2026 · Bengaluru, India
+              </p>
+            </div>
+            <div>
+              <h3 className="mb-4 font-display text-lg font-semibold text-white">Quick Links</h3>
+              <ul className="space-y-2 text-sm text-white/90">
+                <li>
+                  <NavLink to="/about-conference" className="hover:text-smvit-accent transition-colors">
+                    About Conference
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/paper-submission" className="hover:text-smvit-accent transition-colors">
+                    Paper Submission
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/important-dates" className="hover:text-smvit-accent transition-colors">
+                    Important Dates
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/contact" className="hover:text-smvit-accent transition-colors">
+                    Contact Us
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="mb-4 font-display text-lg font-semibold text-white">Contact</h3>
+              <p className="text-sm leading-relaxed text-white/90">
+                Sir M. Visvesvaraya Institute of Technology
+              </p>
+              <p className="mt-2 text-sm text-white/80">
+                Bengaluru, Karnataka, India
+              </p>
+            </div>
+          </div>
+          <div className="mt-8 border-t border-white/20 pt-6 text-center text-sm text-white/80">
+            © {new Date().getFullYear()} Sir M. Visvesvaraya Institute of Technology · All rights reserved.
+          </div>
+        </div>
       </footer>
     </div>
 

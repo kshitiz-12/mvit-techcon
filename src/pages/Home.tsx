@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import MotionSection from '../components/MotionSection'
+import HeroCarousel from '../components/HeroCarousel'
 
 const stats = [
   { label: 'Years of Excellence', value: '40+', detail: 'Academic heritage since 1986' },
@@ -54,153 +55,129 @@ const timeline = [
 
 const Home = () => {
   return (
-    <div className="relative">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-smvit-cream via-white to-slate-100" />
-      <div className="absolute inset-0 -z-10 opacity-40 bg-grid-overlay bg-[size:160px_160px]" />
+    <>
+      <section id="hero" className="relative h-screen w-full overflow-hidden">
+        <HeroCarousel />
+      </section>
+      <div className="relative">
+      
+      <div className="relative mx-auto max-w-6xl px-6 py-12 md:py-16">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-white via-slate-50/50 to-white" />
+        <div className="absolute inset-0 -z-10 opacity-30 bg-grid-overlay bg-[size:120px_120px]" />
+        <div className="absolute left-0 top-0 -z-10 h-96 w-96 rounded-full bg-smvit-primary/5 blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 -z-10 h-96 w-96 rounded-full bg-smvit-accent/5 blur-3xl"></div>
 
-      <MotionSection
-        id="hero"
-        className="relative overflow-hidden rounded-[40px] border border-slate-200 bg-white/90 px-6 py-14 shadow-[0_30px_80px_rgba(15,61,145,0.08)] md:px-16"
-      >
-        <div className="absolute right-10 top-10 hidden h-48 w-48 rounded-full bg-smvit-accent/20 blur-[90px] md:block" />
-        <div className="grid gap-12 md:grid-cols-[1.2fr_0.8fr] md:items-center">
-          <div>
-            <h1 className="font-display text-4xl leading-tight tracking-tight text-smvit-slate md:text-5xl lg:text-6xl">
-              Sir M. Visvesvaraya Institute of Technology presents MVIT-TECHCON 2026.
-            </h1>
-            <p className="mt-6 text-lg text-slate-600 md:text-xl">
-              5–7 June 2026 · Bengaluru · Hybrid access featuring immersive studio broadcasts, curated labs, and industry studio
-              hours. Every submission receives editorial coaching and access to the SMVIT AI Sandbox.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                href="#tracks"
-                className="rounded-full bg-smvit-primary px-6 py-3 font-semibold text-white shadow shadow-smvit-primary/40 transition hover:-translate-y-0.5 hover:bg-[#0a3380]"
-              >
-                Explore Program
-              </a>
-              <a
-                href="#timeline"
-                className="rounded-full border border-slate-300 px-6 py-3 font-semibold text-smvit-primary transition hover:bg-smvit-accent/10"
-              >
-                Important Dates
-              </a>
-            </div>
-          </div>
-
-          <div className="space-y-5">
-            <motion.div
-              className="glass-card"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-            >
-              <p className="text-sm uppercase tracking-[0.25em] text-smvit-accent">Spotlight Theme</p>
-              <h3 className="mt-3 text-2xl font-semibold text-smvit-slate">Connected Intelligence for Resilient Cities</h3>
-              <p className="mt-3 text-sm text-slate-600">
-                Cohorts co-design playbooks for blended physical-digital infrastructure—from campus mobility to defense-grade sensor
-                fabrics.
-              </p>
-            </motion.div>
-            <motion.div
-              className="glass-card border-smvit-accent/30"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-            >
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-slate-500">Featured Partner Lab</p>
-                  <p className="text-lg font-semibold text-smvit-slate">Visvesvaraya Center for Responsible AI</p>
-                </div>
-                <span className="rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-                  New
-                </span>
-              </div>
-              <p className="mt-3 text-sm text-slate-600">
-                Hands-on residencies, policy sandboxes, and civic deployments in collaboration with IEEE Bangalore Section.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </MotionSection>
-
-      <MotionSection className="mt-16 grid gap-6 rounded-[32px] border border-slate-200 bg-white/80 p-6 md:grid-cols-4 md:p-10">
-        {stats.map((item) => (
-          <div key={item.label} className="rounded-2xl border border-slate-100 bg-white/80 p-5 shadow-sm">
-            <p className="text-xs uppercase tracking-[0.35em] text-smvit-accent">{item.label}</p>
-            <p className="mt-3 font-display text-4xl text-smvit-slate">{item.value}</p>
-            <p className="mt-2 text-sm text-slate-500">{item.detail}</p>
-          </div>
+      <MotionSection className="mt-20 grid gap-6 md:grid-cols-4">
+        {stats.map((item, index) => (
+          <motion.div
+            key={item.label}
+            className="group relative overflow-hidden rounded-2xl border border-slate-200/80 bg-gradient-to-br from-white to-slate-50/50 p-6 transition-all duration-300 hover:scale-105 hover:border-smvit-primary/30 hover:shadow-glow"
+            style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)' }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1 }}
+          >
+            <div className="absolute right-0 top-0 h-32 w-32 -translate-y-1/2 translate-x-1/2 rounded-full bg-smvit-accent/10 blur-3xl"></div>
+            <p className="relative text-xs font-semibold uppercase tracking-[0.35em] text-smvit-accent">{item.label}</p>
+            <p className="relative mt-4 font-display text-5xl font-bold text-smvit-primary">{item.value}</p>
+            <p className="relative mt-3 text-sm leading-relaxed text-slate-600">{item.detail}</p>
+          </motion.div>
         ))}
       </MotionSection>
 
-      <MotionSection id="about" className="mt-20 grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+      <MotionSection id="about" className="mt-24 grid gap-12 md:grid-cols-[1.1fr_0.9fr] md:items-center">
         <div>
           <p className="eyebrow">Why SMVIT 2026</p>
-          <h2 className="section-heading">A campus engineered for immersive research exchanges.</h2>
-          <p className="mt-4 text-lg text-slate-600">
+          <h2 className="mt-3 font-display text-4xl font-bold leading-tight text-slate-900 md:text-5xl">
+            A campus engineered for immersive research exchanges.
+          </h2>
+          <p className="mt-6 text-lg leading-relaxed text-slate-600">
             Sir M. Visvesvaraya Institute of Technology blends four decades of engineering excellence with a student-led innovation
             ecosystem. Expect curated lab tours, IEEE student branch showcases, and mentorship pairings that turn submissions into
             journal-ready outcomes.
           </p>
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            {focusAreas.map((area) => (
-              <div key={area.title} className="glass-card">
-                <h3 className="text-lg font-semibold text-smvit-slate">{area.title}</h3>
-                <p className="mt-2 text-sm text-slate-600">{area.detail}</p>
-              </div>
+          <div className="mt-10 grid gap-5 md:grid-cols-2">
+            {focusAreas.map((area, index) => (
+              <motion.div
+                key={area.title}
+                className="group relative overflow-hidden rounded-2xl border border-slate-200/80 bg-gradient-to-br from-white to-slate-50/50 p-6 transition-all duration-300 hover:scale-[1.02] hover:border-smvit-primary/30 hover:shadow-glow"
+                style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)' }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <div className="absolute right-0 top-0 h-24 w-24 -translate-y-1/2 translate-x-1/2 rounded-full bg-smvit-accent/10 blur-2xl"></div>
+                <h3 className="relative text-lg font-bold text-smvit-slate">{area.title}</h3>
+                <p className="relative mt-3 text-sm leading-relaxed text-slate-600">{area.detail}</p>
+              </motion.div>
             ))}
           </div>
         </div>
-        <div className="rounded-3xl border border-slate-200 bg-gradient-to-br from-smvit-cream to-white p-8 shadow-glow">
-          <h3 className="font-display text-3xl text-smvit-slate">What to expect</h3>
-          <ul className="mt-4 space-y-4 text-slate-600">
-            <li className="flex items-start gap-3">
-              <span className="mt-1 h-2 w-2 rounded-full bg-smvit-accent" />
-              Experiential studios pairing faculty with civic partners for live prototyping.
+        <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-gradient-to-br from-smvit-cream via-white to-slate-50/50 p-8 shadow-glow-lg">
+          <div className="absolute right-0 top-0 h-64 w-64 -translate-y-1/2 translate-x-1/2 rounded-full bg-smvit-accent/10 blur-3xl"></div>
+          <h3 className="relative font-display text-3xl font-bold text-smvit-slate">What to expect</h3>
+          <ul className="relative mt-6 space-y-5 text-slate-700">
+            <li className="flex items-start gap-4">
+              <div className="mt-1.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-smvit-accent/20">
+                <span className="h-2 w-2 rounded-full bg-smvit-accent"></span>
+              </div>
+              <span className="leading-relaxed">Experiential studios pairing faculty with civic partners for live prototyping.</span>
             </li>
-            <li className="flex items-start gap-3">
-              <span className="mt-1 h-2 w-2 rounded-full bg-smvit-accent" />
-              Curated mentorship hours focusing on storytelling, policy, and fundraising.
+            <li className="flex items-start gap-4">
+              <div className="mt-1.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-smvit-accent/20">
+                <span className="h-2 w-2 rounded-full bg-smvit-accent"></span>
+              </div>
+              <span className="leading-relaxed">Curated mentorship hours focusing on storytelling, policy, and fundraising.</span>
             </li>
-            <li className="flex items-start gap-3">
-              <span className="mt-1 h-2 w-2 rounded-full bg-smvit-accent" />
-              Publication-ready templates, design systems, and data visualization support.
+            <li className="flex items-start gap-4">
+              <div className="mt-1.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-smvit-accent/20">
+                <span className="h-2 w-2 rounded-full bg-smvit-accent"></span>
+              </div>
+              <span className="leading-relaxed">Publication-ready templates, design systems, and data visualization support.</span>
             </li>
           </ul>
-          <div className="mt-8 rounded-2xl border border-slate-200 bg-white/80 p-5 text-sm text-slate-500">
+          <div className="relative mt-8 rounded-2xl border border-slate-200/80 bg-white/90 p-5 text-sm leading-relaxed text-slate-600 shadow-sm">
             IEEE-compliant peer-review is powered by Microsoft CMT with dedicated accessibility desks and asynchronous review sprints
             for global members.
           </div>
         </div>
       </MotionSection>
 
-      <MotionSection id="tracks" className="mt-20 space-y-10">
+      <MotionSection id="tracks" className="mt-24 space-y-12">
         <div className="max-w-3xl">
           <p className="eyebrow">Program Architecture</p>
-          <h2 className="section-heading">Curated tracks with executive feedback loops.</h2>
-          <p className="mt-4 text-lg text-slate-600">
+          <h2 className="mt-3 font-display text-4xl font-bold leading-tight text-slate-900 md:text-5xl">
+            Curated tracks with executive feedback loops.
+          </h2>
+          <p className="mt-6 text-lg leading-relaxed text-slate-600">
             Authors are encouraged to align submissions with the following research constellations. Interdisciplinary proposals gain
             priority for plenary storytelling.
           </p>
         </div>
         <div className="grid gap-8 md:grid-cols-3">
-          {tracks.map((track) => (
+          {tracks.map((track, index) => (
             <motion.div
               key={track.title}
-              className="flex flex-col rounded-3xl border border-slate-200 bg-white/80 p-6 shadow-lg"
-              whileHover={{ y: -8 }}
-              transition={{ duration: 0.3 }}
+              className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200/80 bg-gradient-to-br from-white to-slate-50/50 p-8 transition-all duration-300 hover:scale-[1.02] hover:border-smvit-primary/30 hover:shadow-glow-lg"
+              style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)' }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.15 }}
             >
-              <span className="text-4xl">{track.icon}</span>
-              <h3 className="mt-4 text-2xl font-semibold text-smvit-slate">{track.title}</h3>
-              <p className="mt-3 text-sm text-slate-600">{track.description}</p>
-              <ul className="mt-5 space-y-2 text-sm text-smvit-primary">
+              <div className="absolute right-0 top-0 h-40 w-40 -translate-y-1/2 translate-x-1/2 rounded-full bg-smvit-accent/10 blur-3xl"></div>
+              <div className="relative mb-6 text-5xl">{track.icon}</div>
+              <h3 className="relative text-2xl font-bold text-smvit-slate">{track.title}</h3>
+              <p className="relative mt-4 text-sm leading-relaxed text-slate-600">{track.description}</p>
+              <ul className="relative mt-6 space-y-3 text-sm font-medium text-smvit-primary">
                 {track.highlights.map((highlight) => (
-                  <li key={highlight} className="flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-smvit-accent" />
-                    {highlight}
+                  <li key={highlight} className="flex items-center gap-3">
+                    <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-smvit-accent/20">
+                      <span className="h-1.5 w-1.5 rounded-full bg-smvit-accent"></span>
+                    </div>
+                    <span>{highlight}</span>
                   </li>
                 ))}
               </ul>
@@ -209,22 +186,35 @@ const Home = () => {
         </div>
       </MotionSection>
 
-      <MotionSection id="timeline" className="mt-20 space-y-8">
+      <MotionSection id="timeline" className="mt-24 space-y-10">
         <div className="max-w-3xl">
           <p className="eyebrow">Important Dates</p>
-          <h2 className="section-heading">High-touch review cadence with rolling updates.</h2>
+          <h2 className="mt-3 font-display text-4xl font-bold leading-tight text-slate-900 md:text-5xl">
+            High-touch review cadence with rolling updates.
+          </h2>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
-          {timeline.map((item) => (
-            <div key={item.phase} className="rounded-3xl border border-slate-200 bg-white/80 p-6 shadow-sm">
-              <p className="text-sm text-smvit-accent">{item.phase}</p>
-              <p className="mt-2 text-2xl font-semibold text-smvit-slate">{item.date}</p>
-              <p className="mt-3 text-sm text-slate-600">{item.detail}</p>
-            </div>
+          {timeline.map((item, index) => (
+            <motion.div
+              key={item.phase}
+              className="group relative overflow-hidden rounded-3xl border border-slate-200/80 bg-gradient-to-br from-white to-slate-50/50 p-8 transition-all duration-300 hover:scale-[1.02] hover:border-smvit-primary/30 hover:shadow-glow"
+              style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)' }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <div className="absolute right-0 top-0 h-32 w-32 -translate-y-1/2 translate-x-1/2 rounded-full bg-smvit-accent/10 blur-3xl"></div>
+              <p className="relative text-sm font-semibold uppercase tracking-wide text-smvit-accent">{item.phase}</p>
+              <p className="relative mt-4 text-3xl font-bold text-smvit-primary">{item.date}</p>
+              <p className="relative mt-4 text-sm leading-relaxed text-slate-600">{item.detail}</p>
+            </motion.div>
           ))}
         </div>
       </MotionSection>
-    </div>
+      </div>
+      </div>
+    </>
   )
 }
 

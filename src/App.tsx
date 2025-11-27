@@ -79,9 +79,9 @@ const AppContent = () => {
             </svg>
           </button>
           <div
-            className={`nav-shell absolute left-0 right-0 top-full w-full flex-col gap-3 border-t border-slate-200 bg-slate-900/95 px-6 py-4 text-white shadow-lg shadow-slate-900/20 lg:relative lg:top-0 lg:flex lg:w-auto lg:flex-row lg:border-0 lg:bg-transparent lg:p-0 lg:text-inherit ${
+            className={`absolute left-0 right-0 top-full w-full flex-col gap-4 border-t border-slate-200 bg-white/95 px-6 py-6 shadow-lg shadow-slate-900/10 lg:relative lg:top-0 lg:flex lg:w-auto lg:flex-row lg:border-0 lg:bg-transparent lg:p-0 ${
               mobileOpen ? 'flex' : 'hidden lg:flex'
-            }`}
+            } nav-shell`}
           >
             {navLinks.map((link) => (
               <NavLink

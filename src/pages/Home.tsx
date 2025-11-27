@@ -57,12 +57,6 @@ const Home = () => {
               <p className="mt-4 text-base leading-relaxed text-slate-700 md:text-lg">
                 The institute offers a comprehensive range of undergraduate, postgraduate, and doctoral programs across various engineering disciplines. With state-of-the-art infrastructure, modern laboratories, and experienced faculty, SMVIT is committed to nurturing innovation, research, and academic excellence. The institute is recognized by AICTE, UGC, and NAAC accredited, ensuring the highest standards of education.
               </p>
-              <a
-                href="/about-conference"
-                className="mt-8 inline-block rounded-lg bg-red-600 px-8 py-3 font-semibold text-white transition-all duration-300 hover:bg-red-700 hover:shadow-lg"
-              >
-                Read More
-              </a>
             </div>
             
             <div className="relative overflow-hidden rounded-2xl">
@@ -99,12 +93,6 @@ const Home = () => {
               <p className="mt-4 text-base leading-relaxed text-slate-700 md:text-lg">
                 The conference has a high impact on the IEEE Bangalore Section regarding advances in intelligent computing for engineering, sciences, healthcare, energy, and environment. The scope includes interdisciplinary, emerging, and thrust areas focusing on cognitive computing for complex problem-solving, deeper understanding of current trends in intelligent computation, and multi-disciplinary research on national growth towards healthcare solutions.
               </p>
-              <a
-                href="/about-conference"
-                className="mt-8 inline-block rounded-lg bg-red-600 px-8 py-3 font-semibold text-white transition-all duration-300 hover:bg-red-700 hover:shadow-lg"
-              >
-                Read More
-              </a>
             </div>
           </div>
         </div>

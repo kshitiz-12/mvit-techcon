@@ -34,6 +34,13 @@ const ScrollToTop = () => {
 
 const AppContent = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
+  const location = useLocation()
+
+  useEffect(() => {
+    setMobileOpen(false)
+    setDropdownOpen(false)
+  }, [location.pathname])
 
   return (
     <>
@@ -48,13 +55,42 @@ const AppContent = () => {
             />
             <span className="font-display text-2xl font-semibold">MVIT-TECHCON 2026</span>
           </a>
-          <div className="nav-shell order-2 w-full lg:order-none lg:w-auto">
+          <div className="flex items-center justify-between lg:hidden">
+            <button
+              type="button"
+              className="rounded-2xl border border-slate-300 bg-white p-3 text-slate-700 shadow"
+              onClick={() => setMobileOpen((prev) => !prev)}
+              aria-label="Toggle navigation"
+            >
+              <span className="sr-only">Toggle menu</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                {mobileOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
+          <div
+            className={`nav-shell order-2 w-full flex-col gap-3 lg:order-none lg:w-auto lg:flex lg:flex-row ${
+              mobileOpen ? 'flex' : 'hidden'
+            }`}
+          >
             {navLinks.map((link) => (
               <NavLink
                 key={link.path}
                 to={link.path}
                 className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
                 end={link.path === '/'}
+                onClick={() => setMobileOpen(false)}
               >
                 <span>{link.label}</span>
               </NavLink>
@@ -69,6 +105,7 @@ const AppContent = () => {
                 className={`nav-link flex items-center gap-2 ${dropdownOpen ? 'active' : ''}`}
                 aria-haspopup="true"
                 aria-expanded={dropdownOpen}
+                onClick={() => setDropdownOpen((prev) => !prev)}
               >
                 <span>Other Pages</span>
                 <svg
@@ -89,7 +126,10 @@ const AppContent = () => {
                       key={link.path}
                       to={link.path}
                       className="block rounded-xl px-3 py-2 text-sm text-slate-200 transition hover:bg-white/10 hover:text-white"
-                      onClick={() => setDropdownOpen(false)}
+                      onClick={() => {
+                        setDropdownOpen(false)
+                        setMobileOpen(false)
+                      }}
                     >
                       {link.label}
                     </NavLink>

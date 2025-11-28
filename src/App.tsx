@@ -66,19 +66,19 @@ const AppContent = () => {
           : 'border-b border-white/20 bg-gradient-to-r from-smvit-primary via-smvit-primaryDark to-smvit-primary shadow-glow-lg backdrop-blur'
       }`}>
         <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none"></div>
-        <nav className="relative mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4 lg:flex-row">
-          <a href="/" className="group flex items-center gap-4 text-white transition-all duration-300 hover:scale-105">
+        <nav className="relative mx-auto flex max-w-6xl items-center justify-between gap-2 px-4 py-3 sm:gap-4 sm:px-6 sm:py-4 lg:flex-row">
+          <a href="/" className="group flex items-center gap-2 text-white transition-all duration-300 active:scale-95 sm:gap-4 sm:hover:scale-105">
             <div className="relative">
-              <div className="absolute inset-0 rounded-3xl bg-white/20 blur-xl opacity-0 transition-opacity group-hover:opacity-100"></div>
+              <div className="absolute inset-0 rounded-2xl bg-white/20 blur-xl opacity-0 transition-opacity group-hover:opacity-100 sm:rounded-3xl"></div>
               <img
                 src="/SIR-LOGO.webp"
                 alt="Sir M. Visvesvaraya Institute of Technology logo"
-                className="relative h-16 w-16 rounded-3xl border-2 border-white/40 bg-white/10 object-cover shadow-lg backdrop-blur-sm transition-all duration-300 group-hover:border-white/60 group-hover:shadow-xl group-hover:scale-105"
+                className="relative h-12 w-12 rounded-2xl border-2 border-white/40 bg-white/10 object-cover shadow-lg backdrop-blur-sm transition-all duration-300 group-hover:border-white/60 group-hover:shadow-xl sm:h-14 sm:w-14 sm:rounded-3xl lg:h-16 lg:w-16 lg:group-hover:scale-105"
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-display text-xl font-bold leading-tight tracking-tight lg:text-2xl">FESCIS</span>
-              <span className="text-xs font-medium text-white/80 lg:text-sm">2026</span>
+              <span className="font-display text-lg font-bold leading-tight tracking-tight sm:text-xl lg:text-2xl">FESCIS</span>
+              <span className="text-[10px] font-medium text-white/80 sm:text-xs lg:text-sm">2026</span>
             </div>
           </a>
           {/* Desktop Navigation - Direct children of nav */}
@@ -159,21 +159,21 @@ const AppContent = () => {
           {/* Mobile Hamburger Button */}
           <button
             type="button"
-            className="group lg:hidden relative overflow-hidden rounded-xl border-2 border-white/30 bg-white/10 backdrop-blur-md p-3 text-white shadow-lg transition-all duration-300 hover:border-white/50 hover:bg-white/20 hover:shadow-xl"
+            className="group lg:hidden relative overflow-hidden rounded-lg border-2 border-white/30 bg-white/10 backdrop-blur-md p-2 text-white shadow-lg transition-all duration-300 active:scale-95 hover:border-white/50 hover:bg-white/20 hover:shadow-xl sm:rounded-xl sm:p-3 touch-manipulation"
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-label="Toggle navigation"
             aria-expanded={mobileOpen}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
             <span className="sr-only">Toggle menu</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="relative h-5 w-5 transition-transform duration-300"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2.5"
-            >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="relative h-5 w-5 transition-transform duration-300 sm:h-6 sm:w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                    >
               {mobileOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               ) : (
@@ -183,83 +183,91 @@ const AppContent = () => {
           </button>
 
           {/* Mobile Navigation Menu */}
-          {mobileOpen && (
-            <div className="absolute left-0 right-0 top-full w-full flex-col gap-2 border-t border-white/20 bg-gradient-to-b from-smvit-primaryDark/98 to-smvit-primaryDark/95 backdrop-blur-xl px-6 py-6 shadow-2xl lg:hidden">
-              {navLinks.map((link) => (
-                <NavLink
-                  key={link.path}
-                  to={link.path}
-                  className={({ isActive }) => 
-                    `group relative text-base font-semibold tracking-wide text-white transition-all duration-300 outline-none focus:outline-none py-2 px-0 ${
-                      isActive ? 'text-white' : 'hover:text-white/90'
-                    }`
-                  }
-                  end={link.path === '/'}
-                  onClick={() => setMobileOpen(false)}
-                >
-                  <span className="relative inline-block">
-                    {link.label}
-                    <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-gradient-to-r from-white via-smvit-accent to-white transition-all duration-300 group-hover:w-full nav-link-underline"></span>
-                  </span>
-                </NavLink>
-              ))}
-              <div className="relative w-full">
-                <button
-                  type="button"
-                  className={`group relative flex items-center gap-2 text-base font-semibold tracking-wide text-white transition-all duration-300 outline-none focus:outline-none py-2 px-0 ${
-                    dropdownOpen ? 'text-white' : 'hover:text-white/90'
-                  }`}
-                  aria-haspopup="true"
-                  aria-expanded={dropdownOpen}
-                  onClick={() => setDropdownOpen((prev) => !prev)}
-                >
-                  <span className="relative inline-block">
-                    Other Pages
-                    <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-gradient-to-r from-white via-smvit-accent to-white transition-all duration-300 group-hover:w-full"></span>
-                  </span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className={`h-4 w-4 transition-transform duration-300 ${dropdownOpen ? 'rotate-180' : ''}`}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                  >
-                    <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </button>
-                <AnimatePresence>
-                  {dropdownOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                      transition={{ duration: 0.2 }}
-                      className="mt-2 w-full rounded-xl border border-white/30 bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl p-2 shadow-2xl"
-                      style={{ boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1)' }}
+          <AnimatePresence>
+            {mobileOpen && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+                className="absolute left-0 right-0 top-full z-40 w-full overflow-hidden border-t border-white/20 bg-gradient-to-b from-smvit-primaryDark/98 to-smvit-primaryDark/95 backdrop-blur-xl shadow-2xl lg:hidden"
+              >
+                <div className="flex flex-col gap-1 px-4 py-4 sm:gap-2 sm:px-6 sm:py-6">
+                  {navLinks.map((link) => (
+                    <NavLink
+                      key={link.path}
+                      to={link.path}
+                      className={({ isActive }) => 
+                        `group relative block rounded-lg px-4 py-3 text-base font-semibold tracking-wide text-white transition-all duration-200 outline-none focus:outline-none active:bg-white/10 ${
+                          isActive ? 'bg-white/10 text-white' : 'hover:bg-white/5 hover:text-white/90'
+                        }`
+                      }
+                      end={link.path === '/'}
+                      onClick={() => setMobileOpen(false)}
                     >
-                      {secondaryLinks.map((link) => (
-                        <NavLink
-                          key={link.path}
-                          to={link.path}
-                          className="group block rounded-lg px-4 py-2.5 text-sm font-medium text-white transition-all duration-200 hover:bg-white/25 hover:translate-x-1"
-                          onClick={() => {
-                            setDropdownOpen(false)
-                            setMobileOpen(false)
-                          }}
+                      <span className="relative inline-block">
+                        {link.label}
+                        <span className="absolute bottom-1 left-4 right-4 h-0.5 w-0 bg-gradient-to-r from-white via-smvit-accent to-white transition-all duration-300 group-hover:w-full group-[&.active]:w-full"></span>
+                      </span>
+                    </NavLink>
+                  ))}
+                  <div className="relative mt-1">
+                    <button
+                      type="button"
+                      className={`group relative flex w-full items-center justify-between rounded-lg px-4 py-3 text-base font-semibold tracking-wide text-white transition-all duration-200 outline-none focus:outline-none active:bg-white/10 ${
+                        dropdownOpen ? 'bg-white/10 text-white' : 'hover:bg-white/5 hover:text-white/90'
+                      }`}
+                      aria-haspopup="true"
+                      aria-expanded={dropdownOpen}
+                      onClick={() => setDropdownOpen((prev) => !prev)}
+                    >
+                      <span className="relative inline-block">Other Pages</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className={`h-4 w-4 transition-transform duration-300 ${dropdownOpen ? 'rotate-180' : ''}`}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                      >
+                        <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </button>
+                    <AnimatePresence>
+                      {dropdownOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="mt-1 overflow-hidden rounded-lg border border-white/30 bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl"
                         >
-                          <span className="flex items-center gap-2">
-                            <span className="h-1.5 w-1.5 rounded-full bg-smvit-accent opacity-0 transition-opacity group-hover:opacity-100"></span>
-                            {link.label}
-                          </span>
-                        </NavLink>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            </div>
-          )}
+                          <div className="p-2">
+                            {secondaryLinks.map((link) => (
+                              <NavLink
+                                key={link.path}
+                                to={link.path}
+                                className="group block rounded-lg px-4 py-2.5 text-sm font-medium text-white transition-all duration-200 active:bg-white/20 hover:bg-white/15"
+                                onClick={() => {
+                                  setDropdownOpen(false)
+                                  setMobileOpen(false)
+                                }}
+                              >
+                                <span className="flex items-center gap-2">
+                                  <span className="h-1.5 w-1.5 rounded-full bg-smvit-accent opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100"></span>
+                                  {link.label}
+                                </span>
+                              </NavLink>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
           {isHomePage && mobileOpen && (
             <div className="absolute left-0 right-0 top-full w-full flex-col gap-2 rounded-2xl border border-white/30 bg-white/95 backdrop-blur-md px-4 py-4 shadow-xl mt-2">
               {navLinks.map((link) => (

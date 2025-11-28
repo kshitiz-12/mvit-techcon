@@ -12,22 +12,22 @@ const stats = [
 const Home = () => {
   return (
     <>
-      <section id="hero" className="relative h-screen w-full overflow-hidden">
+      <section id="hero" className="relative h-screen w-full overflow-hidden" style={{ minHeight: '-webkit-fill-available' }}>
         <HeroCarousel />
       </section>
       <div className="relative">
       
-      <div className="relative mx-auto max-w-6xl px-6 py-12 md:py-16">
+      <div className="relative mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12 md:py-16">
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-white via-slate-50/50 to-white" />
         <div className="absolute inset-0 -z-10 opacity-30 bg-grid-overlay bg-[size:120px_120px]" />
         <div className="absolute left-0 top-0 -z-10 h-96 w-96 rounded-full bg-smvit-primary/5 blur-3xl"></div>
         <div className="absolute bottom-0 right-0 -z-10 h-96 w-96 rounded-full bg-smvit-accent/5 blur-3xl"></div>
 
-      <MotionSection className="mt-20 grid gap-6 md:grid-cols-4">
+      <MotionSection className="mt-12 grid gap-4 sm:mt-16 sm:gap-6 md:mt-20 md:grid-cols-2 lg:grid-cols-4">
         {stats.map((item, index) => (
           <motion.div
             key={item.label}
-            className="group relative overflow-hidden rounded-2xl border border-slate-200/80 bg-gradient-to-br from-white to-slate-50/50 p-6 transition-all duration-300 hover:scale-105 hover:border-smvit-primary/30 hover:shadow-glow"
+            className="group relative overflow-hidden rounded-xl border border-slate-200/80 bg-gradient-to-br from-white to-slate-50/50 p-4 transition-all duration-300 active:scale-95 sm:rounded-2xl sm:p-6 sm:hover:scale-105 sm:hover:border-smvit-primary/30 sm:hover:shadow-glow"
             style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)' }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -35,23 +35,23 @@ const Home = () => {
             transition={{ delay: index * 0.1 }}
           >
             <div className="absolute right-0 top-0 h-32 w-32 -translate-y-1/2 translate-x-1/2 rounded-full bg-smvit-accent/10 blur-3xl"></div>
-            <p className="relative text-xs font-semibold uppercase tracking-[0.35em] text-smvit-accent">{item.label}</p>
-            <p className="relative mt-4 font-display text-5xl font-bold text-smvit-primary">{item.value}</p>
-            <p className="relative mt-3 text-sm leading-relaxed text-slate-600">{item.detail}</p>
+            <p className="relative text-[10px] font-semibold uppercase tracking-[0.25em] text-smvit-accent sm:text-xs sm:tracking-[0.35em]">{item.label}</p>
+            <p className="relative mt-3 font-display text-3xl font-bold text-smvit-primary sm:mt-4 sm:text-4xl md:text-5xl">{item.value}</p>
+            <p className="relative mt-2 text-xs leading-relaxed text-slate-600 sm:mt-3 sm:text-sm">{item.detail}</p>
           </motion.div>
         ))}
       </MotionSection>
 
-      <MotionSection className="mt-24">
-        <div className="bg-white p-8 md:p-12">
-          <div className="mb-10 text-center">
-            <h2 className="font-display text-4xl font-bold text-slate-900 md:text-5xl">ABOUT US</h2>
+      <MotionSection className="mt-12 sm:mt-16 md:mt-24">
+        <div className="bg-white p-6 sm:p-8 md:p-12">
+          <div className="mb-6 text-center sm:mb-10">
+            <h2 className="font-display text-2xl font-bold text-slate-900 sm:text-3xl md:text-4xl lg:text-5xl">ABOUT US</h2>
             <div className="mx-auto mt-3 h-1 w-20 bg-red-600"></div>
           </div>
           
-          <div className="grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-center">
             <div>
-              <p className="text-base leading-relaxed text-slate-700 md:text-lg">
+              <p className="text-sm leading-relaxed text-slate-700 sm:text-base md:text-lg">
                 Sir M. Visvesvaraya Institute of Technology (SMVIT) was established in 1986 and has been a beacon of excellence in engineering education for over four decades. Located in the vibrant city of Bengaluru, the institute spans across a sprawling green campus and has established itself as a premier institution for technical education.
               </p>
               <p className="mt-4 text-base leading-relaxed text-slate-700 md:text-lg">
@@ -70,10 +70,10 @@ const Home = () => {
         </div>
       </MotionSection>
 
-      <MotionSection className="mt-24">
-        <div className="bg-white p-8 md:p-12">
-          <div className="mb-10 text-center md:text-right">
-            <h2 className="font-display text-4xl font-bold text-slate-900 md:text-5xl">OBJECTIVE OF THE CONFERENCE</h2>
+      <MotionSection className="mt-12 sm:mt-16 md:mt-24">
+        <div className="bg-white p-6 sm:p-8 md:p-12">
+          <div className="mb-6 text-center sm:mb-10 md:text-right">
+            <h2 className="font-display text-2xl font-bold text-slate-900 sm:text-3xl md:text-4xl lg:text-5xl">OBJECTIVE OF THE CONFERENCE</h2>
             <div className="mx-auto mt-3 h-1 w-20 bg-red-600 md:ml-auto md:mr-0"></div>
           </div>
           
@@ -87,10 +87,10 @@ const Home = () => {
             </div>
             
             <div className="order-1 md:order-2">
-              <p className="text-base leading-relaxed text-slate-700 md:text-lg">
+              <p className="text-sm leading-relaxed text-slate-700 sm:text-base md:text-lg">
                 FESCIS 2026 serves as a premier platform for researchers, scientists, academicians, and industry experts to share opinions, new ideas, frameworks, and innovative technologies in intelligent computing and information technology. The conference aims to address critical problems in engineering sciences and healthcare, making a revolutionary contribution to social welfare through science and technology.
               </p>
-              <p className="mt-4 text-base leading-relaxed text-slate-700 md:text-lg">
+              <p className="mt-3 text-sm leading-relaxed text-slate-700 sm:mt-4 sm:text-base md:text-lg">
                 The conference has a high impact on the IEEE Bangalore Section regarding advances in intelligent computing for engineering, sciences, healthcare, energy, and environment. The scope includes interdisciplinary, emerging, and thrust areas focusing on cognitive computing for complex problem-solving, deeper understanding of current trends in intelligent computation, and multi-disciplinary research on national growth towards healthcare solutions.
               </p>
             </div>
@@ -98,14 +98,14 @@ const Home = () => {
         </div>
       </MotionSection>
 
-      <MotionSection className="mt-24">
-        <div className="bg-white p-8 md:p-12">
-          <div className="mb-10 text-center">
-            <h2 className="font-display text-4xl font-bold text-slate-900 md:text-5xl">CONFERENCE HIGHLIGHTS, SCOPE AND EXPECTED OUTCOMES</h2>
-            <div className="mx-auto mt-3 h-1 w-20 bg-red-600"></div>
+      <MotionSection className="mt-12 sm:mt-16 md:mt-24">
+        <div className="bg-white p-6 sm:p-8 md:p-12">
+          <div className="mb-6 text-center sm:mb-10">
+            <h2 className="font-display text-xl font-bold text-slate-900 sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">CONFERENCE HIGHLIGHTS, SCOPE AND EXPECTED OUTCOMES</h2>
+            <div className="mx-auto mt-2 h-1 w-16 bg-red-600 sm:mt-3 sm:w-20"></div>
           </div>
           
-          <ul className="space-y-3 text-base leading-relaxed text-slate-700 md:text-lg">
+          <ul className="space-y-2 text-sm leading-relaxed text-slate-700 sm:space-y-3 sm:text-base md:text-lg">
             <li className="flex items-start gap-3">
               <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-slate-900"></span>
               <span>This Conference is a distinctive effort to explore, enhance and empower multi-disciplinary and multi-institutional research based on Network Technologies, Multimedia Systems, and Information Technology in contemporary engineering and computing domains.</span>

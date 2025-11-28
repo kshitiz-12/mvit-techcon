@@ -5,8 +5,14 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    height: -webkit-fill-available;
+  }
+  
   body {
     @apply bg-slate-50 text-slate-900 antialiased;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
   }
   
   @keyframes fade-in {

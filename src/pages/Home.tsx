@@ -88,7 +88,7 @@ const Home = () => {
             
             <div className="order-1 md:order-2">
               <p className="text-base leading-relaxed text-slate-700 md:text-lg">
-                MVIT-TECHCON 2026 serves as a premier platform for researchers, scientists, academicians, and industry experts to share opinions, new ideas, frameworks, and innovative technologies in intelligent computing and information technology. The conference aims to address critical problems in engineering sciences and healthcare, making a revolutionary contribution to social welfare through science and technology.
+                FESCIS 2026 serves as a premier platform for researchers, scientists, academicians, and industry experts to share opinions, new ideas, frameworks, and innovative technologies in intelligent computing and information technology. The conference aims to address critical problems in engineering sciences and healthcare, making a revolutionary contribution to social welfare through science and technology.
               </p>
               <p className="mt-4 text-base leading-relaxed text-slate-700 md:text-lg">
                 The conference has a high impact on the IEEE Bangalore Section regarding advances in intelligent computing for engineering, sciences, healthcare, energy, and environment. The scope includes interdisciplinary, emerging, and thrust areas focusing on cognitive computing for complex problem-solving, deeper understanding of current trends in intelligent computation, and multi-disciplinary research on national growth towards healthcare solutions.

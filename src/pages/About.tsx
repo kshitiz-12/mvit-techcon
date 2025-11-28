@@ -35,7 +35,7 @@ const About = () => {
           International Airport, SMVIT blends heritage with a future-forward research culture.
         </p>
         <p className="mt-4 text-lg text-slate-600">
-          MVIT-TECHCON carries forward this spirit by convening researchers, practitioners, alumni founders, and
+          FESCIS carries forward this spirit by convening researchers, practitioners, alumni founders, and
           policymakers to co-design responsible technology stacks for society.
         </p>
       </MotionSection>

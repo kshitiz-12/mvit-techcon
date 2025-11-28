@@ -2,44 +2,44 @@ import MotionSection from '../components/MotionSection'
 
 const highlights = [
   {
-    title: 'Immersive Hybrid Production',
+    title: 'Multi-Disciplinary Research',
     detail:
-      'Studio-grade broadcasts, interaction pods for remote delegates, and on-demand translation ensure inclusivity without compromising formality.',
+      'FESCIS 2026 focuses on exploring, enhancing and empowering multi-disciplinary and multi-institutional research based on Future Electronics, Sustainable Computing & Intelligent Systems.',
   },
   {
-    title: 'IEEE-aligned Review Stack',
+    title: 'IEEE-aligned Review Process',
     detail:
-      'Double-blind peer review on Microsoft CMT, editorial coaches for every accepted paper, and compliance with IEEE Event Conduct policy.',
+      'Double-blind peer review ensuring high-quality submissions. All accepted papers will be submitted to IEEE Xplore Digital Library and indexed on Scopus.',
   },
   {
-    title: 'Campus Innovation Trails',
-    detail: 'Curated lab tours across AI, autonomous mobility, aerospace systems, and responsible tech incubators.',
+    title: 'Industry-Academia Collaboration',
+    detail: 'A platform for researchers, academicians, industry professionals, and students to share knowledge and collaborate on cutting-edge research.',
   },
 ]
 
-const formats = [
-  { name: 'Keynotes & fireside dialogues', detail: 'Visionary perspectives from academia, government, and industry.' },
-  { name: 'Technical paper sessions', detail: 'Parallel tracks with structured Q&A, live whiteboarding, and archival recording.' },
-  { name: 'Demos & city studios', detail: 'Scenario-based walkthroughs with civic partners and impact juries.' },
-  { name: 'Scholars-in-residence labs', detail: 'Deep dives hosted by doctoral mentors and alumni founders.' },
-]
-
-const awards = [
-  'IEEE India Council Outstanding Student Branch Award · 2024 (IEEE SB MVIT)',
-  'IEEE Bangalore Section Outstanding Medium Student Branch · 2023 (IEEE SB MVIT)',
-  'Vibrant Pilot – Grand Entry winner at IEEE YESIST12 Grand Finale, Egypt · 2023 (MVIT Innovation Team)',
+const tracks = [
+  'Microelectronics & Integrated Circuits',
+  'Smart Sensors & Actuators',
+  'Embedded Systems & IoT',
+  'Microwave and Antenna for Smart Communication',
+  'Wireless Communication and Signal Processing',
+  'Sustainable Computing & Green Technologies',
+  'Artificial Intelligence',
+  'Data Science & Cybersecurity',
+  'Software Automation',
+  'GSM Cellular Networks & Next-Generation Networks',
 ]
 
 const legacyStats = [
   {
-    title: 'About the MVIT-TECHCON legacy',
+    title: 'About FESCIS 2026',
     detail:
-      'MVIT-TECHCON has hosted flagship editions focused on networks, multimedia, and information systems with the IEEE Bangalore Section since 2023. The 2026 chapter builds on that momentum with a design-forward take on emerging technologies.',
+      'International Conference on Future Electronics, Sustainable Computing & Intelligent Systems (FESCIS) 2026 serves as a premier platform for researchers, scientists, academicians, and industry experts to share opinions, new ideas, frameworks, and innovative technologies.',
   },
   {
-    title: 'IEEE Student Branch impact',
+    title: 'IEEE Student Branch',
     detail:
-      'IEEE SB Sir M. Visvesvaraya Institute of Technology (Stb64731) was established in 2005 to spark research seminars, workshops, and competitions that expose students to global experts. A highlight was securing $75,000 from the IEEE Aerospace and Electronic Systems Society under the Distributed Sensing Technology and Education Initiatives for Region 10.',
+      'IEEE SB Sir M. Visvesvaraya Institute of Technology has been actively promoting research and innovation. The branch organizes seminars, workshops, and competitions that expose students to global experts and industry leaders.',
   },
 ]
 
@@ -47,17 +47,13 @@ const AboutConference = () => {
   return (
     <div className="space-y-14">
       <MotionSection className="rounded-[32px] border border-slate-200 bg-white/80 p-10 shadow-[0_25px_80px_rgba(15,61,145,0.08)]">
-        <p className="eyebrow">About MVIT-TECHCON</p>
+        <p className="eyebrow">About FESCIS</p>
         <h1 className="mt-4 font-display text-4xl text-slate-900">Designing resilient, human-centered technology futures.</h1>
         <p className="mt-5 text-lg text-slate-600">
-          The primary goal of MVIT-TECHCON 2026 is to promote research and developmental activities across Network, Multimedia, and
-          Information Technology, while enabling scientific interchange between researchers, developers, engineers, students, and
-          practitioners worldwide. It provides a forum to deliberate on the latest trends, spot research problems, and nurture young
-          innovators.
+          The primary goal of FESCIS 2026 is to promote research and developmental activities across Future Electronics, Sustainable Computing, and Intelligent Systems. The conference aims to address critical problems in engineering sciences and healthcare, making a revolutionary contribution to social welfare through science and technology.
         </p>
         <p className="mt-4 text-lg text-slate-600">
-          MVIT-TECHCON extends the legacy of previous IEEE-backed editions, retaining their rigor and IEEE Bangalore Section partnership
-          while adding immersive studio-grade experiences hosted from Sir M. Visvesvaraya Institute of Technology.
+          FESCIS 2026 has a high impact on the IEEE Bangalore Section regarding advances in intelligent computing for engineering, sciences, healthcare, energy, and environment. The scope includes interdisciplinary, emerging, and thrust areas focusing on cognitive computing for complex problem-solving and multi-disciplinary research on national growth.
         </p>
       </MotionSection>
 
@@ -75,19 +71,19 @@ const AboutConference = () => {
           <div>
             <p className="eyebrow">Conference objectives</p>
             <ul className="mt-4 list-disc space-y-3 pl-5 text-slate-600">
-              <li>Promote research exchange across networked intelligence, multimedia systems, and information technology.</li>
-              <li>Provide a launchpad for young researchers to access mentoring, publishing pipelines, and venture partners.</li>
-              <li>Showcase IEEE Student Branch innovations and collaborations with civic agencies.</li>
-              <li>Co-create responsible technology playbooks that can be adopted by cities, campuses, and enterprises.</li>
+              <li>Explore, enhance and empower multi-disciplinary and multi-institutional research in Future Electronics, Sustainable Computing & Intelligent Systems.</li>
+              <li>Provide recent developments in intelligent networks, multimedia processing, and information systems in emerging fields of Engineering & Technology.</li>
+              <li>Focus on identifying challenges and solutions through an integrated approach, shaping the path for new research dimensions.</li>
+              <li>Foster collaboration between academia and industry to drive innovation and societal progress.</li>
             </ul>
           </div>
           <div>
-            <p className="eyebrow">Experience layers</p>
-            <ul className="mt-4 space-y-4 text-slate-600">
-              {formats.map((format) => (
-                <li key={format.name} className="rounded-2xl border border-slate-200 bg-white/70 p-4">
-                  <span className="font-semibold text-smvit-primary">{format.name}</span>
-                  <p className="text-sm text-slate-600">{format.detail}</p>
+            <p className="eyebrow">Conference tracks</p>
+            <ul className="mt-4 space-y-3 text-slate-600">
+              {tracks.map((track) => (
+                <li key={track} className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white/70 px-4 py-3">
+                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-smvit-accent"></span>
+                  <span className="text-sm">{track}</span>
                 </li>
               ))}
             </ul>
@@ -103,14 +99,32 @@ const AboutConference = () => {
           </div>
         ))}
         <div className="rounded-3xl border border-slate-200 bg-white/80 p-6">
-          <h3 className="text-xl font-semibold text-slate-900">Honors & awards</h3>
+          <h3 className="text-xl font-semibold text-slate-900">Conference details</h3>
           <ul className="mt-4 space-y-3 text-sm text-slate-600">
-            {awards.map((award) => (
-              <li key={award} className="flex items-start gap-2">
-                <span className="mt-1 h-2 w-2 rounded-full bg-smvit-accent" />
-                {award}
-              </li>
-            ))}
+            <li className="flex items-start gap-2">
+              <span className="mt-1 h-2 w-2 rounded-full bg-smvit-accent" />
+              <span><strong>Conference Date:</strong> 3rd and 4th December 2026</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1 h-2 w-2 rounded-full bg-smvit-accent" />
+              <span><strong>Venue:</strong> Sir M. Visvesvaraya Institute of Technology, Bengaluru, India</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1 h-2 w-2 rounded-full bg-smvit-accent" />
+              <span><strong>Full Paper Submission:</strong> 1st August 2026</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1 h-2 w-2 rounded-full bg-smvit-accent" />
+              <span><strong>Acceptance Notification:</strong> 1st October 2026</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1 h-2 w-2 rounded-full bg-smvit-accent" />
+              <span><strong>Registration Deadline:</strong> 7th October 2026</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1 h-2 w-2 rounded-full bg-smvit-accent" />
+              <span><strong>Camera Ready Paper:</strong> 15th October 2026</span>
+            </li>
           </ul>
         </div>
       </MotionSection>
@@ -120,9 +134,7 @@ const AboutConference = () => {
           <div>
             <p className="eyebrow">Previous publications</p>
             <p className="mt-3 text-lg text-slate-600">
-              All papers presented through the legacy editions have been submitted to the IEEE Xplore Digital Library (subject to scope
-              and quality checks) and indexed on Scopus. MVIT-TECHCON 2026 continues this pathway, ensuring archival visibility for every
-              accepted submission.
+              All accepted papers will be submitted to the IEEE Xplore Digital Library (subject to scope and quality checks) and indexed on Scopus. FESCIS 2026 ensures archival visibility for every accepted submission, providing authors with global recognition and citation opportunities.
             </p>
           </div>
           <div className="rounded-3xl border border-slate-200 bg-white/70 p-6 text-sm text-slate-600">
@@ -133,11 +145,10 @@ const AboutConference = () => {
               rel="noreferrer"
               className="mt-2 inline-flex items-center gap-2 text-smvit-primary underline"
             >
-              IEEE Xplore · MVIT-TECHCON archives
+              IEEE Xplore · FESCIS archives
             </a>
             <p className="mt-3">
-              Proceedings include the previous MVIT-TECHCON editions; the 2026 manuscripts will follow the same archival workflow with
-              camera-ready compliance checks.
+              All accepted papers will be published in the conference proceedings and submitted to IEEE Xplore. The 2026 manuscripts will follow IEEE archival workflow with camera-ready compliance checks and quality assurance.
             </p>
           </div>
         </div>

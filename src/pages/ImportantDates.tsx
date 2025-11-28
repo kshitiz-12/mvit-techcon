@@ -1,12 +1,11 @@
 import MotionSection from '../components/MotionSection'
 
 const milestones = [
-  { phase: 'Call for Papers Opens', date: '15 December 2025', status: 'Live', detail: 'Mentoring desk activated; abstract clinics weekly.' },
-  { phase: 'Full Paper Submission', date: '15 March 2026', status: 'Upcoming', detail: 'CMT portal closes 23:59 IST.' },
-  { phase: 'Reviewer Feedback', date: '10 April 2026', status: 'Upcoming', detail: 'Consolidated decisions shared with meta reviews.' },
-  { phase: 'Camera Ready & Copyright', date: '25 April 2026', status: 'Upcoming', detail: 'IEEE eCopyright + final PDF upload.' },
-  { phase: 'Author Registration Deadline', date: '5 May 2026', status: 'Upcoming', detail: 'One author per paper must complete payment.' },
-  { phase: 'Conference Week', date: '5 – 7 June 2026', status: 'Event', detail: 'On-campus + hybrid broadcast from Bengaluru.' },
+  { phase: 'Last Date for Full Paper Submission', date: '1st August 2026', status: 'Upcoming', detail: 'All papers must be submitted via the submission portal before the deadline.' },
+  { phase: 'Acceptance Notification', date: '1st October 2026', status: 'Upcoming', detail: 'Authors will be notified of paper acceptance decisions.' },
+  { phase: 'Last Date for Registration', date: '7th October 2026', status: 'Upcoming', detail: 'One author per paper must complete registration and payment.' },
+  { phase: 'Camera Ready Paper', date: '15th October 2026', status: 'Upcoming', detail: 'Final camera-ready papers must be submitted with all corrections.' },
+  { phase: 'Conference Date', date: '3rd and 4th December 2026', status: 'Event', detail: 'FESCIS 2026 will be held at Sir M. Visvesvaraya Institute of Technology, Bengaluru.' },
 ]
 
 const reminders = [
@@ -20,7 +19,7 @@ const ImportantDates = () => {
     <div className="space-y-12">
       <MotionSection className="rounded-[32px] border border-slate-200 bg-white/80 p-10 shadow-[0_25px_80px_rgba(15,61,145,0.08)]">
         <p className="eyebrow">Important Dates</p>
-        <h1 className="mt-4 font-display text-4xl text-slate-900">Stay aligned with the MVIT-TECHCON cadence.</h1>
+        <h1 className="mt-4 font-display text-4xl text-slate-900">Stay aligned with the FESCIS cadence.</h1>
         <p className="mt-5 text-lg text-slate-600">
           The Technical Program Committee operates on a transparent, high-touch schedule so that authors, reviewers, and partners can
           plan travel, visa, and production timelines in advance.

@@ -25,7 +25,7 @@ const RegistrationFees = () => {
     <div className="space-y-12">
       <MotionSection className="rounded-[32px] border border-slate-200 bg-white/80 p-10 shadow-[0_25px_80px_rgba(15,61,145,0.08)]">
         <p className="eyebrow">Registration</p>
-        <h1 className="mt-4 font-display text-4xl text-slate-900">Secure your seat at MVIT-TECHCON 2026.</h1>
+        <h1 className="mt-4 font-display text-4xl text-slate-900">Secure your seat at FESCIS 2026.</h1>
         <p className="mt-5 text-lg text-slate-600">
           Registration opens immediately after acceptance notifications. Delegates can opt for the on-campus immersive pass or the
           hybrid pass with live studio feeds. IEEE members receive preferential pricing across all categories.

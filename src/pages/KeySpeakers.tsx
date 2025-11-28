@@ -7,7 +7,7 @@ const KeySpeakers = () => {
         <p className="eyebrow">Key Speakers</p>
         <h1 className="mt-4 font-display text-4xl text-slate-900">Voices shaping the future of resilient technology.</h1>
         <p className="mt-5 text-lg text-slate-600">
-          MVIT-TECHCON curates cross-sector leaders who blend research depth with deployment experience. The 2026 line-up bridges
+          FESCIS curates cross-sector leaders who blend research depth with deployment experience. The 2026 line-up bridges
           public infrastructure, advanced communications, and responsible automation.
         </p>
       </MotionSection>

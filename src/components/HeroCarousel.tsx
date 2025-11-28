@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const carouselImages = [
   '/smvit_slider1.jpg',
@@ -31,22 +32,19 @@ const HeroCarousel = () => {
             <img
               src={img}
               alt={`MVIT Campus ${index + 1}`}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover brightness-110"
             />
-            {/* Sophisticated gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-smvit-primary/70 via-black/50 to-black/70" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
           </div>
         ))}
       </div>
 
       {/* IEEE Bangalore Logo Overlay */}
       <div className="absolute right-8 top-8 z-20 animate-fade-in">
-        <div className="rounded-2xl border border-white/20 bg-white/95 p-4 shadow-glow-lg backdrop-blur-md transition-transform hover:scale-105">
+        <div className="rounded-xl border border-white/20 bg-white/95 p-2 shadow-glow-lg backdrop-blur-md transition-transform hover:scale-105">
           <img
             src="/IEEE.jpg"
             alt="IEEE Bangalore Section"
-            className="h-20 w-auto lg:h-28"
+            className="h-12 w-auto lg:h-16"
           />
         </div>
       </div>
@@ -70,31 +68,39 @@ const HeroCarousel = () => {
       <div className="absolute inset-0 z-10 flex items-center">
         <div className="mx-auto max-w-6xl px-6 text-center text-white">
   
-          <h1 className="font-display text-5xl font-bold leading-tight tracking-tight drop-shadow-2xl md:text-6xl lg:text-7xl">
-            <span className="bg-gradient-to-r from-white via-white to-white/90 bg-clip-text text-transparent">
-              MVIT-TECHCON 2026
-            </span>
+          <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] md:text-5xl lg:text-6xl">
+            FESCIS 2026
           </h1>
-          <p className="mt-6 text-xl font-medium text-white/95 md:text-2xl lg:text-3xl">
-            Conference on Network, Multimedia and Information Technology
+          <p className="mt-6 text-lg font-medium text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] md:text-xl lg:text-2xl">
+            International Conference on Future Electronics, Sustainable Computing & Intelligent Systems
           </p>
-          <p className="mt-4 text-lg text-white/85 md:text-xl">
-            5–7 June 2026 · Sir M. Visvesvaraya Institute of Technology, Bengaluru
-          </p>
+          <div className="mt-6 flex flex-col items-center gap-3">
+            <div className="inline-flex items-center gap-3 rounded-2xl border-2 border-white/40 bg-gradient-to-r from-smvit-primary/90 via-smvit-primaryDark/90 to-smvit-primary/90 px-6 py-3 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white lg:h-7 lg:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <span className="font-display text-xl font-bold text-white md:text-2xl lg:text-3xl">
+                3–4 December 2026
+              </span>
+            </div>
+            <p className="text-base font-medium text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)] md:text-lg">
+              Sir M. Visvesvaraya Institute of Technology, Bengaluru
+            </p>
+          </div>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <a
-              href="#tracks"
+            <Link
+              to="/paper-submission"
               className="group relative overflow-hidden rounded-xl bg-smvit-primary px-8 py-4 font-semibold text-white shadow-glow-lg transition-all duration-300 hover:scale-105 hover:bg-smvit-primaryLight hover:shadow-glow-accent"
             >
               <span className="relative z-10">Explore Program</span>
               <div className="absolute inset-0 bg-gradient-to-r from-smvit-accent/20 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
-            </a>
-            <a
-              href="#timeline"
+            </Link>
+            <Link
+              to="/important-dates"
               className="rounded-xl border-2 border-white/30 bg-white/10 px-8 py-4 font-semibold text-white backdrop-blur-md transition-all duration-300 hover:scale-105 hover:border-white/50 hover:bg-white/20 hover:shadow-lg"
             >
               Important Dates
-            </a>
+            </Link>
           </div>
         </div>
       </div>

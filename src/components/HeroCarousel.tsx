@@ -39,7 +39,7 @@ const HeroCarousel = () => {
       </div>
 
       {/* IEEE Bangalore Logo Overlay */}
-      <div className="absolute right-4 top-4 z-20 animate-fade-in sm:right-8 sm:top-8">
+      {/* <div className="absolute right-4 top-4 z-20 animate-fade-in sm:right-8 sm:top-8">
         <div className="rounded-lg border border-white/20 bg-white/95 p-1.5 shadow-glow-lg backdrop-blur-md transition-transform hover:scale-105 sm:rounded-xl sm:p-2">
           <img
             src="/IEEE.jpg"
@@ -47,7 +47,7 @@ const HeroCarousel = () => {
             className="h-8 w-auto sm:h-12 lg:h-16"
           />
         </div>
-      </div>
+      </div> */}
 
       {/* Carousel Indicators */}
       <div className="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 gap-2 sm:bottom-6">

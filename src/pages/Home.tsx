@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import MotionSection from '../components/MotionSection'
 import HeroCarousel from '../components/HeroCarousel'
+import FAQ from '../components/FAQ'
+import AnimatedCounter from '../components/AnimatedCounter'
 
 const stats = [
   { label: 'Years of Excellence', value: '40+', detail: 'Academic heritage since 1986' },
@@ -36,7 +38,9 @@ const Home = () => {
           >
             <div className="absolute right-0 top-0 h-32 w-32 -translate-y-1/2 translate-x-1/2 rounded-full bg-smvit-accent/10 blur-3xl"></div>
             <p className="relative text-[10px] font-semibold uppercase tracking-[0.25em] text-smvit-accent sm:text-xs sm:tracking-[0.35em]">{item.label}</p>
-            <p className="relative mt-3 font-display text-3xl font-bold text-smvit-primary sm:mt-4 sm:text-4xl md:text-5xl">{item.value}</p>
+            <p className="relative mt-3 font-display text-3xl font-bold text-smvit-primary sm:mt-4 sm:text-4xl md:text-5xl">
+              <AnimatedCounter value={item.value} duration={2000} />
+            </p>
             <p className="relative mt-2 text-xs leading-relaxed text-slate-600 sm:mt-3 sm:text-sm">{item.detail}</p>
           </motion.div>
         ))}
@@ -62,8 +66,10 @@ const Home = () => {
             <div className="relative overflow-hidden rounded-2xl">
               <img
                 src="/Sirmvit-About-Header-img-500x350.jpg"
-                alt="Sir M. Visvesvaraya Institute of Technology Campus"
+                alt="Sir M. Visvesvaraya Institute of Technology Campus showing modern buildings and green spaces"
                 className="h-full w-full object-cover shadow-lg"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -81,8 +87,10 @@ const Home = () => {
             <div className="relative overflow-hidden rounded-2xl order-2 md:order-1">
               <img
                 src="/sir-m-visvesvaraya-institute-of-technology-mvit-bengaluru-500x300.jpg"
-                alt="Sir M. Visvesvaraya Institute of Technology Campus Entrance"
+                alt="Sir M. Visvesvaraya Institute of Technology campus entrance with architectural buildings"
                 className="h-full w-full object-cover shadow-lg"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             
@@ -153,6 +161,8 @@ const Home = () => {
           </ul>
         </div>
       </MotionSection>
+
+      <FAQ />
       </div>
       </div>
     </>

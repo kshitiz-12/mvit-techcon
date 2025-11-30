@@ -1,14 +1,30 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, lazy, Suspense } from 'react'
 import { BrowserRouter, NavLink, Route, Routes, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import Home from './pages/Home'
-import AboutConference from './pages/AboutConference'
-import PaperSubmission from './pages/PaperSubmission'
-import RegistrationFees from './pages/RegistrationFees'
-import ImportantDates from './pages/ImportantDates'
-import KeyCommittees from './pages/KeyCommittees'
-import KeySpeakers from './pages/KeySpeakers'
-import Contact from './pages/Contact'
+import SEOHead from './components/SEOHead'
+import SkipLink from './components/SkipLink'
+import BackToTop from './components/BackToTop'
+import Breadcrumbs from './components/Breadcrumbs'
+
+// Lazy load pages for better performance
+const Home = lazy(() => import('./pages/Home'))
+const AboutConference = lazy(() => import('./pages/AboutConference'))
+const PaperSubmission = lazy(() => import('./pages/PaperSubmission'))
+const RegistrationFees = lazy(() => import('./pages/RegistrationFees'))
+const ImportantDates = lazy(() => import('./pages/ImportantDates'))
+const KeyCommittees = lazy(() => import('./pages/KeyCommittees'))
+const KeySpeakers = lazy(() => import('./pages/KeySpeakers'))
+const Contact = lazy(() => import('./pages/Contact'))
+
+// Loading component
+const PageLoader = () => (
+  <div className="flex min-h-[60vh] items-center justify-center">
+    <div className="text-center">
+      <div className="inline-block h-12 w-12 animate-spin rounded-full border-4 border-solid border-smvit-primary border-r-transparent"></div>
+      <p className="mt-4 text-slate-600">Loading...</p>
+    </div>
+  </div>
+)
 
 const navLinks = [
   { label: 'About Conference', path: '/about-conference' },
@@ -57,6 +73,8 @@ const AppContent = () => {
 
   return (
     <>
+    <SEOHead />
+    <SkipLink />
     <div className="min-h-screen bg-slate-50 font-body text-slate-900 selection:bg-smvit-accent/30">
       <header className={`sticky top-0 z-30 relative transition-all duration-500 ${
         isHomePage 
@@ -321,18 +339,25 @@ const AppContent = () => {
         </nav>
       </header>
 
-      <main className={`${location.pathname === '/' ? 'relative -mt-0' : 'mx-auto max-w-6xl px-6 py-12 md:py-16'}`}>
+      <main id="main-content" className={`${location.pathname === '/' ? 'relative -mt-0' : 'mx-auto max-w-6xl px-6 py-12 md:py-16'}`}>
         <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about-conference" element={<AboutConference />} />
-          <Route path="/paper-submission" element={<PaperSubmission />} />
-          <Route path="/registration" element={<RegistrationFees />} />
-          <Route path="/important-dates" element={<ImportantDates />} />
-          <Route path="/key-committees" element={<KeyCommittees />} />
-          <Route path="/key-speakers" element={<KeySpeakers />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        {location.pathname !== '/' && (
+          <div className="mx-auto max-w-6xl px-6">
+            <Breadcrumbs />
+          </div>
+        )}
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about-conference" element={<AboutConference />} />
+            <Route path="/paper-submission" element={<PaperSubmission />} />
+            <Route path="/registration" element={<RegistrationFees />} />
+            <Route path="/important-dates" element={<ImportantDates />} />
+            <Route path="/key-committees" element={<KeyCommittees />} />
+            <Route path="/key-speakers" element={<KeySpeakers />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </Suspense>
       </main>
 
       <footer className="border-t border-smvit-primary/20 bg-gradient-to-r from-smvit-primary via-smvit-primaryDark to-smvit-primary py-12 text-white">
@@ -469,16 +494,7 @@ const AppContent = () => {
           </div>
         </div>
       </footer>
-    </div>
-
-    <div className="fixed bottom-6 right-6 z-40 flex max-w-xs items-start gap-3 rounded-2xl border border-yellow-200 bg-amber-50/95 p-4 text-sm text-amber-800 shadow-lg shadow-amber-200">
-      <span className="text-2xl" role="img" aria-label="maintenance bot">
-        🤖
-      </span>
-      <div>
-        <p className="font-semibold">Site under maintenance</p>
-                <p className="text-xs">We're tuning FESCIS systems. Expect occasional sparks!</p>
-      </div>
+      <BackToTop />
     </div>
     </>
   )

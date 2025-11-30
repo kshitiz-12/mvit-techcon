@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 const carouselImages = [
   '/smvit_slider1.jpg',
   '/Sirmvit-About-Header-img-500x350.jpg',
-  '/sir-m-visvesvaraya-institute-of-technology-mvit-bengaluru-500x300.jpg',
-  '/2021-02-11.webp',
+  '/lib-1.png',
+  '/1000034705.webp',
 ]
 
 const HeroCarousel = () => {
@@ -18,8 +18,19 @@ const HeroCarousel = () => {
     return () => clearInterval(interval)
   }, [])
 
+  // Preload images for better quality and performance
+  useEffect(() => {
+    carouselImages.forEach((img) => {
+      const link = document.createElement('link')
+      link.rel = 'preload'
+      link.as = 'image'
+      link.href = img
+      document.head.appendChild(link)
+    })
+  }, [])
+
   return (
-    <div className="relative h-screen w-full overflow-hidden" style={{ minHeight: '-webkit-fill-available' }}>
+    <div className="relative h-[87vh] w-full overflow-hidden max-h-screen" style={{ minHeight: '500px' }}>
       {/* Carousel Images */}
       <div className="relative h-full w-full">
         {carouselImages.map((img, index) => (
@@ -33,6 +44,17 @@ const HeroCarousel = () => {
               src={img}
               alt={`MVIT Campus ${index + 1}`}
               className="h-full w-full object-cover brightness-110"
+              style={{
+                imageRendering: 'auto',
+                backfaceVisibility: 'hidden',
+                transform: 'translateZ(0)',
+                willChange: 'opacity',
+                WebkitFontSmoothing: 'antialiased',
+                MozOsxFontSmoothing: 'grayscale',
+              }}
+              loading={index === 0 || index === currentIndex ? 'eager' : 'lazy'}
+              decoding="async"
+              fetchPriority={index === currentIndex ? 'high' : 'auto'}
             />
           </div>
         ))}

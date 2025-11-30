@@ -80,11 +80,21 @@
     @apply no-underline;
   }
 
-  a:focus {
-    @apply outline-none;
+  a:focus-visible {
+    @apply outline-none ring-2 ring-smvit-primary ring-offset-2 rounded;
   }
 
-  button:focus {
-    @apply outline-none;
+  button:focus-visible {
+    @apply outline-none ring-2 ring-smvit-primary ring-offset-2;
+  }
+
+  /* Better focus styles for keyboard navigation */
+  *:focus {
+    outline: none;
+  }
+
+  *:focus-visible {
+    outline: 2px solid theme('colors.smvit-primary');
+    outline-offset: 2px;
   }
 }

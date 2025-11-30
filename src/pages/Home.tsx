@@ -25,7 +25,7 @@ const Home = () => {
         <div className="absolute left-0 top-0 -z-10 h-96 w-96 rounded-full bg-smvit-primary/5 blur-3xl"></div>
         <div className="absolute bottom-0 right-0 -z-10 h-96 w-96 rounded-full bg-smvit-accent/5 blur-3xl"></div>
 
-      <MotionSection className="mt-12 grid gap-4 sm:mt-16 sm:gap-6 md:mt-20 md:grid-cols-2 lg:grid-cols-4">
+      <MotionSection className="mt-4 grid gap-4 sm:mt-6 sm:gap-6 md:mt-8 md:grid-cols-2 lg:grid-cols-4">
         {stats.map((item, index) => (
           <motion.div
             key={item.label}

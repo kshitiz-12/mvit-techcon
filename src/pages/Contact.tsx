@@ -155,14 +155,6 @@ const Contact = () => {
               </a>
             </div>
           </div>
-          <iframe
-            title="SMVIT Map"
-            className="mt-6 h-64 w-full rounded-3xl border border-slate-200"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.379651930029!2d77.651!3d13.0103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae19ffe24e0749%3A0xb9d93926ab9dd98b!2sSir%20M.%20Visvesvaraya%20Institute%20Of%20Technology!5e0!3m2!1sen!2sin!4v1703070000000!5m2!1sen!2sin"
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
         </div>
       </MotionSection>
     </div>

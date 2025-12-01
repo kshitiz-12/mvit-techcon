@@ -6,27 +6,26 @@ const carouselImages = [
   '/campus view 2.JPG',
   '/campus view 3.JPG',
   '/lib 1.JPG',
+  '/WhatsApp Image 2025-12-01 at 15.50.43_50fce849.jpg',
 ]
 
 const HeroCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
+
+  // Preload all images immediately for faster transitions
+  useEffect(() => {
+    // Preload images in memory for instant display
+    carouselImages.forEach((src) => {
+      const img = new Image()
+      img.src = src
+    })
+  }, [])
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % carouselImages.length)
     }, 5000)
     return () => clearInterval(interval)
-  }, [])
-
-  // Preload images for better quality and performance
-  useEffect(() => {
-    carouselImages.forEach((img) => {
-      const link = document.createElement('link')
-      link.rel = 'preload'
-      link.as = 'image'
-      link.href = img
-      document.head.appendChild(link)
-    })
   }, [])
 
   return (
@@ -36,9 +35,12 @@ const HeroCarousel = () => {
         {carouselImages.map((img, index) => (
           <div
             key={img}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentIndex ? 'opacity-100' : 'opacity-0'
+            className={`absolute inset-0 ${
+              index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
             }`}
+            style={{
+              transition: 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+            }}
           >
             <img
               src={img}
@@ -52,9 +54,9 @@ const HeroCarousel = () => {
                 WebkitFontSmoothing: 'antialiased',
                 MozOsxFontSmoothing: 'grayscale',
               }}
-              loading={index === 0 || index === currentIndex ? 'eager' : 'lazy'}
+              loading="eager"
               decoding="async"
-              fetchPriority={index === currentIndex ? 'high' : 'auto'}
+              fetchPriority="high"
             />
           </div>
         ))}

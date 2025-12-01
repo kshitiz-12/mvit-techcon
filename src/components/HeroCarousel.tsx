@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const carouselImages = [
-  '/smvit_slider1.jpg',
-  '/Sirmvit-About-Header-img-500x350.jpg',
-  '/lib-1.png',
-  '/1000034705.webp',
+  '/Campus view.JPG',
+  '/campus view 2.JPG',
+  '/campus view 3.JPG',
+  '/lib 1.JPG',
 ]
 
 const HeroCarousel = () => {

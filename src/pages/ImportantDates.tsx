@@ -1,11 +1,10 @@
 import MotionSection from '../components/MotionSection'
 
 const milestones = [
+  { phase: 'Conference Date', date: '3rd and 4th December 2026', status: 'Event', detail: 'FESCIS 2026 will be held at Sir M. Visvesvaraya Institute of Technology, Bengaluru.' },
   { phase: 'Last Date for Full Paper Submission', date: '1st August 2026', status: 'Upcoming', detail: 'All papers must be submitted via the submission portal before the deadline.' },
   { phase: 'Acceptance Notification', date: '1st October 2026', status: 'Upcoming', detail: 'Authors will be notified of paper acceptance decisions.' },
   { phase: 'Last Date for Registration', date: '7th October 2026', status: 'Upcoming', detail: 'One author per paper must complete registration and payment.' },
-  { phase: 'Camera Ready Paper', date: '15th October 2026', status: 'Upcoming', detail: 'Final camera-ready papers must be submitted with all corrections.' },
-  { phase: 'Conference Date', date: '3rd and 4th December 2026', status: 'Event', detail: 'FESCIS 2026 will be held at Sir M. Visvesvaraya Institute of Technology, Bengaluru.' },
 ]
 
 const reminders = [

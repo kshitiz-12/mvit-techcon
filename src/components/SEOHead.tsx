@@ -138,3 +138,4 @@ const SEOHead = ({ title, description, keywords, image }: SEOHeadProps) => {
 
 export default SEOHead
 
+

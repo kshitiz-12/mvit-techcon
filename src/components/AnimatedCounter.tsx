@@ -69,3 +69,4 @@ const AnimatedCounter = ({ value, duration = 2000, className = '' }: AnimatedCou
 
 export default AnimatedCounter
 
+

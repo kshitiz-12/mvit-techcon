@@ -1,9 +1,11 @@
 import MotionSection from '../components/MotionSection'
 
 const feeRows = [
-  { category: 'Industry / Academia', indian: '₹8,500', indianIeee: '₹7,000', foreign: '$250', foreignIeee: '$200' },
-  { category: 'Research Scholars / UG / PG', indian: '₹7,500', indianIeee: '₹6,000', foreign: '$220', foreignIeee: '$180' },
-  { category: 'Accompanying Person', indian: '₹1,000', indianIeee: '₹500', foreign: '$80', foreignIeee: '$60' },
+  { category: 'Industry', indianIeee: '₹6,400', indianNonIeee: '₹8,000', foreignIeee: '$128', foreignNonIeee: '$160' },
+  { category: 'Academician', indianIeee: '₹6,000', indianNonIeee: '₹7,500', foreignIeee: '$120', foreignNonIeee: '$150' },
+  { category: 'Research Scholars', indianIeee: '₹5,600', indianNonIeee: '₹7,000', foreignIeee: '$116', foreignNonIeee: '$145' },
+  { category: 'Students', indianIeee: '₹5,000', indianNonIeee: '₹6,500', foreignIeee: '$104', foreignNonIeee: '$130' },
+  { category: 'Listener', indianIeee: '₹3,000', indianNonIeee: '₹4,000', foreignIeee: '$88', foreignNonIeee: '$110' },
 ]
 
 const inclusions = [
@@ -38,20 +40,25 @@ const RegistrationFees = () => {
             <thead className="bg-slate-50 text-xs uppercase tracking-wider text-slate-500">
               <tr>
                 <th className="px-6 py-4">Category</th>
-                <th className="px-6 py-4">Indian Delegates</th>
-                <th className="px-6 py-4">Indian IEEE Members</th>
-                <th className="px-6 py-4">Foreign Delegates</th>
-                <th className="px-6 py-4">Foreign IEEE Members</th>
+                <th className="px-6 py-4 text-center" colSpan={2}>Indian (INR)</th>
+                <th className="px-6 py-4 text-center" colSpan={2}>Foreign (USD)</th>
+              </tr>
+              <tr>
+                <th className="px-6 py-2"></th>
+                <th className="px-6 py-2">IEEE</th>
+                <th className="px-6 py-2">Non-IEEE</th>
+                <th className="px-6 py-2">IEEE</th>
+                <th className="px-6 py-2">Non-IEEE</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 bg-white">
               {feeRows.map((row) => (
                 <tr key={row.category}>
                   <td className="px-6 py-4 font-semibold text-slate-900">{row.category}</td>
-                  <td className="px-6 py-4">{row.indian}</td>
                   <td className="px-6 py-4">{row.indianIeee}</td>
-                  <td className="px-6 py-4">{row.foreign}</td>
+                  <td className="px-6 py-4">{row.indianNonIeee}</td>
                   <td className="px-6 py-4">{row.foreignIeee}</td>
+                  <td className="px-6 py-4">{row.foreignNonIeee}</td>
                 </tr>
               ))}
             </tbody>

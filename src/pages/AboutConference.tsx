@@ -45,32 +45,32 @@ const legacyStats = [
 
 const AboutConference = () => {
   return (
-    <div className="space-y-14">
-      <MotionSection className="rounded-[32px] border border-slate-200 bg-white/80 p-10 shadow-[0_25px_80px_rgba(15,61,145,0.08)]">
-        <p className="eyebrow">About FESCIS</p>
-        <h1 className="mt-4 font-display text-4xl text-slate-900">Designing resilient, human-centered technology futures.</h1>
-        <p className="mt-5 text-lg text-slate-600">
+    <div className="space-y-8 xs:space-y-10 sm:space-y-12 md:space-y-14">
+      <MotionSection className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-[0_25px_80px_rgba(15,61,145,0.08)] xs:rounded-3xl xs:p-6 sm:rounded-[32px] sm:p-8 md:p-10">
+        <p className="eyebrow text-[10px] xs:text-xs">About FESCIS</p>
+        <h1 className="mt-3 font-display text-2xl text-slate-900 xs:mt-4 xs:text-3xl sm:text-4xl">Designing resilient, human-centered technology futures.</h1>
+        <p className="mt-4 text-sm text-slate-600 xs:mt-5 xs:text-base sm:text-lg">
           The primary goal of FESCIS 2026 is to promote research and developmental activities across Future Electronics, Sustainable Computing, and Intelligent Systems. The conference aims to address critical problems in engineering sciences and healthcare, making a revolutionary contribution to social welfare through science and technology.
         </p>
-        <p className="mt-4 text-lg text-slate-600">
+        <p className="mt-3 text-sm text-slate-600 xs:mt-4 xs:text-base sm:text-lg">
           FESCIS 2026 has a high impact on the IEEE Bangalore Section regarding advances in intelligent computing for engineering, sciences, healthcare, energy, and environment. The scope includes interdisciplinary, emerging, and thrust areas focusing on cognitive computing for complex problem-solving and multi-disciplinary research on national growth.
         </p>
       </MotionSection>
 
-      <MotionSection className="grid gap-8 md:grid-cols-3">
+      <MotionSection className="grid gap-4 xs:gap-5 sm:gap-6 md:gap-8 md:grid-cols-3">
         {highlights.map((item) => (
-          <div key={item.title} className="glass-card">
-            <h3 className="text-xl font-semibold text-slate-900">{item.title}</h3>
-            <p className="mt-3 text-sm text-slate-600">{item.detail}</p>
+          <div key={item.title} className="glass-card p-4 xs:p-5 sm:p-6">
+            <h3 className="text-lg font-semibold text-slate-900 xs:text-xl">{item.title}</h3>
+            <p className="mt-2 text-xs text-slate-600 xs:mt-3 xs:text-sm">{item.detail}</p>
           </div>
         ))}
       </MotionSection>
 
-      <MotionSection className="rounded-[32px] border border-slate-200 bg-white/80 p-10">
-        <div className="grid gap-6 md:grid-cols-2">
+      <MotionSection className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-6 sm:rounded-[32px] sm:p-8 md:p-10">
+        <div className="grid gap-4 xs:gap-5 sm:gap-6 md:grid-cols-2">
           <div>
-            <p className="eyebrow">Conference objectives</p>
-            <ul className="mt-4 list-disc space-y-3 pl-5 text-slate-600">
+            <p className="eyebrow text-[10px] xs:text-xs">Conference objectives</p>
+            <ul className="mt-3 list-disc space-y-2 text-xs text-slate-600 xs:mt-4 xs:space-y-3 xs:text-sm xs:pl-5">
               <li>Explore, enhance and empower multi-disciplinary and multi-institutional research in Future Electronics, Sustainable Computing & Intelligent Systems.</li>
               <li>Provide recent developments in intelligent networks, multimedia processing, and information systems in emerging fields of Engineering & Technology.</li>
               <li>Focus on identifying challenges and solutions through an integrated approach, shaping the path for new research dimensions.</li>
@@ -78,12 +78,12 @@ const AboutConference = () => {
             </ul>
           </div>
           <div>
-            <p className="eyebrow">Conference tracks</p>
-            <ul className="mt-4 space-y-3 text-slate-600">
+            <p className="eyebrow text-[10px] xs:text-xs">Conference tracks</p>
+            <ul className="mt-3 space-y-2 text-slate-600 xs:mt-4 xs:space-y-3">
               {tracks.map((track) => (
-                <li key={track} className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white/70 px-4 py-3">
-                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-smvit-accent"></span>
-                  <span className="text-sm">{track}</span>
+                <li key={track} className="flex items-start gap-2 rounded-xl border border-slate-200 bg-white/70 px-3 py-2 xs:gap-3 xs:rounded-2xl xs:px-4 xs:py-3">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-smvit-accent xs:h-2 xs:w-2"></span>
+                  <span className="text-xs xs:text-sm">{track}</span>
                 </li>
               ))}
             </ul>
@@ -91,16 +91,16 @@ const AboutConference = () => {
         </div>
       </MotionSection>
 
-      <MotionSection className="grid gap-8 md:grid-cols-2">
+      <MotionSection className="grid gap-4 xs:gap-5 sm:gap-6 md:gap-8 md:grid-cols-2">
         {legacyStats.map((item) => (
-          <div key={item.title} className="rounded-3xl border border-slate-200 bg-white/80 p-6">
-            <h3 className="text-xl font-semibold text-slate-900">{item.title}</h3>
-            <p className="mt-3 text-sm text-slate-600">{item.detail}</p>
+          <div key={item.title} className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-5 sm:p-6">
+            <h3 className="text-lg font-semibold text-slate-900 xs:text-xl">{item.title}</h3>
+            <p className="mt-2 text-xs text-slate-600 xs:mt-3 xs:text-sm">{item.detail}</p>
           </div>
         ))}
-        <div className="rounded-3xl border border-slate-200 bg-white/80 p-6">
-          <h3 className="text-xl font-semibold text-slate-900">Conference details</h3>
-          <ul className="mt-4 space-y-3 text-sm text-slate-600">
+        <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-5 sm:p-6">
+          <h3 className="text-lg font-semibold text-slate-900 xs:text-xl">Conference details</h3>
+          <ul className="mt-3 space-y-2 text-xs text-slate-600 xs:mt-4 xs:space-y-3 xs:text-sm">
             <li className="flex items-start gap-2">
               <span className="mt-1 h-2 w-2 rounded-full bg-smvit-accent" />
               <span><strong>Conference Date:</strong> 3rd and 4th December 2026</span>
@@ -129,25 +129,25 @@ const AboutConference = () => {
         </div>
       </MotionSection>
 
-      <MotionSection className="rounded-[32px] border border-slate-200 bg-white/80 p-10">
-        <div className="grid gap-6 md:grid-cols-2">
+      <MotionSection className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-6 sm:rounded-[32px] sm:p-8 md:p-10">
+        <div className="grid gap-4 xs:gap-5 sm:gap-6 md:grid-cols-2">
           <div>
-            <p className="eyebrow">Previous publications</p>
-            <p className="mt-3 text-lg text-slate-600">
+            <p className="eyebrow text-[10px] xs:text-xs">Previous publications</p>
+            <p className="mt-3 text-sm text-slate-600 xs:text-base sm:text-lg">
               All accepted papers will be submitted to the IEEE Xplore Digital Library (subject to scope and quality checks) and indexed on Scopus. FESCIS 2026 ensures archival visibility for every accepted submission, providing authors with global recognition and citation opportunities.
             </p>
           </div>
-          <div className="rounded-3xl border border-slate-200 bg-white/70 p-6 text-sm text-slate-600">
+          <div className="rounded-2xl border border-slate-200 bg-white/70 p-4 text-xs text-slate-600 xs:rounded-3xl xs:p-5 xs:text-sm sm:p-6">
             <p className="font-semibold text-slate-900">Browse previous proceedings</p>
             <a
               href="https://ieeexplore.ieee.org/xpl/conhome/1851010/all-proceedings"
               target="_blank"
               rel="noreferrer"
-              className="mt-2 inline-flex items-center gap-2 text-smvit-primary underline"
+              className="mt-2 inline-flex items-center gap-2 text-smvit-primary underline text-xs xs:text-sm"
             >
               IEEE Xplore · FESCIS archives
             </a>
-            <p className="mt-3">
+            <p className="mt-2 xs:mt-3">
               All accepted papers will be published in the conference proceedings and submitted to IEEE Xplore. The 2026 manuscripts will follow IEEE archival workflow with camera-ready compliance checks and quality assurance.
             </p>
           </div>

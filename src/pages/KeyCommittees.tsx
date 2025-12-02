@@ -123,25 +123,25 @@ const advisoryCommittee = [
 
 const KeyCommittees = () => {
   return (
-    <div className="space-y-12">
-      <MotionSection className="rounded-[32px] border border-slate-200 bg-white/80 p-10 shadow-[0_25px_80px_rgba(15,61,145,0.08)]">
-        <p className="eyebrow">Key Committees</p>
-        <h1 className="mt-4 font-display text-4xl text-slate-900">Global expertise steering FESCIS.</h1>
-        <p className="mt-5 text-lg text-slate-600">
+    <div className="space-y-6 xs:space-y-8 sm:space-y-10 md:space-y-12">
+      <MotionSection className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-[0_25px_80px_rgba(15,61,145,0.08)] xs:rounded-3xl xs:p-6 sm:rounded-[32px] sm:p-8 md:p-10">
+        <p className="eyebrow text-[10px] xs:text-xs">Key Committees</p>
+        <h1 className="mt-3 font-display text-2xl text-slate-900 xs:mt-4 xs:text-3xl sm:text-4xl">Global expertise steering FESCIS.</h1>
+        <p className="mt-4 text-sm text-slate-600 xs:mt-5 xs:text-base sm:text-lg">
           The organizing framework blends campus leadership with international advisors, ensuring that every technical decision,
           delegate experience, and publication process aligns with IEEE gold standards.
         </p>
       </MotionSection>
 
-      <MotionSection className="grid gap-6 md:grid-cols-2">
+      <MotionSection className="grid gap-4 xs:gap-5 sm:gap-6 md:grid-cols-2">
         {committees.map((committee) => (
-          <div key={committee.title} className="rounded-3xl border border-slate-200 bg-white/80 p-6">
-            <h3 className="text-xl font-semibold text-slate-900">{committee.title}</h3>
-            <ul className="mt-4 space-y-3">
+          <div key={committee.title} className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-5 sm:p-6">
+            <h3 className="text-lg font-semibold text-slate-900 xs:text-xl">{committee.title}</h3>
+            <ul className="mt-3 space-y-2 xs:mt-4 xs:space-y-3">
               {committee.people.map((person, index) => (
-                <li key={index} className="rounded-2xl border border-slate-200 bg-white/70 px-4 py-3">
-                  <p className="font-semibold text-slate-900">{person.name}</p>
-                  <p className="mt-1 text-sm text-slate-600">{person.role}</p>
+                <li key={index} className="rounded-xl border border-slate-200 bg-white/70 px-3 py-2 xs:rounded-2xl xs:px-4 xs:py-3">
+                  <p className="text-sm font-semibold text-slate-900 xs:text-base">{person.name}</p>
+                  <p className="mt-0.5 text-xs text-slate-600 xs:mt-1 xs:text-sm">{person.role}</p>
                 </li>
               ))}
             </ul>
@@ -149,13 +149,13 @@ const KeyCommittees = () => {
         ))}
       </MotionSection>
 
-      <MotionSection className="rounded-3xl border border-slate-200 bg-white/80 p-8">
-        <h3 className="text-2xl font-semibold text-slate-900">Advisory Committee</h3>
-        <ul className="mt-6 space-y-3">
+      <MotionSection className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-5 sm:p-6 md:p-8">
+        <h3 className="text-xl font-semibold text-slate-900 xs:text-2xl">Advisory Committee</h3>
+        <ul className="mt-4 space-y-2 xs:mt-5 xs:space-y-3 sm:mt-6">
           {advisoryCommittee.map((member, index) => (
-            <li key={index} className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white/70 px-4 py-3">
-              <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-smvit-primary"></span>
-              <span className="text-slate-700">{member}</span>
+            <li key={index} className="flex items-start gap-2 rounded-xl border border-slate-200 bg-white/70 px-3 py-2 xs:gap-3 xs:rounded-2xl xs:px-4 xs:py-3">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-smvit-primary xs:h-2 xs:w-2"></span>
+              <span className="text-xs text-slate-700 xs:text-sm">{member}</span>
             </li>
           ))}
         </ul>

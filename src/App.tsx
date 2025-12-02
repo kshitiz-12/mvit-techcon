@@ -84,19 +84,19 @@ const AppContent = () => {
           : 'border-b border-white/20 bg-gradient-to-r from-smvit-primary via-smvit-primaryDark to-smvit-primary shadow-glow-lg backdrop-blur'
       }`}>
         <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none"></div>
-        <nav className="relative mx-auto flex max-w-6xl items-center justify-between gap-2 px-4 py-3 sm:gap-4 sm:px-6 sm:py-4 lg:flex-row">
-          <a href="/" className="group flex items-center gap-2 text-white transition-all duration-300 active:scale-95 sm:gap-4 sm:hover:scale-105">
+        <nav className="relative mx-auto flex max-w-6xl items-center justify-between gap-2 px-3 py-2.5 xs:px-4 xs:py-3 sm:gap-4 sm:px-6 sm:py-4 lg:flex-row">
+          <a href="/" className="group flex items-center gap-1.5 text-white transition-all duration-300 active:scale-95 xs:gap-2 sm:gap-4 sm:hover:scale-105">
             <div className="relative">
-              <div className="absolute inset-0 rounded-2xl bg-white/20 blur-xl opacity-0 transition-opacity group-hover:opacity-100 sm:rounded-3xl"></div>
+              <div className="absolute inset-0 rounded-xl bg-white/20 blur-xl opacity-0 transition-opacity group-hover:opacity-100 xs:rounded-2xl sm:rounded-3xl"></div>
               <img
                 src="/SIR-LOGO.webp"
                 alt="Sir M. Visvesvaraya Institute of Technology logo"
-                className="relative h-12 w-12 rounded-2xl border-2 border-white/40 bg-white/10 object-cover shadow-lg backdrop-blur-sm transition-all duration-300 group-hover:border-white/60 group-hover:shadow-xl sm:h-14 sm:w-14 sm:rounded-3xl lg:h-16 lg:w-16 lg:group-hover:scale-105"
+                className="relative h-10 w-10 rounded-xl border-2 border-white/40 bg-white/10 object-cover shadow-lg backdrop-blur-sm transition-all duration-300 group-hover:border-white/60 group-hover:shadow-xl xs:h-12 xs:w-12 xs:rounded-2xl sm:h-14 sm:w-14 sm:rounded-3xl lg:h-16 lg:w-16 lg:group-hover:scale-105"
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-display text-lg font-bold leading-tight tracking-tight sm:text-xl lg:text-2xl">FESCIS</span>
-              <span className="text-[10px] font-medium text-white/80 sm:text-xs lg:text-sm">2026</span>
+              <span className="font-display text-base font-bold leading-tight tracking-tight xs:text-lg sm:text-xl lg:text-2xl">FESCIS</span>
+              <span className="text-[9px] font-medium text-white/80 xs:text-[10px] sm:text-xs lg:text-sm">2026</span>
             </div>
           </a>
           {/* Desktop Navigation - Direct children of nav */}
@@ -177,7 +177,7 @@ const AppContent = () => {
           {/* Mobile Hamburger Button */}
           <button
             type="button"
-            className="group lg:hidden relative overflow-hidden rounded-lg border-2 border-white/30 bg-white/10 backdrop-blur-md p-2 text-white shadow-lg transition-all duration-300 active:scale-95 hover:border-white/50 hover:bg-white/20 hover:shadow-xl sm:rounded-xl sm:p-3 touch-manipulation"
+            className="group lg:hidden relative overflow-hidden rounded-lg border-2 border-white/30 bg-white/10 backdrop-blur-md p-1.5 text-white shadow-lg transition-all duration-300 active:scale-95 hover:border-white/50 hover:bg-white/20 hover:shadow-xl xs:p-2 sm:rounded-xl sm:p-3 touch-manipulation"
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-label="Toggle navigation"
             aria-expanded={mobileOpen}
@@ -186,7 +186,7 @@ const AppContent = () => {
             <span className="sr-only">Toggle menu</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="relative h-5 w-5 transition-transform duration-300 sm:h-6 sm:w-6"
+                      className="relative h-4 w-4 transition-transform duration-300 xs:h-5 xs:w-5 sm:h-6 sm:w-6"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -210,13 +210,13 @@ const AppContent = () => {
                 transition={{ duration: 0.3, ease: 'easeInOut' }}
                 className="absolute left-0 right-0 top-full z-40 w-full overflow-hidden border-t border-white/20 bg-gradient-to-b from-smvit-primaryDark/98 to-smvit-primaryDark/95 backdrop-blur-xl shadow-2xl lg:hidden"
               >
-                <div className="flex flex-col gap-1 px-4 py-4 sm:gap-2 sm:px-6 sm:py-6">
+                <div className="flex flex-col gap-0.5 px-3 py-3 xs:gap-1 xs:px-4 xs:py-4 sm:gap-2 sm:px-6 sm:py-6">
                   {navLinks.map((link) => (
                     <NavLink
                       key={link.path}
                       to={link.path}
                       className={({ isActive }) => 
-                        `group relative block rounded-lg px-4 py-3 text-base font-semibold tracking-wide text-white transition-all duration-200 outline-none focus:outline-none active:bg-white/10 ${
+                        `group relative block rounded-lg px-3 py-2.5 text-sm font-semibold tracking-wide text-white transition-all duration-200 outline-none focus:outline-none active:bg-white/10 xs:px-4 xs:py-3 xs:text-base ${
                           isActive ? 'bg-white/10 text-white' : 'hover:bg-white/5 hover:text-white/90'
                         }`
                       }
@@ -225,14 +225,14 @@ const AppContent = () => {
                     >
                       <span className="relative inline-block">
                         {link.label}
-                        <span className="absolute bottom-1 left-4 right-4 h-0.5 w-0 bg-gradient-to-r from-white via-smvit-accent to-white transition-all duration-300 group-hover:w-full group-[&.active]:w-full"></span>
+                        <span className="absolute bottom-1 left-3 right-3 h-0.5 w-0 bg-gradient-to-r from-white via-smvit-accent to-white transition-all duration-300 group-hover:w-full group-[&.active]:w-full xs:left-4 xs:right-4"></span>
                       </span>
                     </NavLink>
                   ))}
                   <div className="relative mt-1">
                     <button
                       type="button"
-                      className={`group relative flex w-full items-center justify-between rounded-lg px-4 py-3 text-base font-semibold tracking-wide text-white transition-all duration-200 outline-none focus:outline-none active:bg-white/10 ${
+                      className={`group relative flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-sm font-semibold tracking-wide text-white transition-all duration-200 outline-none focus:outline-none active:bg-white/10 xs:px-4 xs:py-3 xs:text-base ${
                         dropdownOpen ? 'bg-white/10 text-white' : 'hover:bg-white/5 hover:text-white/90'
                       }`}
                       aria-haspopup="true"
@@ -242,7 +242,7 @@ const AppContent = () => {
                       <span className="relative inline-block">Other Pages</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className={`h-4 w-4 transition-transform duration-300 ${dropdownOpen ? 'rotate-180' : ''}`}
+                        className={`h-3.5 w-3.5 transition-transform duration-300 xs:h-4 xs:w-4 ${dropdownOpen ? 'rotate-180' : ''}`}
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -260,19 +260,19 @@ const AppContent = () => {
                           transition={{ duration: 0.2 }}
                           className="mt-1 overflow-hidden rounded-lg border border-white/30 bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl"
                         >
-                          <div className="p-2">
+                          <div className="p-1.5 xs:p-2">
                             {secondaryLinks.map((link) => (
                               <NavLink
                                 key={link.path}
                                 to={link.path}
-                                className="group block rounded-lg px-4 py-2.5 text-sm font-medium text-white transition-all duration-200 active:bg-white/20 hover:bg-white/15"
+                                className="group block rounded-lg px-3 py-2 text-xs font-medium text-white transition-all duration-200 active:bg-white/20 hover:bg-white/15 xs:px-4 xs:py-2.5 xs:text-sm"
                                 onClick={() => {
                                   setDropdownOpen(false)
                                   setMobileOpen(false)
                                 }}
                               >
-                                <span className="flex items-center gap-2">
-                                  <span className="h-1.5 w-1.5 rounded-full bg-smvit-accent opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100"></span>
+                                <span className="flex items-center gap-1.5 xs:gap-2">
+                                  <span className="h-1 w-1 rounded-full bg-smvit-accent opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100 xs:h-1.5 xs:w-1.5"></span>
                                   {link.label}
                                 </span>
                               </NavLink>

@@ -84,8 +84,8 @@ const AppContent = () => {
           : 'border-b border-white/20 bg-gradient-to-r from-smvit-primary via-smvit-primaryDark to-smvit-primary shadow-glow-lg backdrop-blur'
       }`}>
         <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none"></div>
-        <nav className="relative mx-auto flex max-w-6xl items-center justify-between gap-2 px-3 py-2.5 xs:px-4 xs:py-3 sm:gap-4 sm:px-6 sm:py-4 lg:flex-row">
-          <a href="/" className="group -ml-16 flex items-center gap-1.5 text-white transition-all duration-300 active:scale-95 xs:gap-2 sm:gap-4 sm:hover:scale-105">
+        <nav className="relative mx-auto flex max-w-6xl items-center justify-between gap-2 px-3 py-2.5 xs:px-4 xs:py-3 sm:gap-4 sm:px-6 sm:py-4 lg:flex-row lg:justify-between">
+          <a href="/" className="group flex items-center gap-1.5 text-white transition-all duration-300 active:scale-95 ml-3 xs:ml-4 xs:gap-2 sm:ml-6 sm:gap-4 sm:hover:scale-105 md:ml-0 md:-ml-8 lg:-ml-16 xl:-ml-24">
             <div className="relative">
               <div className="absolute inset-0 rounded-xl bg-white/20 blur-xl opacity-0 transition-opacity group-hover:opacity-100 xs:rounded-2xl sm:rounded-3xl"></div>
               <img
@@ -99,7 +99,7 @@ const AppContent = () => {
             </div>
           </a>
           {/* Desktop Navigation - Direct children of nav */}
-          <div className="hidden lg:flex lg:items-center lg:gap-8">
+          <div className="hidden lg:flex lg:items-center lg:gap-8 lg:-mr-24 xl:-mr-32">
             {navLinks.map((link) => (
               <NavLink
                 key={link.path}
@@ -176,7 +176,7 @@ const AppContent = () => {
           {/* Mobile Hamburger Button */}
           <button
             type="button"
-            className="group lg:hidden relative overflow-hidden rounded-lg border-2 border-white/30 bg-white/10 backdrop-blur-md p-1.5 text-white shadow-lg transition-all duration-300 active:scale-95 hover:border-white/50 hover:bg-white/20 hover:shadow-xl xs:p-2 sm:rounded-xl sm:p-3 touch-manipulation"
+            className="group lg:hidden relative overflow-hidden rounded-lg border-2 border-white/30 bg-white/10 backdrop-blur-md p-1.5 text-white shadow-lg transition-all duration-300 active:scale-95 hover:border-white/50 hover:bg-white/20 hover:shadow-xl mr-3 xs:mr-4 xs:p-2 sm:mr-6 sm:rounded-xl sm:p-3 md:mr-0 touch-manipulation"
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-label="Toggle navigation"
             aria-expanded={mobileOpen}
@@ -285,56 +285,6 @@ const AppContent = () => {
               </motion.div>
             )}
           </AnimatePresence>
-          {isHomePage && mobileOpen && (
-            <div className="absolute left-0 right-0 top-full w-full flex-col gap-2 rounded-2xl border border-white/30 bg-white/95 backdrop-blur-md px-4 py-4 shadow-xl mt-2">
-              {navLinks.map((link) => (
-                <NavLink
-                  key={link.path}
-                  to={link.path}
-                  className="block rounded-lg px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-smvit-primary"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {link.label}
-                </NavLink>
-              ))}
-              <div className="relative w-full">
-                <button
-                  type="button"
-                  className="flex w-full items-center justify-between gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-smvit-primary"
-                  onClick={() => setDropdownOpen((prev) => !prev)}
-                >
-                  <span className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full">Other Pages</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </button>
-                {dropdownOpen && (
-                  <div className="mt-2 w-full rounded-xl border border-slate-200 bg-white p-2 shadow-lg">
-                    {secondaryLinks.map((link) => (
-                      <NavLink
-                        key={link.path}
-                        to={link.path}
-                        className="block rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-100 hover:text-smvit-primary"
-                        onClick={() => {
-                          setDropdownOpen(false)
-                          setMobileOpen(false)
-                        }}
-                      >
-                        {link.label}
-                      </NavLink>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
         </nav>
       </header>
 

@@ -137,7 +137,7 @@ const HeroCarousel = () => {
   }, [transitionToNext])
 
   return (
-    <div className="relative h-[87vh] w-full overflow-hidden max-h-screen" style={{ minHeight: '500px' }}>
+    <div className="relative h-[85vh] w-full overflow-hidden" style={{ minHeight: '-webkit-fill-available' }}>
       {/* Carousel Images */}
       <div className="relative h-full w-full">
         {carouselImages.map((img, index) => {
@@ -248,9 +248,11 @@ const HeroCarousel = () => {
           <h1 className="font-display text-2xl font-bold leading-tight tracking-tight text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] [text-shadow:_0_2px_8px_rgba(0,0,0,0.8),_0_4px_16px_rgba(0,0,0,0.6)] xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
             FESCIS 2026
           </h1>
-          <p className="mt-3 text-xs font-medium leading-relaxed text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] [text-shadow:_0_1px_4px_rgba(0,0,0,0.8),_0_2px_8px_rgba(0,0,0,0.6)] xs:mt-4 xs:text-sm sm:mt-6 sm:text-base md:text-lg lg:text-xl xl:text-2xl">
-            International Conference on Future Electronics, Sustainable Computing & Intelligent Systems
-          </p>
+          <div className="mt-3 text-xs font-medium leading-relaxed text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] [text-shadow:_0_1px_4px_rgba(0,0,0,0.8),_0_2px_8px_rgba(0,0,0,0.6)] xs:mt-4 xs:text-sm sm:mt-6 sm:text-base md:text-lg lg:text-xl xl:text-2xl">
+            <p className="text-center">International Conference</p>
+            <p className="text-center">On</p>
+            <p className="text-center px-2">Future Electronics, Sustainable Computing & Intelligent Systems</p>
+          </div>
           <div className="mt-3 flex flex-col items-center gap-2 xs:mt-4 sm:mt-6 sm:gap-3">
             <div className="inline-flex items-center gap-1.5 rounded-lg border-2 border-white/40 bg-gradient-to-r from-smvit-primary/90 via-smvit-primaryDark/90 to-smvit-primary/90 px-3 py-1.5 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.4)] xs:gap-2 xs:rounded-xl xs:px-4 xs:py-2 sm:gap-3 sm:rounded-2xl sm:px-6 sm:py-3">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 shrink-0 text-white xs:h-5 xs:w-5 sm:h-6 sm:w-6 lg:h-7 lg:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
@@ -260,7 +262,7 @@ const HeroCarousel = () => {
                 3–4 December 2026
               </span>
             </div>
-            <p className="text-[10px] font-medium text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] [text-shadow:_0_1px_4px_rgba(0,0,0,0.8),_0_2px_6px_rgba(0,0,0,0.6)] xs:text-xs sm:text-sm md:text-base">
+            <p className="text-center text-xs font-medium text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] [text-shadow:_0_1px_4px_rgba(0,0,0,0.8),_0_2px_6px_rgba(0,0,0,0.6)] xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl px-2">
               Sir M. Visvesvaraya Institute of Technology, Bengaluru
             </p>
           </div>

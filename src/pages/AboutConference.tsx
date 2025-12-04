@@ -9,7 +9,7 @@ const highlights = [
   {
     title: 'IEEE-aligned Review Process',
     detail:
-      'Double-blind peer review ensuring high-quality submissions. All accepted papers will be submitted to IEEE Xplore Digital Library and indexed on Scopus.',
+      'Triple-blind peer review ensuring high-quality submissions. All accepted papers will be submitted to IEEE Xplore Digital Library and indexed on Scopus.',
   },
   {
     title: 'Industry-Academia Collaboration',
@@ -67,27 +67,16 @@ const AboutConference = () => {
       </MotionSection>
 
       <MotionSection className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-6 sm:rounded-[32px] sm:p-8 md:p-10">
-        <div className="grid gap-4 xs:gap-5 sm:gap-6 md:grid-cols-2">
-          <div>
-            <p className="eyebrow text-[10px] xs:text-xs">Conference objectives</p>
-            <ul className="mt-3 list-disc space-y-2 text-xs text-slate-600 xs:mt-4 xs:space-y-3 xs:text-sm xs:pl-5">
-              <li>Explore, enhance and empower multi-disciplinary and multi-institutional research in Future Electronics, Sustainable Computing & Intelligent Systems.</li>
-              <li>Provide recent developments in intelligent networks, multimedia processing, and information systems in emerging fields of Engineering & Technology.</li>
-              <li>Focus on identifying challenges and solutions through an integrated approach, shaping the path for new research dimensions.</li>
-              <li>Foster collaboration between academia and industry to drive innovation and societal progress.</li>
-            </ul>
-          </div>
-          <div>
-            <p className="eyebrow text-[10px] xs:text-xs">Conference tracks</p>
-            <ul className="mt-3 space-y-2 text-slate-600 xs:mt-4 xs:space-y-3">
-              {tracks.map((track) => (
-                <li key={track} className="flex items-start gap-2 rounded-xl border border-slate-200 bg-white/70 px-3 py-2 xs:gap-3 xs:rounded-2xl xs:px-4 xs:py-3">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-smvit-accent xs:h-2 xs:w-2"></span>
-                  <span className="text-xs xs:text-sm">{track}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div>
+          <p className="eyebrow text-[10px] xs:text-xs">Conference tracks</p>
+          <ul className="mt-3 grid gap-3 space-y-2 text-slate-600 xs:mt-4 xs:space-y-3 sm:grid-cols-2">
+            {tracks.map((track) => (
+              <li key={track} className="flex items-start gap-2 rounded-xl border border-slate-200 bg-white/70 px-3 py-2 xs:gap-3 xs:rounded-2xl xs:px-4 xs:py-3">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-smvit-accent xs:h-2 xs:w-2"></span>
+                <span className="text-xs xs:text-sm">{track}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </MotionSection>
 

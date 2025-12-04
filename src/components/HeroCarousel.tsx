@@ -245,10 +245,10 @@ const HeroCarousel = () => {
       {/* Content Overlay */}
       <div className="absolute inset-0 z-10 flex items-center px-3 sm:px-4 md:px-6">
         <div className="mx-auto w-full max-w-6xl text-center text-white">
-          <h1 className="font-display text-2xl font-bold leading-tight tracking-tight text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+          <h1 className="font-display text-2xl font-bold leading-tight tracking-tight text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] [text-shadow:_0_2px_8px_rgba(0,0,0,0.8),_0_4px_16px_rgba(0,0,0,0.6)] xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
             FESCIS 2026
           </h1>
-          <p className="mt-3 text-xs font-medium leading-relaxed text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] xs:mt-4 xs:text-sm sm:mt-6 sm:text-base md:text-lg lg:text-xl xl:text-2xl">
+          <p className="mt-3 text-xs font-medium leading-relaxed text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] [text-shadow:_0_1px_4px_rgba(0,0,0,0.8),_0_2px_8px_rgba(0,0,0,0.6)] xs:mt-4 xs:text-sm sm:mt-6 sm:text-base md:text-lg lg:text-xl xl:text-2xl">
             International Conference on Future Electronics, Sustainable Computing & Intelligent Systems
           </p>
           <div className="mt-3 flex flex-col items-center gap-2 xs:mt-4 sm:mt-6 sm:gap-3">
@@ -260,7 +260,7 @@ const HeroCarousel = () => {
                 3–4 December 2026
               </span>
             </div>
-            <p className="text-[10px] font-medium text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)] xs:text-xs sm:text-sm md:text-base">
+            <p className="text-[10px] font-medium text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] [text-shadow:_0_1px_4px_rgba(0,0,0,0.8),_0_2px_6px_rgba(0,0,0,0.6)] xs:text-xs sm:text-sm md:text-base">
               Sir M. Visvesvaraya Institute of Technology, Bengaluru
             </p>
           </div>

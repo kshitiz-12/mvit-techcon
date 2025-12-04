@@ -57,7 +57,7 @@ const checkpoints = [
   {
     title: 'Review policy',
     detail:
-      'Double-blind peer review managed by the Technical Program Committee. Each paper receives a minimum of three reviews plus a meta-review before the final decision.',
+      'Triple-blind peer review managed by the Technical Program Committee. Each paper receives a minimum of three reviews plus a meta-review before the final decision.',
   },
   {
     title: 'Publication',

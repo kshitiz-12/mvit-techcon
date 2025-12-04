@@ -14,11 +14,11 @@ const faqs: FAQItem[] = [
   },
   {
     question: 'Will the conference papers be published?',
-    answer: 'Yes, all accepted papers will be submitted to IEEE Xplore Digital Library subject to satisfying scope and quality requirements. The proceedings will be indexed in Scopus and other major databases.',
+    answer: 'Yes, all accepted and presented papers will be submitted to IEEE Xplore Digital Library subject to satisfying scope and quality requirements. The proceedings will be indexed in Scopus and other major databases.',
   },
   {
     question: 'What is the review process?',
-    answer: 'The conference follows a double-blind peer review process managed by the Technical Program Committee. Each paper receives a minimum of three reviews plus a meta-review before the final decision.',
+    answer: 'The conference follows a triple-blind peer review process managed by the Technical Program Committee. Each paper receives a minimum of three reviews plus a meta-review before the final decision.',
   },
   {
     question: 'What are the registration fees?',

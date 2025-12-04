@@ -29,13 +29,13 @@ const PageLoader = () => (
 const navLinks = [
   { label: 'About Conference', path: '/about-conference' },
   { label: 'Paper Submission', path: '/paper-submission' },
-  { label: 'Important Dates', path: '/important-dates' },
-  { label: 'Contact', path: '/contact' },
+  { label: 'Key Committees', path: '/key-committees' },
+  { label: 'Registration Fees', path: '/registration' },
 ]
 
 const secondaryLinks = [
-  { label: 'Registration Fees', path: '/registration' },
-  { label: 'Key Committees', path: '/key-committees' },
+  { label: 'Important Dates', path: '/important-dates' },
+  { label: 'Contact', path: '/contact' },
   { label: 'Key Speakers', path: '/key-speakers' },
 ]
 
@@ -85,7 +85,7 @@ const AppContent = () => {
       }`}>
         <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none"></div>
         <nav className="relative mx-auto flex max-w-6xl items-center justify-between gap-2 px-3 py-2.5 xs:px-4 xs:py-3 sm:gap-4 sm:px-6 sm:py-4 lg:flex-row">
-          <a href="/" className="group flex items-center gap-1.5 text-white transition-all duration-300 active:scale-95 xs:gap-2 sm:gap-4 sm:hover:scale-105">
+          <a href="/" className="group -ml-16 flex items-center gap-1.5 text-white transition-all duration-300 active:scale-95 xs:gap-2 sm:gap-4 sm:hover:scale-105">
             <div className="relative">
               <div className="absolute inset-0 rounded-xl bg-white/20 blur-xl opacity-0 transition-opacity group-hover:opacity-100 xs:rounded-2xl sm:rounded-3xl"></div>
               <img
@@ -95,8 +95,7 @@ const AppContent = () => {
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-display text-base font-bold leading-tight tracking-tight xs:text-lg sm:text-xl lg:text-2xl">FESCIS</span>
-              <span className="text-[9px] font-medium text-white/80 xs:text-[10px] sm:text-xs lg:text-sm">2026</span>
+              <span className="font-display text-base font-bold leading-tight tracking-tight xs:text-lg sm:text-xl lg:text-2xl">Sir MVIT</span>
             </div>
           </a>
           {/* Desktop Navigation - Direct children of nav */}

@@ -17,6 +17,7 @@ const committees = [
     title: 'Organizing Chair',
     people: [
       { name: 'Dr. Sasmita Mohapatra', role: 'Professor and Head, Dept. of ECE, Sir MVIT' },
+      { name: 'Dr. Abhishek Appaji M.', role: 'Chair, IEEE SPS, Bangalore Chapter' },
     ],
   },
   {
@@ -29,53 +30,49 @@ const committees = [
   {
     title: 'TPC Chair',
     people: [
-      { name: 'Dr. Anitha T. N.', role: 'Professor and Head, Dept. of CSE, Sir MVIT' },
+      { name: 'Dr. Sheetal Belaldavar', role: 'Associate Professor Dept. of ECE, Sir MVIT' },
     ],
   },
   {
     title: 'TPC Co-Chair',
     people: [
-      { name: 'Dr. Sheetal Belaldavar', role: 'Associate Professor Dept. of ECE, Sir MVIT' },
-      { name: 'Dr. S. Ambareesh', role: 'Professor Dept. of CSE, Sir MVIT' },
+      { name: 'Dr. S. Ambareesh', role: 'Professor, Dept. of AI&ML, Sir MVIT' },
     ],
   },
   {
     title: 'Publication Chair',
     people: [
-      { name: 'Dr. Savitha Chowdhary', role: 'Professor and Head, Dept. of IoT, Sir MVIT' },
+      { name: 'Mr. Phanindar Ravi P.', role: 'Assistant Professor, Dept. of ECE, Sir MVIT' },
     ],
   },
   {
     title: 'Publication Co-Chair',
     people: [
-      { name: 'Mr. Phanindar Ravi P.', role: 'Assistant Professor, Dept. of ECE, Sir MVIT' },
-      { name: 'Dr. Shridar Kumar', role: 'Professor, Dept. of ISE, Sir MVIT' },
+      { name: 'Ms. Bhuvaneshwari N.', role: 'Assistant Professor Dept. of ECE, Sir MVIT' },
     ],
   },
   {
     title: 'Finance Chair',
     people: [
-      { name: 'Dr. G. C. Bhanuprakash', role: 'Professor and Head, Dept. of ISE, Sir MVIT' },
+      { name: 'Dr. Poongothai C.', role: 'Associate Professor Dept. of ECE, Sir MVIT' },
     ],
   },
   {
     title: 'Finance Co-Chair',
     people: [
-      { name: 'Dr. Poongothai C.', role: 'Associate Professor Dept. of ECE, Sir MVIT' },
-      { name: 'Dr. Sreenivasa B. C.', role: 'Associate Professor Dept. of CSE, Sir MVIT' },
+      { name: 'Dr. Cyril Robinson Azariah J', role: 'Associate Professor Dept. of ECE, Sir MVIT' },
     ],
   },
   {
     title: 'Publicity Chair',
     people: [
-      { name: 'Dr. E. Kavitha', role: 'Professor and Head, Dept. of ETE, Sir MVIT' },
+      { name: 'Dr. G. Shashibhushan', role: 'Assistant Professor Dept. of ECE, Sir MVIT' },
     ],
   },
   {
     title: 'Publicity Co-Chair',
     people: [
-      { name: 'Dr. G. Shashibhushan', role: 'Assistant Professor Dept. of ECE, Sir MVIT' },
-      { name: 'Dr. Sowndeswari', role: 'Associate Professor Dept. of ETE, Sir MVIT' },
+      { name: 'Dr. Sowndeswari S.', role: 'Associate Professor Dept. of ETE, Sir MVIT' },
     ],
   },
   {
@@ -87,7 +84,7 @@ const committees = [
   {
     title: 'Website Co-Chair',
     people: [
-      { name: 'Dr. Soumya Patil', role: 'Professor and Head, Dept. of AIML, Sir MVIT' },
+      { name: 'Dr. Pradeep S Narayanan', role: 'Assistant Professor Dept. of ECE, Sir MVIT' },
     ],
   },
   {
@@ -100,8 +97,6 @@ const committees = [
     title: 'Registration Co-Chair',
     people: [
       { name: 'Mr. Nataraja R.', role: 'Associate Professor Dept. of ECE, Sir MVIT' },
-      { name: 'Ms. Bhuvaneshwari N.', role: 'Assistant Professor Dept. of ECE, Sir MVIT' },
-      { name: 'Ms. Geetha V.', role: 'Assistant Professor Dept. of ECE, Sir MVIT' },
     ],
   },
 ]

@@ -102,18 +102,23 @@ const committees = [
 ]
 
 const advisoryCommittee = [
-  'L. M. Patnaik, Professor, Adjunct Professor and NASI Senior Scientist',
-  'Dr. Sanjay, Dean of Engg., VTU, Principal BMSIT',
-  'Dr. Abhishek Appaji M., Chair, IEEE SPS, Bangalore Chapter, BMSCE – Bengaluru',
-  'Dr. Karunakar Rai, AICTE, VTU, Professor, Dept. of ECE, NMIT',
-  'Dr. Prasant Misra, Chair-IEEE Bengaluru Karnataka, India',
-  'Prof. Bheemarjun Reddy Tamma, Dept. of Computer Science and Engineering, IIT Hyderabad',
-  'Dr. Narushan Pillay, Dept. of Electrical, Electronics and Computer Engineering, University of Kwazulu-Natal Duban',
-  'Dr. Puneet Mishra, Head Antenna Division URSC, Bangalore',
-  'Dr. Jawed Qumar, Scientist F CABS, DRDO, Bengaluru',
-  'Oracle',
-  'SAP',
-  'IBM',
+  'Prof. L. M. Patnaik, INSA Senior Scientist & Adjunct Faculty, Consciousness Studies Program, National Institute of Advanced Studies, IISc Campus, Honorary Professor, Indian Institute of Science, Bangalore',
+  'Dr. Sanjay, Dean of Engineering, Visvesvaraya Technological University, Principal, BMS Institute of Technology & Management',
+  'Dr. Abhishek Appaji M., Chair, IEEE SPS, Bangalore Chapter',
+  'Dr. Prasant Misra, Chair-IEEE, Bengaluru, Karnataka, India',
+  'Prof. Bheemarjun Reddy Tamma, Professor, Dept. of Computer Science and Engineering, Indian Institute of Technology, Hyderabad',
+  'Dr. Narushan Pillay, Professor, Dept. of Electrical, Electronics and Computer Engineering, University of Kwazulu-Natal, Duban, South Africa',
+  'Dr. Puneet Mishra, Head Antenna Division, U R Rao Satellite Centre, Bengaluru',
+  'Dr. Jawed Qumar, Scientist F, Centre for Airborne Systems, Defence Research and Development Organisation, Bengaluru',
+  'Dr. Chengappa Munjandira, Senior Technologist, Hewlett Packard Enterprise',
+  'Narayanan Selvam, Senior Director, Oracle',
+  'Dr. Karunakar Rai, Senate member, Professor, Department of Electronics and Communication Engineering, Nitte Meenakshi Institute of Technology, Bengaluru',
+  'Dr. Minh Tien, Professor & Deputy Head of Department, Mechanical Engineering, University of Danang, University of Technical Education, Vietnam',
+  'Dr. Low Foo Wah, Assistant Professor & Head of Programme (MEng Electrical), Department of Electrical and Electronic Engineering, University of Tunku Abdul Rahman, Malaysia',
+  'Dr. Barbara Szymanik, Associate Professor, West Pomeranian University of Technology, Poland',
+  'Dr. Przemyslaw Lopato, Professor, Department of Theoretical Electrical Engineering and Computer Science, West Pomeranian University of Technology, Poland',
+  'Dr. Grzegorz Psuj, Associate Professor, Faculty of Electrical and Computer Engineering, West Pomeranian University of Technology, Szczecin, Poland',
+  'Ir. Prof. Dr. Sumathi Sethupathi, Faculty of Engineering and Green Technology (FEGT), Department of Environmental Engineering, Kampar Campus, University Tunku Abdul Rahman, Malaysia',
 ]
 
 const KeyCommittees = () => {

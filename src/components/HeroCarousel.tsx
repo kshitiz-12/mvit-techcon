@@ -87,31 +87,24 @@ const HeroCarousel = () => {
     }
     firstImg.src = carouselImages[0]
 
-    // Load remaining images progressively with delay (only after first is loaded or after timeout)
+    // Load remaining images immediately (browser will handle prioritization)
     const loadRemainingImages = async () => {
-      // Wait for first image or timeout after 1 second
-      await new Promise(resolve => setTimeout(resolve, 100))
-      
       for (let i = 1; i < carouselImages.length; i++) {
         if (!isMounted) break
         
-        // Small delay between each image to avoid overwhelming the network
-        await new Promise(resolve => setTimeout(resolve, 200))
-        
+        // Start loading all images immediately, browser will prioritize
         try {
-          await loadImage(carouselImages[i], i)
+          loadImage(carouselImages[i], i).catch(() => {
+            // Errors handled in loadImage
+          })
         } catch (error) {
-          console.error(`Failed to load image ${i}:`, error)
+          console.error(`Failed to initiate load for image ${i}:`, error)
         }
       }
     }
 
-    // Start loading remaining images after a short delay
-    setTimeout(() => {
-      if (isMounted) {
-        loadRemainingImages()
-      }
-    }, 300)
+    // Start loading remaining images immediately (don't delay)
+    loadRemainingImages()
 
     return () => {
       isMounted = false
@@ -168,8 +161,8 @@ const HeroCarousel = () => {
                 perspective: '1000px',
               }}
             >
-              {/* Loading placeholder */}
-              {!showImage && isActive && (
+              {/* Loading placeholder - show when image is not loaded and is active */}
+              {!showImage && isActive && !imageState.error && (
                 <div className="absolute inset-0 bg-gradient-to-br from-smvit-primary/20 via-smvit-primaryDark/20 to-smvit-primary/20 animate-pulse flex items-center justify-center">
                   <div className="text-white/50 text-sm">Loading image...</div>
                 </div>
@@ -184,35 +177,44 @@ const HeroCarousel = () => {
                 </div>
               )}
               
-              {/* Actual image */}
-              {showImage && (
-                <img
-                  src={img}
-                  alt={`MVIT Campus ${index + 1}`}
-                  className="h-full w-full object-cover brightness-110"
-                  style={{
-                    imageRendering: 'auto',
-                    backfaceVisibility: 'hidden',
-                    WebkitBackfaceVisibility: 'hidden',
-                    transform: 'translateZ(0)',
-                    willChange: 'opacity, transform',
-                    WebkitFontSmoothing: 'antialiased',
-                    MozOsxFontSmoothing: 'grayscale',
-                    transition: 'opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-                    opacity: isActive ? 1 : 0,
-                  }}
-                  loading={index === 0 ? 'eager' : 'lazy'}
-                  decoding={index === 0 ? 'sync' : 'async'}
-                  fetchPriority={index === 0 ? 'high' : 'low'}
-                  onError={() => {
-                    setImageStates((prev) => {
+              {/* Actual image - always render to allow browser to load it */}
+              <img
+                src={img}
+                alt={`MVIT Campus ${index + 1}`}
+                className="h-full w-full object-cover brightness-110"
+                style={{
+                  imageRendering: 'auto',
+                  backfaceVisibility: 'hidden',
+                  WebkitBackfaceVisibility: 'hidden',
+                  transform: 'translateZ(0)',
+                  willChange: 'opacity, transform',
+                  WebkitFontSmoothing: 'antialiased',
+                  MozOsxFontSmoothing: 'grayscale',
+                  transition: 'opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                  opacity: isActive && showImage ? 1 : 0,
+                  visibility: isActive && showImage ? 'visible' : 'hidden',
+                }}
+                loading={index === 0 ? 'eager' : 'lazy'}
+                decoding={index === 0 ? 'sync' : 'async'}
+                fetchPriority={index === 0 ? 'high' : 'auto'}
+                onLoad={() => {
+                  setImageStates((prev) => {
+                    if (!prev[index].loaded) {
                       const newStates = [...prev]
-                      newStates[index] = { loaded: false, error: true, retryCount: prev[index].retryCount }
+                      newStates[index] = { loaded: true, error: false, retryCount: prev[index].retryCount }
                       return newStates
-                    })
-                  }}
-                />
-              )}
+                    }
+                    return prev
+                  })
+                }}
+                onError={() => {
+                  setImageStates((prev) => {
+                    const newStates = [...prev]
+                    newStates[index] = { loaded: false, error: true, retryCount: prev[index].retryCount }
+                    return newStates
+                  })
+                }}
+              />
             </div>
           )
         })}

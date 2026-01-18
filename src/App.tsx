@@ -113,7 +113,7 @@ const AppContent = () => {
               >
                 <span className="relative inline-block">
                   {link.label}
-                  <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-gradient-to-r from-white via-smvit-accent to-white transition-all duration-300 group-hover:w-full nav-link-underline"></span>
+                  <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-gradient-to-r from-white via-smvit-accent to-white transition-all duration-300 group-hover:w-full nav-link-underline" style={{ pointerEvents: 'none' }}></span>
                 </span>
               </NavLink>
             ))}
@@ -299,7 +299,7 @@ const AppContent = () => {
           </div>
         )}
         <Suspense fallback={<PageLoader />}>
-          <Routes>
+          <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
             <Route path="/about-conference" element={<AboutConference />} />
             <Route path="/paper-submission" element={<PaperSubmission />} />

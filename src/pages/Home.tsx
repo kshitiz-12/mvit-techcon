@@ -91,8 +91,11 @@ const Home = () => {
                 src="/Sirmvit-About-Header-img-500x350.jpg"
                 alt="Sir M. Visvesvaraya Institute of Technology Campus showing modern buildings and green spaces"
                 className="h-full w-full object-cover shadow-lg"
+                width="500"
+                height="350"
                 loading="lazy"
                 decoding="async"
+                fetchPriority="low"
               />
             </div>
           </div>
@@ -112,8 +115,11 @@ const Home = () => {
                 src="/sir-m-visvesvaraya-institute-of-technology-mvit-bengaluru-500x300.jpg"
                 alt="Sir M. Visvesvaraya Institute of Technology campus entrance with architectural buildings"
                 className="h-full w-full object-cover shadow-lg"
+                width="500"
+                height="300"
                 loading="lazy"
                 decoding="async"
+                fetchPriority="low"
               />
             </div>
             
@@ -173,7 +179,11 @@ const Home = () => {
                         src={patron.image}
                         alt={patron.name}
                         className="h-full w-full rounded-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        width="128"
+                        height="128"
                         loading="lazy"
+                        decoding="async"
+                        fetchPriority="low"
                       />
                     </div>
                   </div>

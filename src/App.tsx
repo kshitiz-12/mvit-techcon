@@ -92,6 +92,10 @@ const AppContent = () => {
                 src="/SIR-LOGO.webp"
                 alt="Sir M. Visvesvaraya Institute of Technology logo"
                 className="relative h-10 w-10 rounded-xl border-2 border-white/40 bg-white/10 object-cover shadow-lg backdrop-blur-sm transition-all duration-300 group-hover:border-white/60 group-hover:shadow-xl xs:h-12 xs:w-12 xs:rounded-2xl sm:h-14 sm:w-14 sm:rounded-3xl lg:h-16 lg:w-16 lg:group-hover:scale-105"
+                width="64"
+                height="64"
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
             <div className="flex flex-col">

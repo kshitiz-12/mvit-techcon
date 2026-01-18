@@ -125,17 +125,15 @@ const HeroCarousel = () => {
   }, [currentIndex, imageStates, loadImage])
 
   // Smooth transition - always transition, show loading state if image not ready
-  const transitionToNext = useCallback(() => {
-    const nextIndex = (currentIndex + 1) % carouselImages.length
-    setCurrentIndex(nextIndex)
-  }, [currentIndex])
-
+  // Use ref to avoid re-rendering interval on every currentIndex change
   useEffect(() => {
     const interval = setInterval(() => {
-      transitionToNext()
-    }, 2000)
+      setCurrentIndex((prevIndex) => {
+        return (prevIndex + 1) % carouselImages.length
+      })
+    }, 5000)
     return () => clearInterval(interval)
-  }, [transitionToNext])
+  }, []) // Empty dependency array - interval created once
 
   return (
     <div className="relative h-[85vh] w-full overflow-hidden" style={{ minHeight: '-webkit-fill-available' }}>

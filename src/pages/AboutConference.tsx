@@ -117,31 +117,6 @@ const AboutConference = () => {
           </ul>
         </div>
       </MotionSection>
-
-      <MotionSection className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-6 sm:rounded-[32px] sm:p-8 md:p-10">
-        <div className="grid gap-4 xs:gap-5 sm:gap-6 md:grid-cols-2">
-          <div>
-            <p className="eyebrow text-[10px] xs:text-xs">Previous publications</p>
-            <p className="mt-3 text-sm text-slate-600 xs:text-base sm:text-lg">
-              All accepted papers will be submitted to the IEEE Xplore Digital Library (subject to scope and quality checks) and indexed on Scopus. FESCIS 2026 ensures archival visibility for every accepted submission, providing authors with global recognition and citation opportunities.
-            </p>
-          </div>
-          <div className="rounded-2xl border border-slate-200 bg-white/70 p-4 text-xs text-slate-600 xs:rounded-3xl xs:p-5 xs:text-sm sm:p-6">
-            <p className="font-semibold text-slate-900">Browse previous proceedings</p>
-            <a
-              href="https://ieeexplore.ieee.org/xpl/conhome/1851010/all-proceedings"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-2 inline-flex items-center gap-2 text-smvit-primary underline text-xs xs:text-sm"
-            >
-              IEEE Xplore · FESCIS archives
-            </a>
-            <p className="mt-2 xs:mt-3">
-              All accepted papers will be published in the conference proceedings and submitted to IEEE Xplore. The 2026 manuscripts will follow IEEE archival workflow with camera-ready compliance checks and quality assurance.
-            </p>
-          </div>
-        </div>
-      </MotionSection>
     </div>
   )
 }

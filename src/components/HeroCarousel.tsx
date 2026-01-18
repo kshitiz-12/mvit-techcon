@@ -66,24 +66,37 @@ const HeroCarousel = () => {
   useEffect(() => {
     let isMounted = true
 
-    // Load first image immediately with high priority
-    const loadFirstImage = async () => {
-      try {
-        await loadImage(carouselImages[0], 0)
-      } catch (error) {
-        console.error('Failed to load first image:', error)
+    // Preload first image with highest priority - start immediately
+    const firstImg = new Image()
+    firstImg.fetchPriority = 'high'
+    firstImg.decoding = 'sync'
+    firstImg.onload = () => {
+      if (isMounted) {
+        setImageStates((prev) => {
+          const newStates = [...prev]
+          newStates[0] = { loaded: true, error: false, retryCount: 0 }
+          return newStates
+        })
       }
     }
+    firstImg.onerror = () => {
+      // Fallback to loadImage function if direct loading fails
+      if (isMounted) {
+        loadImage(carouselImages[0], 0).catch(() => {})
+      }
+    }
+    firstImg.src = carouselImages[0]
 
-    loadFirstImage()
-
-    // Load remaining images progressively with delay
+    // Load remaining images progressively with delay (only after first is loaded or after timeout)
     const loadRemainingImages = async () => {
+      // Wait for first image or timeout after 1 second
+      await new Promise(resolve => setTimeout(resolve, 100))
+      
       for (let i = 1; i < carouselImages.length; i++) {
         if (!isMounted) break
         
         // Small delay between each image to avoid overwhelming the network
-        await new Promise(resolve => setTimeout(resolve, 300))
+        await new Promise(resolve => setTimeout(resolve, 200))
         
         try {
           await loadImage(carouselImages[i], i)
@@ -98,7 +111,7 @@ const HeroCarousel = () => {
       if (isMounted) {
         loadRemainingImages()
       }
-    }, 500)
+    }, 300)
 
     return () => {
       isMounted = false
@@ -194,8 +207,8 @@ const HeroCarousel = () => {
                     opacity: isActive ? 1 : 0,
                   }}
                   loading={index === 0 ? 'eager' : 'lazy'}
-                  decoding="async"
-                  fetchPriority={index === 0 ? 'high' : 'auto'}
+                  decoding={index === 0 ? 'sync' : 'async'}
+                  fetchPriority={index === 0 ? 'high' : 'low'}
                   onError={() => {
                     setImageStates((prev) => {
                       const newStates = [...prev]

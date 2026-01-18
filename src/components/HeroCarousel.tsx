@@ -240,11 +240,18 @@ const HeroCarousel = () => {
             onClick={() => {
               setCurrentIndex(index)
             }}
-            className={`h-1.5 rounded-full transition-all duration-300 ease-in-out touch-manipulation sm:h-2 ${
-              index === currentIndex ? 'w-6 bg-white sm:w-8' : 'w-1.5 bg-white/50 sm:w-2 hover:w-2 sm:hover:w-2.5'
-            }`}
+            className="relative flex items-center justify-center rounded-full touch-manipulation transition-all duration-300 ease-in-out"
+            style={{
+              minWidth: '44px',
+              minHeight: '44px',
+              padding: '20px 10px',
+            }}
             aria-label={`Go to slide ${index + 1}`}
-          />
+          >
+            <span className={`h-1.5 rounded-full transition-all duration-300 ease-in-out sm:h-2 ${
+              index === currentIndex ? 'w-6 bg-white sm:w-8' : 'w-1.5 bg-white/50 sm:w-2'
+            }`}></span>
+          </button>
         ))}
       </div>
 

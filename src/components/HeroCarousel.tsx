@@ -131,21 +131,16 @@ const HeroCarousel = () => {
     }
   }, [currentIndex, imageStates, loadImage])
 
-  // Smooth transition with preload check
+  // Smooth transition - always transition, show loading state if image not ready
   const transitionToNext = useCallback(() => {
     const nextIndex = (currentIndex + 1) % carouselImages.length
-    const nextImageState = imageStates[nextIndex]
-    
-    // Only transition if next image is loaded, otherwise wait
-    if (nextImageState.loaded && !nextImageState.error) {
-      setCurrentIndex(nextIndex)
-    }
-  }, [currentIndex, imageStates])
+    setCurrentIndex(nextIndex)
+  }, [currentIndex])
 
   useEffect(() => {
     const interval = setInterval(() => {
       transitionToNext()
-    }, 5000)
+    }, 2000)
     return () => clearInterval(interval)
   }, [transitionToNext])
 
@@ -241,16 +236,12 @@ const HeroCarousel = () => {
             key={img}
             type="button"
             onClick={() => {
-              // Only allow transition if image is loaded
-              if (imageStates[index].loaded && !imageStates[index].error) {
-                setCurrentIndex(index)
-              }
+              setCurrentIndex(index)
             }}
             className={`h-1.5 rounded-full transition-all duration-300 ease-in-out touch-manipulation sm:h-2 ${
               index === currentIndex ? 'w-6 bg-white sm:w-8' : 'w-1.5 bg-white/50 sm:w-2 hover:w-2 sm:hover:w-2.5'
             }`}
             aria-label={`Go to slide ${index + 1}`}
-            disabled={!imageStates[index].loaded || imageStates[index].error}
           />
         ))}
       </div>

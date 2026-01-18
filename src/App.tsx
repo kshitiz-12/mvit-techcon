@@ -1,5 +1,5 @@
 import { useEffect, useState, lazy, Suspense } from 'react'
-import { BrowserRouter, NavLink, Route, Routes, useLocation } from 'react-router-dom'
+import { BrowserRouter, NavLink, Link, Route, Routes, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import SEOHead from './components/SEOHead'
 import SkipLink from './components/SkipLink'
@@ -85,7 +85,7 @@ const AppContent = () => {
       }`}>
         <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none"></div>
         <nav className="relative mx-auto flex max-w-6xl items-center justify-between gap-2 px-3 py-2.5 xs:px-4 xs:py-3 sm:gap-4 sm:px-6 sm:py-4 lg:flex-row lg:justify-between">
-          <a href="/" className="group flex items-center gap-1.5 text-white transition-all duration-300 active:scale-95 ml-3 xs:ml-4 xs:gap-2 sm:ml-6 sm:gap-4 sm:hover:scale-105 md:ml-0 md:-ml-8 lg:-ml-16 xl:-ml-24">
+          <Link to="/" className="group flex items-center gap-1.5 text-white transition-all duration-300 active:scale-95 ml-3 xs:ml-4 xs:gap-2 sm:ml-6 sm:gap-4 sm:hover:scale-105 md:ml-0 md:-ml-8 lg:-ml-16 xl:-ml-24">
             <div className="relative">
               <div className="absolute inset-0 rounded-xl bg-white/20 blur-xl opacity-0 transition-opacity group-hover:opacity-100 xs:rounded-2xl sm:rounded-3xl"></div>
               <img
@@ -97,7 +97,7 @@ const AppContent = () => {
             <div className="flex flex-col">
               <span className="font-display text-base font-bold leading-tight tracking-tight xs:text-lg sm:text-xl lg:text-2xl">Sir MVIT</span>
             </div>
-          </a>
+          </Link>
           {/* Desktop Navigation - Direct children of nav */}
           <div className="hidden lg:flex lg:items-center lg:gap-8 lg:-mr-24 xl:-mr-32">
             {navLinks.map((link) => (
@@ -207,7 +207,7 @@ const AppContent = () => {
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.3, ease: 'easeInOut' }}
-                className="absolute left-0 right-0 top-full z-40 w-full overflow-hidden border-t border-white/20 bg-gradient-to-b from-smvit-primaryDark/98 to-smvit-primaryDark/95 backdrop-blur-xl shadow-2xl lg:hidden"
+                className="absolute left-0 right-0 top-full z-40 w-full overflow-hidden border-t border-white/20 bg-gradient-to-b from-smvit-primaryDark/98 to-smvit-primaryDark/95 backdrop-blur-xl shadow-2xl lg:hidden pointer-events-auto"
               >
                 <div className="flex flex-col gap-0.5 px-3 py-3 xs:gap-1 xs:px-4 xs:py-4 sm:gap-2 sm:px-6 sm:py-6">
                   {navLinks.map((link) => (
@@ -215,12 +215,15 @@ const AppContent = () => {
                       key={link.path}
                       to={link.path}
                       className={({ isActive }) => 
-                        `group relative block rounded-lg px-3 py-2.5 text-sm font-semibold tracking-wide text-white transition-all duration-200 outline-none focus:outline-none active:bg-white/10 xs:px-4 xs:py-3 xs:text-base ${
+                        `group relative block rounded-lg px-3 py-2.5 text-sm font-semibold tracking-wide text-white transition-all duration-200 outline-none focus:outline-none active:bg-white/10 xs:px-4 xs:py-3 xs:text-base touch-manipulation ${
                           isActive ? 'bg-white/10 text-white' : 'hover:bg-white/5 hover:text-white/90'
                         }`
                       }
                       end={link.path === '/'}
-                      onClick={() => setMobileOpen(false)}
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        setMobileOpen(false)
+                      }}
                     >
                       <span className="relative inline-block">
                         {link.label}

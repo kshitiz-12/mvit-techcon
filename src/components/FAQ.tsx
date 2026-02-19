@@ -14,7 +14,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: 'Will the conference papers be published?',
-    answer: 'All accepted, registered and presented papers will be submitted for possible publication in IEEE Xplore® Digital Library, through the IEEE Conference Publications Program (CPP).',
+    answer: 'Yes, all accepted and presented papers will be submitted to IEEE Xplore Digital Library subject to satisfying scope and quality requirements. The proceedings will be indexed in Scopus and other major databases.',
   },
   {
     question: 'What is the review process?',
@@ -30,7 +30,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: 'Is the conference in-person or virtual?',
-    answer: 'FESCIS 2026 is planned as an in-person conference to be held at Sir M. Visvesvaraya Institute of Technology, Bengaluru. Please check the website for any updates.',
+    answer: 'FESCIS 2026 is planned as an in-person only conference to be held at Sir M. Visvesvaraya Institute of Technology, Bengaluru. Please check the website for any updates.',
   },
   {
     question: 'How can I register for the conference?',

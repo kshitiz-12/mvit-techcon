@@ -56,13 +56,21 @@ const checkpoints = [
   },
   {
     title: 'Review policy',
-    detail:
-      'Triple-blind peer review managed by the Technical Program Committee. Each paper receives a minimum of three reviews plus a meta-review before the final decision.',
+    detail: '',
+    points: [
+      'All submitted manuscripts undergo mandatory plagiarism screening as per IEEE guidelines.',
+      'Triple-blind review is used. Authors must remove names, affiliations, acknowledgements, and any identifying information from the manuscript.',
+      'Self-citations must be written in the third person to avoid revealing identity.',
+      'Papers are evaluated on originality, technical depth, clarity, significance, and relevance to the conference scope.',
+      'The author list at the time of submission is final. No reordering, addition or removal of authors is allowed after submission.',
+      'Papers violating formatting, page limits, or anonymization rules will be rejected without review.',
+      'A paper may be moved to WIP/Poster category if it does not meet depth requirements; authors will have 1 week to submit a shorter version.',
+    ],
   },
   {
     title: 'Publication',
     detail:
-      'All accepted, registered and presented papers will be submitted for possible publication in IEEE Xplore® Digital Library, through the IEEE Conference Publications Program (CPP).',
+      'Accepted papers will be submitted to IEEE Xplore subject to satisfying scope and quality requirements. Proceedings are indexed with major databases including Scopus.',
   },
 ]
 
@@ -94,24 +102,32 @@ const PaperSubmission = () => {
         {checkpoints.map((item) => (
           <div key={item.title} className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-5 sm:p-6">
             <h3 className="text-base font-semibold text-slate-900 leading-tight xs:text-lg">{item.title}</h3>
-            <p className="mt-2 text-xs leading-relaxed text-slate-600 break-words xs:mt-3 xs:text-sm">
-              {item.title === 'Submission portal' ? (
-                <>
-                  All papers must be uploaded via Microsoft CMT at{' '}
-                  <a 
-                    href="https://cmt3.research.microsoft.com/MVITTECHCON2026" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-smvit-primary underline break-all hover:text-smvit-primaryDark"
-                  >
-                    https://cmt3.research.microsoft.com/MVITTECHCON2026
-                  </a>
-                  . Authors are responsible for ensuring metadata accuracy and conflict declarations.
-                </>
-              ) : (
-                item.detail
-              )}
-            </p>
+            {'points' in item && item.points ? (
+              <ul className="mt-2 list-disc list-inside space-y-1.5 text-xs leading-relaxed text-slate-600 marker:text-smvit-primary xs:mt-3 xs:text-sm">
+                {item.points.map((point) => (
+                  <li key={point} className="break-words">{point}</li>
+                ))}
+              </ul>
+            ) : (
+              <p className="mt-2 text-xs leading-relaxed text-slate-600 break-words xs:mt-3 xs:text-sm">
+                {item.title === 'Submission portal' ? (
+                  <>
+                    All papers must be uploaded via Microsoft CMT at{' '}
+                    <a 
+                      href="https://cmt3.research.microsoft.com/MVITTECHCON2026" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-smvit-primary underline break-all hover:text-smvit-primaryDark"
+                    >
+                      https://cmt3.research.microsoft.com/MVITTECHCON2026
+                    </a>
+                    . Authors are responsible for ensuring metadata accuracy and conflict declarations.
+                  </>
+                ) : (
+                  item.detail
+                )}
+              </p>
+            )}
           </div>
         ))}
       </section>

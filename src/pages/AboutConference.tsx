@@ -9,7 +9,7 @@ const highlights = [
   {
     title: 'IEEE-aligned Review Process',
     detail:
-      'Triple-blind peer review ensuring high-quality submissions. All accepted, registered and presented papers will be submitted for possible publication in IEEE Xplore® Digital Library.',
+      'Triple-blind peer review ensuring high-quality submissions. All accepted papers will be submitted to IEEE Xplore Digital Library and indexed on Scopus.',
   },
   {
     title: 'Industry-Academia Collaboration',
@@ -53,7 +53,7 @@ const AboutConference = () => {
           The primary goal of FESCIS 2026 is to promote research and developmental activities across Future Electronics, Sustainable Computing, and Intelligent Systems. The conference aims to address critical problems in engineering sciences and healthcare, making a revolutionary contribution to social welfare through science and technology.
         </p>
         <p className="mt-3 text-sm text-slate-600 xs:mt-4 xs:text-base sm:text-lg">
-          FESCIS 2026 advances the frontiers of intelligent computing in engineering, sciences, healthcare, energy, and environmental domains. The conference focuses on interdisciplinary and emerging thrust areas, promoting cognitive computing for complex problem-solving and multidisciplinary research aligned with national development priorities.
+          FESCIS 2026 has a high impact on the IEEE Bangalore Section regarding advances in intelligent computing for engineering, sciences, healthcare, energy, and environment. The scope includes interdisciplinary, emerging, and thrust areas focusing on cognitive computing for complex problem-solving and multi-disciplinary research on national growth.
         </p>
       </MotionSection>
 
@@ -97,6 +97,10 @@ const AboutConference = () => {
             <li className="flex items-start gap-2">
               <span className="mt-1 h-2 w-2 rounded-full bg-smvit-accent" />
               <span><strong>Venue:</strong> Sir M. Visvesvaraya Institute of Technology, Bengaluru, India</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1 h-2 w-2 rounded-full bg-smvit-accent" />
+              <span><strong>Conference mode:</strong> Offline only</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1 h-2 w-2 rounded-full bg-smvit-accent" />

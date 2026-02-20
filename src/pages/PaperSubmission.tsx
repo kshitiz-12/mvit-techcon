@@ -70,7 +70,7 @@ const checkpoints = [
   {
     title: 'Publication',
     detail:
-      'Accepted papers will be submitted to IEEE Xplore subject to satisfying scope and quality requirements. Proceedings are indexed with major databases including Scopus.',
+      'All accepted, registered and presented papers will be submitted for possible publication in IEEE Xplore® Digital Library, through the IEEE Conference Publications Program (CPP)',
   },
 ]
 

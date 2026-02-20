@@ -14,7 +14,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: 'Will the conference papers be published?',
-    answer: 'Yes, all accepted and presented papers will be submitted to IEEE Xplore Digital Library subject to satisfying scope and quality requirements. The proceedings will be indexed in Scopus and other major databases.',
+    answer: 'All accepted, registered and presented papers will be submitted for possible publication in IEEE Xplore® Digital Library, through the IEEE Conference Publications Program (CPP)',
   },
   {
     question: 'What is the review process?',

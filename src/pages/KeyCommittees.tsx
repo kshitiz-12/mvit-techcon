@@ -84,7 +84,7 @@ const committees = [
   {
     title: 'Website Co-Chair',
     people: [
-      { name: 'Dr. Pradeep S Narayanan', role: 'Assistant Professor Dept. of ECE, Sir MVIT' },
+      { name: 'Madhu Kumari Ray', role: 'Assistant Professor, Dept. of ETE, Sir MVIT' },
     ],
   },
   {

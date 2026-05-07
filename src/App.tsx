@@ -325,7 +325,7 @@ const AppContent = () => {
                 International Conference on Future Electronics, Sustainable Computing & Intelligent Systems
               </p>
               <p className="mt-2 text-sm text-white/80">
-                3–4 December 2026 · Sir M. Visvesvaraya Institute of Technology, Bengaluru
+                17th & 18th December 2026 · Sir M. Visvesvaraya Institute of Technology, Bengaluru
               </p>
             </div>
             <div>
@@ -379,8 +379,8 @@ const AppContent = () => {
               </p>
               <p className="mt-1 text-sm text-white/90">
                 <span className="font-semibold">Email:</span>{' '}
-                <a href="mailto:info@sirmvit.edu" className="hover:text-smvit-accent underline transition-colors">
-                  info@sirmvit.edu
+                <a href="mailto:fescis-ieee@sirmvit.edu" className="hover:text-smvit-accent underline transition-colors">
+                  fescis-ieee@sirmvit.edu
                 </a>
               </p>
               <div className="mt-4">

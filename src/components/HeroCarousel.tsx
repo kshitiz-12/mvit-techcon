@@ -260,7 +260,7 @@ const HeroCarousel = () => {
             FESCIS 2026
           </h1>
           <div className="mt-3 text-xs font-medium leading-relaxed text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] [text-shadow:_0_1px_4px_rgba(0,0,0,0.8),_0_2px_8px_rgba(0,0,0,0.6)] xs:mt-4 xs:text-sm sm:mt-6 sm:text-base md:text-lg lg:text-xl xl:text-2xl">
-            <p className="text-center">International Conference</p>
+            <p className="text-center">2026 International Conference</p>
             <p className="text-center">On</p>
             <p className="text-center px-2">Future Electronics, Sustainable Computing & Intelligent Systems</p>
           </div>
@@ -270,7 +270,7 @@ const HeroCarousel = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
               <span className="font-display text-sm font-bold text-white xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
-                3–4 December 2026
+                17th & 18th December 2026
               </span>
             </div>
             <p className="text-center text-xs font-medium text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] [text-shadow:_0_1px_4px_rgba(0,0,0,0.8),_0_2px_6px_rgba(0,0,0,0.6)] xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl px-2">

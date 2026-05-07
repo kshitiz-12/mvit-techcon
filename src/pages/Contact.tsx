@@ -1,7 +1,7 @@
 import MotionSection from '../components/MotionSection'
 
 const contacts = [
-  { role: 'TPC Helpdesk', name: 'Dr. Anitha T. N.', designation: 'TPC Chair, Professor and Head, Dept. of CSE, Sir MVIT', email: 'tpc@sirsmvit.edu', phone: '+91 XXX-XXX-XXXX' },
+  { role: 'Conference Helpdesk', name: 'FESCIS Organizing Team', designation: 'Sir M. Visvesvaraya Institute of Technology, Bengaluru', email: 'fescis-ieee@sirmvit.edu', phone: '+91 XXX-XXX-XXXX' },
   { role: 'Sponsorship & Demos', name: 'Dr. E. Kavitha', designation: 'Publicity Chair, Professor and Head, Dept. of ETE, Sir MVIT', email: 'sponsor@sirsmvit.edu', phone: '+91 XXX-XXX-XXXX' },
   { role: 'Registration Desk', name: 'Dr. Jagadeesh H. S.', designation: 'Registration Chair, Professor Dept. of ECE, Sir MVIT', email: 'register@sirsmvit.edu', phone: '+91 XXX-XXX-XXXX' },
 ]

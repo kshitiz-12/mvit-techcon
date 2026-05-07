@@ -10,7 +10,7 @@ interface FAQItem {
 const faqs: FAQItem[] = [
   {
     question: 'What is the deadline for paper submission?',
-    answer: 'The last date for full paper submission is 1st August 2026. All papers must be submitted via the Microsoft CMT portal before the deadline.',
+    answer: 'The last date for full paper submission is 15th August 2026. All papers must be submitted via the Microsoft CMT portal before the deadline.',
   },
   {
     question: 'Will the conference papers be published?',
@@ -26,15 +26,15 @@ const faqs: FAQItem[] = [
   },
   {
     question: 'When will I receive acceptance notification?',
-    answer: 'Authors will be notified of paper acceptance decisions on 1st October 2026. Notification emails will be sent to the corresponding author.',
+    answer: 'Authors will be notified of paper acceptance decisions on 15th October 2026. Notification emails will be sent to the corresponding author.',
   },
   {
     question: 'Is the conference in-person or virtual?',
     answer: 'FESCIS 2026 is planned as an in-person only conference to be held at Sir M. Visvesvaraya Institute of Technology, Bengaluru. Please check the website for any updates.',
   },
   {
-    question: 'How can I register for the conference?',
-    answer: 'Registration opens after acceptance notifications. Authors must complete registration and payment by 7th October 2026. Detailed registration instructions will be provided upon acceptance.',
+    question: 'When is the final paper submission deadline?',
+    answer: 'Final paper submission is due on 22nd October 2026. Detailed camera-ready submission instructions will be provided after acceptance.',
   },
   {
     question: 'Will visa support letters be provided?',

@@ -92,7 +92,7 @@ const AboutConference = () => {
           <ul className="mt-3 space-y-2 text-xs text-slate-600 xs:mt-4 xs:space-y-3 xs:text-sm">
             <li className="flex items-start gap-2">
               <span className="mt-1 h-2 w-2 rounded-full bg-smvit-accent" />
-              <span><strong>Conference Date:</strong> 3rd and 4th December 2026</span>
+              <span><strong>Conference Date:</strong> 17th & 18th December 2026</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1 h-2 w-2 rounded-full bg-smvit-accent" />
@@ -104,19 +104,15 @@ const AboutConference = () => {
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1 h-2 w-2 rounded-full bg-smvit-accent" />
-              <span><strong>Full Paper Submission:</strong> 1st August 2026</span>
+              <span><strong>Full Paper Submission:</strong> 15th August 2026</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1 h-2 w-2 rounded-full bg-smvit-accent" />
-              <span><strong>Acceptance Notification:</strong> 1st October 2026</span>
+              <span><strong>Acceptance Notification:</strong> 15th October 2026</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-1 h-2 w-2 rounded-full bg-smvit-accent" />
-              <span><strong>Registration Deadline:</strong> 7th October 2026</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="mt-1 h-2 w-2 rounded-full bg-smvit-accent" />
-              <span><strong>Camera Ready Paper:</strong> 15th October 2026</span>
+              <span><strong>Final Paper Submission:</strong> 22nd October 2026</span>
             </li>
           </ul>
         </div>

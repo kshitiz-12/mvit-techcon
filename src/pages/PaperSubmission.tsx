@@ -85,7 +85,7 @@ const PaperSubmission = () => {
           flagship tracks. Interdisciplinary submissions that bridge multiple tracks are prioritized for plenary storytelling.
         </p>
         <div className="mt-4 rounded-xl border border-slate-200 bg-white/70 p-3 text-xs leading-relaxed text-slate-600 xs:mt-5 xs:rounded-2xl xs:p-4 xs:text-sm">
-          Need help? Write to <a href="mailto:tpc@sirsmvit.edu" className="font-semibold text-smvit-primary underline break-all hover:text-smvit-primaryDark">tpc@sirsmvit.edu</a> with the subject line "FESCIS Submission".
+          Need help? Write to <a href="mailto:fescis-ieee@sirmvit.edu" className="font-semibold text-smvit-primary underline break-all hover:text-smvit-primaryDark">fescis-ieee@sirmvit.edu</a> with the subject line "FESCIS Submission".
         </div>
       </MotionSection>
 

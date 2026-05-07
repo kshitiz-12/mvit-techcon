@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from 'react'
-import { useInView } from 'framer-motion'
 
 interface AnimatedCounterProps {
   value: string // e.g., "40+", "120+", "8", "25+"
@@ -9,16 +8,16 @@ interface AnimatedCounterProps {
 
 const AnimatedCounter = ({ value, duration = 2000, className = '' }: AnimatedCounterProps) => {
   const [count, setCount] = useState(0)
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.5 })
+  const ref = useRef<HTMLSpanElement | null>(null)
+  const [isInView, setIsInView] = useState(false)
   const hasAnimated = useRef(false)
 
   // Extract numeric value and suffix from string
   const extractValueAndSuffix = (val: string) => {
-    const match = val.match(/^(\d+)(.*)$/)
+    const match = /^(\d+)(.*)$/.exec(val)
     if (match) {
       return {
-        numericValue: parseInt(match[1], 10),
+        numericValue: Number.parseInt(match[1], 10),
         suffix: match[2] || '',
       }
     }
@@ -26,6 +25,24 @@ const AnimatedCounter = ({ value, duration = 2000, className = '' }: AnimatedCou
   }
 
   const { numericValue, suffix } = extractValueAndSuffix(value)
+
+  useEffect(() => {
+    const target = ref.current
+    if (!target) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true)
+          observer.unobserve(entry.target)
+        }
+      },
+      { threshold: 0.5 },
+    )
+
+    observer.observe(target)
+    return () => observer.disconnect()
+  }, [])
 
   useEffect(() => {
     if (!isInView || hasAnimated.current || numericValue === 0) {
@@ -60,7 +77,11 @@ const AnimatedCounter = ({ value, duration = 2000, className = '' }: AnimatedCou
   }, [isInView, numericValue, duration])
 
   return (
-    <span ref={ref} className={className}>
+    <span
+      ref={ref}
+      className={`inline-block tabular-nums ${className}`}
+      style={{ minWidth: `${String(numericValue).length + suffix.length}ch` }}
+    >
       {count}
       {suffix}
     </span>

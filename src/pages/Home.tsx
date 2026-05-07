@@ -1,8 +1,9 @@
-import { motion } from 'framer-motion'
+import { lazy, Suspense } from 'react'
 import MotionSection from '../components/MotionSection'
 import HeroCarousel from '../components/HeroCarousel'
-import FAQ from '../components/FAQ'
 import AnimatedCounter from '../components/AnimatedCounter'
+
+const FaqSection = lazy(() => import('../components/FAQ'))
 
 const chiefPatrons = [
   { name: 'Dr. A. C. Chandrashekar Raju', role: 'Founder Trustee', image: '/AC-Chandrashekhar-Raju.jpg' },
@@ -49,15 +50,11 @@ const Home = () => {
         <div className="absolute bottom-0 right-0 -z-10 h-96 w-96 rounded-full bg-smvit-accent/5 blur-3xl"></div>
 
       <MotionSection className="mt-4 grid gap-3 xs:mt-6 xs:gap-4 sm:mt-6 sm:gap-6 md:mt-8 md:grid-cols-2 lg:grid-cols-5">
-        {stats.map((item, index) => (
-          <motion.div
+        {stats.map((item) => (
+          <div
             key={item.label}
             className="group relative overflow-hidden rounded-lg border border-slate-200/80 bg-gradient-to-br from-white to-slate-50/50 p-3 transition-all duration-300 active:scale-95 xs:rounded-xl xs:p-4 sm:rounded-2xl sm:p-6 sm:hover:scale-105 sm:hover:border-smvit-primary/30 sm:hover:shadow-glow"
             style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)' }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
           >
             <div className="absolute right-0 top-0 h-32 w-32 -translate-y-1/2 translate-x-1/2 rounded-full bg-smvit-accent/10 blur-3xl"></div>
             <p className="relative text-[9px] font-semibold uppercase tracking-[0.2em] text-smvit-accent xs:text-[10px] xs:tracking-[0.25em] sm:text-xs sm:tracking-[0.35em]">{item.label}</p>
@@ -65,7 +62,7 @@ const Home = () => {
               <AnimatedCounter value={item.value} duration={2000} />
             </p>
             <p className="relative mt-1.5 text-[10px] leading-relaxed text-slate-600 xs:mt-2 xs:text-xs sm:mt-3 sm:text-sm">{item.detail}</p>
-          </motion.div>
+          </div>
         ))}
       </MotionSection>
 
@@ -86,7 +83,7 @@ const Home = () => {
               </p>
             </div>
             
-            <div className="relative overflow-hidden rounded-xl xs:rounded-2xl">
+            <div className="relative overflow-hidden rounded-xl aspect-[10/7] xs:rounded-2xl">
               <img
                 src="/Sirmvit-About-Header-img-500x350.jpg"
                 alt="Sir M. Visvesvaraya Institute of Technology Campus showing modern buildings and green spaces"
@@ -110,7 +107,7 @@ const Home = () => {
           </div>
           
           <div className="grid gap-4 xs:gap-5 sm:gap-6 md:gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
-            <div className="relative overflow-hidden rounded-xl order-2 xs:rounded-2xl md:order-1">
+            <div className="relative overflow-hidden rounded-xl aspect-[5/3] order-2 xs:rounded-2xl md:order-1">
               <img
                 src="/sir-m-visvesvaraya-institute-of-technology-mvit-bengaluru-500x300.jpg"
                 alt="Sir M. Visvesvaraya Institute of Technology campus entrance with architectural buildings"
@@ -159,14 +156,10 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-2 gap-4 xs:gap-5 sm:grid-cols-3 sm:gap-6 md:grid-cols-4 lg:grid-cols-5 lg:gap-7">
-            {chiefPatrons.map((patron, index) => (
-              <motion.div
+            {chiefPatrons.map((patron) => (
+              <div
                 key={patron.name}
                 className="group relative flex min-h-[200px] flex-col overflow-hidden rounded-2xl border border-slate-200/60 bg-white/80 p-4 backdrop-blur-sm transition-all duration-300 hover:border-smvit-primary/40 hover:bg-white hover:shadow-xl hover:-translate-y-1 xs:min-h-[220px] xs:rounded-3xl xs:p-5 sm:min-h-[240px] sm:rounded-3xl sm:p-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.03 }}
                 style={{ boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)' }}
               >
                 <div className="absolute inset-0 -z-10 bg-gradient-to-br from-smvit-primary/0 via-smvit-accent/0 to-smvit-primary/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-hover:from-smvit-primary/5 group-hover:via-smvit-accent/5 group-hover:to-smvit-primary/5"></div>
@@ -197,13 +190,15 @@ const Home = () => {
                     {patron.role}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </MotionSection>
 
-      <FAQ />
+      <Suspense fallback={null}>
+        <FaqSection />
+      </Suspense>
       </div>
       </div>
     </>

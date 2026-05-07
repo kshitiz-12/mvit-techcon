@@ -12,8 +12,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Space Grotesk"', 'sans-serif'],
-        body: ['"Inter"', 'sans-serif'],
+        display: ['"Segoe UI"', 'system-ui', '-apple-system', 'sans-serif'],
+        body: ['"Segoe UI"', 'system-ui', '-apple-system', 'sans-serif'],
       },
       colors: {
         smvit: {

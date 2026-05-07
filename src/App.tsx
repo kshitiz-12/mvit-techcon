@@ -316,7 +316,7 @@ const AppContent = () => {
         </Suspense>
       </main>
 
-      <footer className="border-t border-smvit-primary/20 bg-gradient-to-r from-smvit-primary via-smvit-primaryDark to-smvit-primary py-12 text-white min-h-[400px]" style={{ containIntrinsicSize: '400px' }}>
+      <footer className="border-t border-smvit-primary/20 bg-gradient-to-r from-smvit-primary via-smvit-primaryDark to-smvit-primary py-12 text-white min-h-[400px]">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-8 md:grid-cols-3">
             <div>

@@ -1,4 +1,5 @@
 import MotionSection from '../components/MotionSection'
+import TiltCard from '../components/TiltCard'
 
 const committees = [
   {
@@ -60,13 +61,13 @@ const committees = [
   {
     title: 'Finance Co-Chair',
     people: [
-      { name: 'Dr. Cyril Robinson Azariah J', role: 'Associate Professor Dept. of ECE, Sir MVIT' },
+      { name: 'Dr. G. Shashibhushan', role: 'Assistant Professor Dept. of ECE, Sir MVIT' },
     ],
   },
   {
     title: 'Publicity Chair',
     people: [
-      { name: 'Dr. G. Shashibhushan', role: 'Assistant Professor Dept. of ECE, Sir MVIT' },
+      { name: 'Dr. Cyril Robinson Azariah J', role: 'Associate Professor Dept. of ECE, Sir MVIT' },
     ],
   },
   {
@@ -84,7 +85,7 @@ const committees = [
   {
     title: 'Website Co-Chair',
     people: [
-      { name: 'Madhu Kumari Ray', role: 'Assistant Professor, Dept. of ETE, Sir MVIT' },
+      { name: 'Kshitiz Vishwakarma', role: '3rd Year, Dept. of ECE, Sir MVIT' },
     ],
   },
   {
@@ -135,17 +136,19 @@ const KeyCommittees = () => {
 
       <MotionSection className="grid gap-4 xs:gap-5 sm:gap-6 md:grid-cols-2">
         {committees.map((committee) => (
-          <div key={committee.title} className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-5 sm:p-6">
-            <h3 className="text-lg font-semibold text-slate-900 xs:text-xl">{committee.title}</h3>
-            <ul className="mt-3 space-y-2 xs:mt-4 xs:space-y-3">
-              {committee.people.map((person, index) => (
-                <li key={index} className="rounded-xl border border-slate-200 bg-white/70 px-3 py-2 xs:rounded-2xl xs:px-4 xs:py-3">
-                  <p className="text-sm font-semibold text-slate-900 xs:text-base">{person.name}</p>
-                  <p className="mt-0.5 text-xs text-slate-600 xs:mt-1 xs:text-sm">{person.role}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <TiltCard key={committee.title} maxTilt={7} className="h-full">
+            <div className="glass-card h-full p-4 xs:p-5 sm:p-6">
+              <h3 className="text-lg font-semibold text-slate-900 xs:text-xl">{committee.title}</h3>
+              <ul className="mt-3 space-y-2 xs:mt-4 xs:space-y-3">
+                {committee.people.map((person, index) => (
+                  <li key={index} className="rounded-xl border border-slate-200 bg-white/70 px-3 py-2 xs:rounded-2xl xs:px-4 xs:py-3">
+                    <p className="text-sm font-semibold text-slate-900 xs:text-base">{person.name}</p>
+                    <p className="mt-0.5 text-xs text-slate-600 xs:mt-1 xs:text-sm">{person.role}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </TiltCard>
         ))}
       </MotionSection>
 

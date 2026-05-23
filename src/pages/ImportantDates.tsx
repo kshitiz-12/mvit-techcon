@@ -1,5 +1,5 @@
 import MotionSection from '../components/MotionSection'
-
+import CountdownTimer from '../components/CountdownTimer'
 const milestones = [
   { phase: 'Conference Date', date: '17th & 18th December 2026', status: 'Event', detail: 'FESCIS 2026 will be held at Sir M. Visvesvaraya Institute of Technology, Bengaluru.' },
   { phase: 'Full Paper Submission Date', date: '15th August 2026', status: 'Upcoming', detail: 'All papers must be submitted via the submission portal before the deadline.' },
@@ -23,6 +23,10 @@ const ImportantDates = () => {
           The Technical Program Committee operates on a transparent, high-touch schedule so that authors, reviewers, and partners can
           plan travel, visa, and production timelines in advance.
         </p>
+      </MotionSection>
+
+      <MotionSection className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-[0_25px_80px_rgba(15,61,145,0.08)] xs:rounded-3xl xs:p-6 sm:rounded-[32px] sm:p-8 md:p-10">
+        <CountdownTimer variant="page" />
       </MotionSection>
 
       <section className="grid gap-4 xs:gap-5 sm:gap-6 md:grid-cols-2">

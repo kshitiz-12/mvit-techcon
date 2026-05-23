@@ -1,5 +1,8 @@
 import { useEffect, useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import CountdownTimer from './CountdownTimer'
+import { useReducedMotion } from '../hooks/useReducedMotion'
 
 const carouselImages = [
   '/Campus view.JPG',
@@ -19,6 +22,7 @@ const MAX_RETRIES = 3
 const RETRY_DELAY = 2000
 
 const HeroCarousel = () => {
+  const reduced = useReducedMotion()
   const [currentIndex, setCurrentIndex] = useState(0)
   const [imageStates, setImageStates] = useState<ImageLoadState[]>(
     carouselImages.map(() => ({ loaded: false, error: false, retryCount: 0 }))
@@ -179,7 +183,7 @@ const HeroCarousel = () => {
               <img
                 src={img}
                 alt={`MVIT Campus ${index + 1}`}
-                className="h-full w-full object-cover brightness-110"
+                className="h-full w-full object-cover"
                 style={{
                   imageRendering: 'auto',
                   backfaceVisibility: 'hidden',
@@ -218,16 +222,35 @@ const HeroCarousel = () => {
         })}
       </div>
 
-      {/* IEEE Bangalore Logo Overlay */}
-      {/* <div className="absolute right-4 top-4 z-20 animate-fade-in sm:right-8 sm:top-8">
-        <div className="rounded-lg border border-white/20 bg-white/95 p-1.5 shadow-glow-lg backdrop-blur-md transition-transform hover:scale-105 sm:rounded-xl sm:p-2">
-          <img
-            src="/IEEE.jpg"
-            alt="IEEE Bangalore Section"
-            className="h-8 w-auto sm:h-12 lg:h-16"
-          />
+      {/* IEEE partner logos */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-20 px-3 pt-3 sm:px-5 sm:pt-5 md:px-6 md:pt-6">
+        <div className="pointer-events-auto mx-auto flex max-w-7xl items-center justify-between gap-2 sm:gap-4">
+          <div
+            className="animate-fade-in rounded-lg border border-white/40 bg-white/95 p-2 shadow-[0_8px_32px_rgba(0,0,0,0.28)] backdrop-blur-md transition-transform duration-300 hover:scale-[1.02] sm:rounded-xl sm:p-2.5 md:p-3"
+            style={{ animationDelay: '0.1s' }}
+          >
+            <img
+              src="/ieee-bangalore-section.png"
+              alt="IEEE Bangalore Section"
+              className="h-8 w-auto object-contain sm:h-10 md:h-12 lg:h-14"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+          <div
+            className="animate-fade-in rounded-lg border border-white/40 bg-white/95 p-2 shadow-[0_8px_32px_rgba(0,0,0,0.28)] backdrop-blur-md transition-transform duration-300 hover:scale-[1.02] sm:rounded-xl sm:p-2.5 md:p-3"
+            style={{ animationDelay: '0.2s' }}
+          >
+            <img
+              src="/ieee-comsoc-bangalore.png"
+              alt="IEEE ComSoc Bangalore Chapter"
+              className="h-8 w-auto max-w-[120px] object-contain object-left sm:h-10 sm:max-w-[160px] md:h-11 md:max-w-[200px] lg:h-12 lg:max-w-[240px]"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
         </div>
-      </div> */}
+      </div>
 
       {/* Carousel Indicators */}
       <div className="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 gap-2 sm:bottom-6">
@@ -254,9 +277,15 @@ const HeroCarousel = () => {
       </div>
 
       {/* Content Overlay */}
-      <div className="absolute inset-0 z-10 flex items-center px-3 sm:px-4 md:px-6">
-        <div className="mx-auto w-full max-w-6xl text-center text-white">
-          <h1 className="font-display text-2xl font-bold leading-tight tracking-tight text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] [text-shadow:_0_2px_8px_rgba(0,0,0,0.8),_0_4px_16px_rgba(0,0,0,0.6)] xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+      <div className="absolute inset-0 z-[15] flex items-center px-3 sm:px-4 md:px-6">
+        <motion.div
+          className="mx-auto w-full max-w-6xl text-center text-white"
+          style={{ transformPerspective: 1200, transformStyle: 'preserve-3d' }}
+          initial={reduced ? false : { opacity: 0, y: 36, rotateX: 12 }}
+          animate={reduced ? undefined : { opacity: 1, y: 0, rotateX: 0 }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+        >
+          <h1 className="hero-float font-display text-2xl font-bold leading-tight tracking-tight text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] [text-shadow:_0_2px_8px_rgba(0,0,0,0.8),_0_4px_16px_rgba(0,0,0,0.6)] xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
             FESCIS 2026
           </h1>
           <div className="mt-3 text-xs font-medium leading-relaxed text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] [text-shadow:_0_1px_4px_rgba(0,0,0,0.8),_0_2px_8px_rgba(0,0,0,0.6)] xs:mt-4 xs:text-sm sm:mt-6 sm:text-base md:text-lg lg:text-xl xl:text-2xl">
@@ -276,27 +305,32 @@ const HeroCarousel = () => {
             <p className="text-center text-xs font-medium text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] [text-shadow:_0_1px_4px_rgba(0,0,0,0.8),_0_2px_6px_rgba(0,0,0,0.6)] xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl px-2">
               Sir M. Visvesvaraya Institute of Technology, Bengaluru
             </p>
+            <CountdownTimer variant="hero" />
           </div>
           <div className="mt-4 flex flex-col items-center gap-2.5 xs:mt-5 sm:mt-6 sm:flex-row sm:justify-center sm:gap-4 sm:mt-8">
-            <Link
-              to="/paper-submission"
-              className="group relative w-full max-w-[280px] overflow-hidden rounded-lg bg-smvit-primary px-5 py-2.5 text-xs font-semibold text-white shadow-glow-lg transition-all duration-300 active:scale-95 hover:bg-smvit-primaryLight hover:shadow-glow-accent xs:max-w-xs xs:rounded-xl xs:px-6 xs:py-3 xs:text-sm sm:w-auto sm:px-8 sm:py-4 sm:text-base"
-            >
-              <span className="relative z-10">Explore Program</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-smvit-accent/20 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
-            </Link>
-            <Link
-              to="/important-dates"
-              className="w-full max-w-[280px] rounded-lg border-2 border-white/30 bg-white/10 px-5 py-2.5 text-xs font-semibold text-white backdrop-blur-md transition-all duration-300 active:scale-95 hover:border-white/50 hover:bg-white/20 hover:shadow-lg xs:max-w-xs xs:rounded-xl xs:px-6 xs:py-3 xs:text-sm sm:w-auto sm:px-8 sm:py-4 sm:text-base"
-            >
-              Important Dates
-            </Link>
+            <motion.div whileHover={reduced ? undefined : { scale: 1.04, translateZ: 8 }} whileTap={reduced ? undefined : { scale: 0.97 }}>
+              <Link
+                to="/paper-submission"
+                className="group relative block w-full max-w-[280px] overflow-hidden rounded-lg bg-smvit-primary px-5 py-2.5 text-xs font-semibold text-white shadow-glow-lg transition-all duration-300 hover:bg-smvit-primaryLight hover:shadow-glow-accent xs:max-w-xs xs:rounded-xl xs:px-6 xs:py-3 xs:text-sm sm:w-auto sm:px-8 sm:py-4 sm:text-base"
+                style={{ transform: 'translateZ(0)' }}
+              >
+                <span className="relative z-10">Explore Program</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-smvit-accent/20 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+              </Link>
+            </motion.div>
+            <motion.div whileHover={reduced ? undefined : { scale: 1.04, translateZ: 8 }} whileTap={reduced ? undefined : { scale: 0.97 }}>
+              <Link
+                to="/important-dates"
+                className="block w-full max-w-[280px] rounded-lg border-2 border-white/30 bg-white/10 px-5 py-2.5 text-xs font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-white/50 hover:bg-white/20 hover:shadow-lg xs:max-w-xs xs:rounded-xl xs:px-6 xs:py-3 xs:text-sm sm:w-auto sm:px-8 sm:py-4 sm:text-base"
+              >
+                Important Dates
+              </Link>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   )
 }
 
 export default HeroCarousel
-

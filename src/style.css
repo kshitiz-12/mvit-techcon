@@ -27,6 +27,18 @@
   .animate-fade-in {
     animation: fade-in 0.6s ease-out;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scene-shape,
+    .hero-float,
+    .scene-3d-stage {
+      animation: none !important;
+    }
+
+    .tilt-card {
+      transform: none !important;
+    }
+  }
 }
 
 @layer components {
@@ -55,6 +67,196 @@
   .glass-card {
     @apply rounded-3xl border border-slate-200/80 bg-gradient-to-br from-white to-slate-50/50 p-6 shadow-lg backdrop-blur;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    transform-style: preserve-3d;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease;
+  }
+
+  .glass-card:hover {
+    box-shadow:
+      0 32px 64px -16px rgba(11, 61, 145, 0.18),
+      0 0 0 1px rgba(15, 183, 169, 0.12);
+  }
+
+  .tilt-card {
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  .tilt-card-inner {
+    transform: translateZ(0);
+    transform-style: preserve-3d;
+  }
+
+  .scene-3d-stage {
+    perspective: 1400px;
+    perspective-origin: 50% 40%;
+    transform-style: preserve-3d;
+  }
+
+  .scene-shape {
+    position: absolute;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+
+  .scene-ring {
+    border-radius: 50%;
+    border: 1px solid rgba(15, 183, 169, 0.35);
+    box-shadow:
+      inset 0 0 40px rgba(11, 61, 145, 0.08),
+      0 0 60px rgba(15, 183, 169, 0.12);
+  }
+
+  .scene-ring-a {
+    width: 280px;
+    height: 280px;
+    left: -4%;
+    top: 18%;
+    animation: orbit-ring-a 42s linear infinite;
+  }
+
+  .scene-ring-b {
+    width: 200px;
+    height: 200px;
+    right: 6%;
+    bottom: 12%;
+    border-color: rgba(11, 61, 145, 0.28);
+    animation: orbit-ring-b 36s linear infinite reverse;
+  }
+
+  .scene-cube {
+    width: 72px;
+    height: 72px;
+    border: 1px solid rgba(11, 61, 145, 0.2);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(15, 183, 169, 0.08));
+    box-shadow: 0 20px 50px rgba(11, 61, 145, 0.12);
+  }
+
+  .scene-cube-a {
+    right: 14%;
+    top: 22%;
+    animation: float-cube-a 18s ease-in-out infinite;
+  }
+
+  .scene-cube-b {
+    left: 10%;
+    bottom: 20%;
+    width: 52px;
+    height: 52px;
+    animation: float-cube-b 22s ease-in-out infinite;
+  }
+
+  .scene-hex {
+    width: 90px;
+    height: 90px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background: linear-gradient(160deg, rgba(11, 61, 145, 0.12), rgba(15, 183, 169, 0.18));
+    border: 1px solid rgba(15, 183, 169, 0.25);
+    left: 48%;
+    top: 8%;
+    animation: float-hex 26s ease-in-out infinite;
+  }
+
+  .scene-hero .scene-ring {
+    border-color: rgba(255, 255, 255, 0.28);
+    box-shadow:
+      inset 0 0 30px rgba(255, 255, 255, 0.06),
+      0 0 50px rgba(15, 183, 169, 0.2);
+  }
+
+  .scene-hero .scene-cube {
+    border-color: rgba(255, 255, 255, 0.22);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(15, 183, 169, 0.15));
+  }
+
+  .scene-hero .scene-hex {
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.1), rgba(15, 183, 169, 0.2));
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .scene-grid-plane {
+    left: 50%;
+    bottom: -30%;
+    width: 140%;
+    height: 55%;
+    transform: translateX(-50%) rotateX(72deg);
+    background-image:
+      linear-gradient(90deg, rgba(11, 61, 145, 0.07) 1px, transparent 1px),
+      linear-gradient(0deg, rgba(11, 61, 145, 0.07) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: linear-gradient(to top, black, transparent 75%);
+    animation: drift-grid 30s linear infinite;
+  }
+
+  @keyframes orbit-ring-a {
+    from {
+      transform: rotateX(68deg) rotateZ(0deg);
+    }
+    to {
+      transform: rotateX(68deg) rotateZ(360deg);
+    }
+  }
+
+  @keyframes orbit-ring-b {
+    from {
+      transform: rotateX(58deg) rotateY(18deg) rotateZ(0deg);
+    }
+    to {
+      transform: rotateX(58deg) rotateY(18deg) rotateZ(-360deg);
+    }
+  }
+
+  @keyframes float-cube-a {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0) rotateX(18deg) rotateY(24deg);
+    }
+    50% {
+      transform: translate3d(0, -18px, 30px) rotateX(28deg) rotateY(44deg);
+    }
+  }
+
+  @keyframes float-cube-b {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0) rotateX(-12deg) rotateY(-30deg);
+    }
+    50% {
+      transform: translate3d(12px, -14px, 20px) rotateX(8deg) rotateY(-10deg);
+    }
+  }
+
+  @keyframes float-hex {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0) rotateZ(0deg);
+    }
+    50% {
+      transform: translate3d(-10px, 16px, 24px) rotateZ(18deg);
+    }
+  }
+
+  @keyframes drift-grid {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 48px 48px;
+    }
+  }
+
+  @keyframes hero-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  .hero-float {
+    animation: hero-float 6s ease-in-out infinite;
   }
 
   .eyebrow {

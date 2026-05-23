@@ -1,5 +1,4 @@
 import MotionSection from '../components/MotionSection'
-
 const feeRows = [
   { category: 'Industry', indianIeee: '₹6,400', indianNonIeee: '₹8,000', foreignIeee: '$128', foreignNonIeee: '$160' },
   { category: 'Academician', indianIeee: '₹6,000', indianNonIeee: '₹7,500', foreignIeee: '$120', foreignNonIeee: '$150' },

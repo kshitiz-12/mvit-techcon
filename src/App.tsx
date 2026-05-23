@@ -2,9 +2,12 @@ import { useEffect, useState, lazy, Suspense } from 'react'
 import { BrowserRouter, NavLink, Link, Route, Routes, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import SEOHead from './components/SEOHead'
+import { CONFERENCE_FULL_NAME, CONFERENCE_SHORT } from './constants/conference'
 import SkipLink from './components/SkipLink'
 import BackToTop from './components/BackToTop'
 import Breadcrumbs from './components/Breadcrumbs'
+import Scene3D from './components/Scene3D'
+import { useReducedMotion } from './hooks/useReducedMotion'
 
 // Lazy load pages for better performance
 const Home = lazy(() => import('./pages/Home'))
@@ -54,6 +57,7 @@ const AppContent = () => {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const location = useLocation()
+  const reducedMotion = useReducedMotion()
 
   useEffect(() => {
     setMobileOpen(false)
@@ -295,34 +299,54 @@ const AppContent = () => {
         </nav>
       </header>
 
-      <main id="main-content" className={`${location.pathname === '/' ? 'relative -mt-0' : 'mx-auto max-w-6xl px-6 py-12 md:py-16'}`}>
+      <main
+        id="main-content"
+        className={`relative ${location.pathname === '/' ? '-mt-0' : 'mx-auto max-w-6xl px-6 py-12 md:py-16'}`}
+      >
+        {location.pathname !== '/' && (
+          <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+            <Scene3D variant="page" />
+          </div>
+        )}
         <ScrollToTop />
         {location.pathname !== '/' && (
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="relative z-10 mx-auto max-w-6xl px-6">
             <Breadcrumbs />
           </div>
         )}
-        <Suspense fallback={<PageLoader />}>
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Home />} />
-            <Route path="/about-conference" element={<AboutConference />} />
-            <Route path="/paper-submission" element={<PaperSubmission />} />
-            <Route path="/registration" element={<RegistrationFees />} />
-            <Route path="/important-dates" element={<ImportantDates />} />
-            <Route path="/key-committees" element={<KeyCommittees />} />
-            <Route path="/key-speakers" element={<KeySpeakers />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </Suspense>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={location.pathname}
+            initial={reducedMotion ? false : { opacity: 0, y: 28, rotateX: 7, scale: 0.985 }}
+            animate={reducedMotion ? undefined : { opacity: 1, y: 0, rotateX: 0, scale: 1 }}
+            exit={reducedMotion ? undefined : { opacity: 0, y: -16, rotateX: -4, scale: 0.99 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            style={{ transformPerspective: 1400, transformStyle: 'preserve-3d' }}
+            className={location.pathname === '/' ? 'w-full' : 'relative z-10 w-full'}
+          >
+            <Suspense fallback={<PageLoader />}>
+              <Routes location={location}>
+                <Route path="/" element={<Home />} />
+                <Route path="/about-conference" element={<AboutConference />} />
+                <Route path="/paper-submission" element={<PaperSubmission />} />
+                <Route path="/registration" element={<RegistrationFees />} />
+                <Route path="/important-dates" element={<ImportantDates />} />
+                <Route path="/key-committees" element={<KeyCommittees />} />
+                <Route path="/key-speakers" element={<KeySpeakers />} />
+                <Route path="/contact" element={<Contact />} />
+              </Routes>
+            </Suspense>
+          </motion.div>
+        </AnimatePresence>
       </main>
 
       <footer className="border-t border-smvit-primary/20 bg-gradient-to-r from-smvit-primary via-smvit-primaryDark to-smvit-primary py-12 text-white min-h-[400px]">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-8 md:grid-cols-3">
             <div>
-              <h3 className="mb-4 font-display text-lg font-semibold text-white">FESCIS 2026</h3>
+              <h3 className="mb-4 font-display text-lg font-semibold text-white">{CONFERENCE_SHORT}</h3>
               <p className="text-sm leading-relaxed text-white/90">
-                International Conference on Future Electronics, Sustainable Computing & Intelligent Systems
+                {CONFERENCE_FULL_NAME}
               </p>
               <p className="mt-2 text-sm text-white/80">
                 17th & 18th December 2026 · Sir M. Visvesvaraya Institute of Technology, Bengaluru

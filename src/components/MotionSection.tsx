@@ -1,45 +1,40 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 import type { PropsWithChildren } from 'react'
+import { useReducedMotion } from '../hooks/useReducedMotion'
 
 type MotionSectionProps = PropsWithChildren<{
   className?: string
   id?: string
+  delay?: number
 }>
 
-const MotionSection = ({ children, className = '', id }: MotionSectionProps) => {
+const MotionSection = ({ children, className = '', id, delay = 0 }: MotionSectionProps) => {
   const ref = useRef<HTMLElement | null>(null)
-  const [visible, setVisible] = useState(false)
+  const inView = useInView(ref, { once: true, amount: 0.12 })
+  const reduced = useReducedMotion()
 
-  useEffect(() => {
-    const target = ref.current
-    if (!target) return
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true)
-          observer.unobserve(entry.target)
-        }
-      },
-      { threshold: 0.15 },
+  if (reduced) {
+    return (
+      <section id={id} ref={ref} className={className}>
+        {children}
+      </section>
     )
-
-    observer.observe(target)
-    return () => observer.disconnect()
-  }, [])
+  }
 
   return (
-    <section
+    <motion.section
       id={id}
       ref={ref}
-      className={`transform transition-all duration-700 ease-out ${
-        visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-      } ${className}`}
+      className={className}
+      initial={{ opacity: 0, y: 48, rotateX: 10 }}
+      animate={inView ? { opacity: 1, y: 0, rotateX: 0 } : { opacity: 0, y: 48, rotateX: 10 }}
+      transition={{ duration: 0.75, delay, ease: [0.22, 1, 0.36, 1] }}
+      style={{ transformPerspective: 1400, transformStyle: 'preserve-3d' }}
     >
       {children}
-    </section>
+    </motion.section>
   )
 }
 
 export default MotionSection
-

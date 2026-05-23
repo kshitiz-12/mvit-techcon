@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import MotionSection from './MotionSection'
-
 interface FAQItem {
   question: string
   answer: string

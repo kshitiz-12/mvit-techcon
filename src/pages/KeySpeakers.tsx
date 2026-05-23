@@ -1,5 +1,4 @@
 import MotionSection from '../components/MotionSection'
-
 const KeySpeakers = () => {
   return (
     <div className="space-y-6 xs:space-y-8 sm:space-y-10 md:space-y-12">

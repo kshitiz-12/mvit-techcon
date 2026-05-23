@@ -2,6 +2,8 @@ import { lazy, Suspense } from 'react'
 import MotionSection from '../components/MotionSection'
 import HeroCarousel from '../components/HeroCarousel'
 import AnimatedCounter from '../components/AnimatedCounter'
+import Scene3D from '../components/Scene3D'
+import TiltCard from '../components/TiltCard'
 
 const FaqSection = lazy(() => import('../components/FAQ'))
 
@@ -42,8 +44,11 @@ const Home = () => {
         <HeroCarousel />
       </section>
       <div className="relative">
-      
-      <div className="relative mx-auto max-w-6xl px-3 py-6 xs:px-4 xs:py-8 sm:px-6 sm:py-12 md:py-16">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <Scene3D variant="page" />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-6xl px-3 py-6 xs:px-4 xs:py-8 sm:px-6 sm:py-12 md:py-16">
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-white via-slate-50/50 to-white" />
         <div className="absolute inset-0 -z-10 opacity-30 bg-grid-overlay bg-[size:120px_120px]" />
         <div className="absolute left-0 top-0 -z-10 h-96 w-96 rounded-full bg-smvit-primary/5 blur-3xl"></div>
@@ -51,18 +56,23 @@ const Home = () => {
 
       <MotionSection className="mt-4 grid gap-3 xs:mt-6 xs:gap-4 sm:mt-6 sm:gap-6 md:mt-8 md:grid-cols-2 lg:grid-cols-5">
         {stats.map((item) => (
-          <div
+          <TiltCard
             key={item.label}
-            className="group relative overflow-hidden rounded-lg border border-slate-200/80 bg-gradient-to-br from-white to-slate-50/50 p-3 transition-all duration-300 active:scale-95 xs:rounded-xl xs:p-4 sm:rounded-2xl sm:p-6 sm:hover:scale-105 sm:hover:border-smvit-primary/30 sm:hover:shadow-glow"
-            style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)' }}
+            maxTilt={9}
+            className="h-full"
           >
-            <div className="absolute right-0 top-0 h-32 w-32 -translate-y-1/2 translate-x-1/2 rounded-full bg-smvit-accent/10 blur-3xl"></div>
-            <p className="relative text-[9px] font-semibold uppercase tracking-[0.2em] text-smvit-accent xs:text-[10px] xs:tracking-[0.25em] sm:text-xs sm:tracking-[0.35em]">{item.label}</p>
-            <p className="relative mt-2 font-display text-2xl font-bold text-smvit-primary xs:mt-3 xs:text-3xl sm:mt-4 sm:text-4xl md:text-5xl">
-              <AnimatedCounter value={item.value} duration={2000} />
-            </p>
-            <p className="relative mt-1.5 text-[10px] leading-relaxed text-slate-600 xs:mt-2 xs:text-xs sm:mt-3 sm:text-sm">{item.detail}</p>
-          </div>
+            <div
+              className="group relative h-full overflow-hidden rounded-lg border border-slate-200/80 bg-gradient-to-br from-white to-slate-50/50 p-3 transition-shadow duration-300 xs:rounded-xl xs:p-4 sm:rounded-2xl sm:p-6 sm:hover:border-smvit-primary/30 sm:hover:shadow-glow"
+              style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)' }}
+            >
+              <div className="absolute right-0 top-0 h-32 w-32 -translate-y-1/2 translate-x-1/2 rounded-full bg-smvit-accent/10 blur-3xl"></div>
+              <p className="relative text-[9px] font-semibold uppercase tracking-[0.2em] text-smvit-accent xs:text-[10px] xs:tracking-[0.25em] sm:text-xs sm:tracking-[0.35em]">{item.label}</p>
+              <p className="relative mt-2 font-display text-2xl font-bold text-smvit-primary xs:mt-3 xs:text-3xl sm:mt-4 sm:text-4xl md:text-5xl">
+                <AnimatedCounter value={item.value} duration={2000} />
+              </p>
+              <p className="relative mt-1.5 text-[10px] leading-relaxed text-slate-600 xs:mt-2 xs:text-xs sm:mt-3 sm:text-sm">{item.detail}</p>
+            </div>
+          </TiltCard>
         ))}
       </MotionSection>
 

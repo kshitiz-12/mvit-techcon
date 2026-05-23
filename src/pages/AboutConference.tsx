@@ -1,10 +1,11 @@
 import MotionSection from '../components/MotionSection'
+import { CONFERENCE_FULL_NAME, CONFERENCE_SHORT } from '../constants/conference'
 
 const highlights = [
   {
     title: 'Multi-Disciplinary Research',
     detail:
-      'FESCIS 2026 focuses on exploring, enhancing and empowering multi-disciplinary and multi-institutional research based on Future Electronics, Sustainable Computing & Intelligent Systems.',
+      `${CONFERENCE_SHORT} focuses on exploring, enhancing and empowering multi-disciplinary and multi-institutional research based on Future Electronics, Sustainable Computing & Intelligent Systems.`,
   },
   {
     title: 'IEEE-aligned Review Process',
@@ -32,9 +33,9 @@ const tracks = [
 
 const legacyStats = [
   {
-    title: 'About FESCIS 2026',
+    title: `About ${CONFERENCE_SHORT}`,
     detail:
-      'International Conference on Future Electronics, Sustainable Computing & Intelligent Systems (FESCIS) 2026 serves as a premier platform for researchers, scientists, academicians, and industry experts to share opinions, new ideas, frameworks, and innovative technologies.',
+      `${CONFERENCE_FULL_NAME} serves as a premier platform for researchers, scientists, academicians, and industry experts to share opinions, new ideas, frameworks, and innovative technologies.`,
   },
   {
     title: 'IEEE Student Branch',
@@ -50,10 +51,10 @@ const AboutConference = () => {
         <p className="eyebrow text-[10px] xs:text-xs">About FESCIS</p>
         <h1 className="mt-3 font-display text-2xl text-slate-900 xs:mt-4 xs:text-3xl sm:text-4xl">Designing resilient, human-centered technology futures.</h1>
         <p className="mt-4 text-sm text-slate-600 xs:mt-5 xs:text-base sm:text-lg">
-          The primary goal of FESCIS 2026 is to promote research and developmental activities across Future Electronics, Sustainable Computing, and Intelligent Systems. The conference aims to address critical problems in engineering sciences and healthcare, making a revolutionary contribution to social welfare through science and technology.
+          The primary goal of {CONFERENCE_SHORT} is to promote research and developmental activities across Future Electronics, Sustainable Computing, and Intelligent Systems. The conference aims to address critical problems in engineering sciences and healthcare, making a revolutionary contribution to social welfare through science and technology.
         </p>
         <p className="mt-3 text-sm text-slate-600 xs:mt-4 xs:text-base sm:text-lg">
-        FESCIS 2026 advances the frontiers of intelligent computing in engineering, sciences, healthcare, energy, and environmental domains. The conference focuses on interdisciplinary and emerging thrust areas, promoting cognitive computing for complex problem-solving and multidisciplinary research aligned with national development priorities
+        {CONFERENCE_SHORT} advances the frontiers of intelligent computing in engineering, sciences, healthcare, energy, and environmental domains. The conference focuses on interdisciplinary and emerging thrust areas, promoting cognitive computing for complex problem-solving and multidisciplinary research aligned with national development priorities
         </p>
       </MotionSection>
 

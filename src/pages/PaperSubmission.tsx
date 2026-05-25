@@ -52,7 +52,10 @@ const checkpoints = [
   {
     title: 'Submission portal',
     detail:
-      'All papers must be uploaded via Microsoft CMT at https://cmt3.research.microsoft.com/MVITTECHCON2026. Authors are responsible for ensuring metadata accuracy and conflict declarations.',
+      'All papers must be uploaded via Microsoft CMT. Authors are responsible for ensuring metadata accuracy and conflict declarations.',
+    acknowledgement:
+      'Acknowledgement: The Microsoft CMT service is used to manage the peer-review process for this conference. Microsoft provides this service free of charge and covers all related operational expenses, including Azure cloud infrastructure, software development, and technical support.',
+    portalPlaceholder: 'https://cmt3.research.microsoft.com/MVITTECHCON2026',
   },
   {
     title: 'Review policy',
@@ -108,24 +111,26 @@ const PaperSubmission = () => {
                   <li key={point} className="break-words">{point}</li>
                 ))}
               </ul>
+            ) : 'portalPlaceholder' in item && item.portalPlaceholder ? (
+              <div className="mt-2 space-y-3 xs:mt-3 xs:space-y-4">
+                <p className="text-xs leading-relaxed text-slate-600 xs:text-sm">{item.detail}</p>
+                <div className="rounded-xl border border-dashed border-slate-300 bg-slate-50/90 p-3 xs:rounded-2xl xs:p-4">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-400 xs:text-xs">Submit via Microsoft CMT</p>
+                  <span className="mt-1.5 inline-block rounded-md bg-slate-200/80 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-slate-500">
+                    Coming soon
+                  </span>
+                  <p className="mt-2 break-all font-mono text-xs text-slate-400 xs:text-sm">
+                    {item.portalPlaceholder}
+                  </p>
+                  <p className="mt-1.5 text-[10px] text-slate-400 xs:text-xs">Submission portal link will be updated here.</p>
+                </div>
+                <p className="rounded-xl border border-slate-200 bg-slate-50/80 p-3 text-xs italic leading-relaxed text-slate-600 xs:rounded-2xl xs:p-4 xs:text-sm">
+                  {item.acknowledgement}
+                </p>
+              </div>
             ) : (
               <p className="mt-2 text-xs leading-relaxed text-slate-600 break-words xs:mt-3 xs:text-sm">
-                {item.title === 'Submission portal' ? (
-                  <>
-                    All papers must be uploaded via Microsoft CMT at{' '}
-                    <a 
-                      href="https://cmt3.research.microsoft.com/MVITTECHCON2026" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-smvit-primary underline break-all hover:text-smvit-primaryDark"
-                    >
-                      https://cmt3.research.microsoft.com/MVITTECHCON2026
-                    </a>
-                    . Authors are responsible for ensuring metadata accuracy and conflict declarations.
-                  </>
-                ) : (
-                  item.detail
-                )}
+                {item.detail}
               </p>
             )}
           </div>

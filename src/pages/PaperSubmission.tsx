@@ -67,7 +67,6 @@ const checkpoints = [
       'Papers are evaluated on originality, technical depth, clarity, significance, and relevance to the conference scope.',
       'The author list at the time of submission is final. No reordering, addition or removal of authors is allowed after submission.',
       'Papers violating formatting, page limits, or anonymization rules will be rejected without review.',
-      'A paper may be moved to WIP/Poster category if it does not meet depth requirements; authors will have 1 week to submit a shorter version.',
     ],
   },
   {
@@ -124,7 +123,7 @@ const PaperSubmission = () => {
                   </p>
                   <p className="mt-1.5 text-[10px] text-slate-400 xs:text-xs">Submission portal link will be updated here.</p>
                 </div>
-                <p className="rounded-xl border border-slate-200 bg-slate-50/80 p-3 text-xs italic leading-relaxed text-slate-600 xs:rounded-2xl xs:p-4 xs:text-sm">
+                <p className="text-xs leading-relaxed text-slate-600 xs:text-sm">
                   {item.acknowledgement}
                 </p>
               </div>

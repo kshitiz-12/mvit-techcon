@@ -1,7 +1,6 @@
 import MotionSection from '../components/MotionSection'
 import CountdownTimer from '../components/CountdownTimer'
 const milestones = [
-  { phase: 'Conference Date', date: '17th & 18th December 2026', status: 'Event', detail: 'FESCIS 2026 will be held at Sir M. Visvesvaraya Institute of Technology, Bengaluru.' },
   { phase: 'Full Paper Submission Date', date: '15th August 2026', status: 'Upcoming', detail: 'All papers must be submitted via the submission portal before the deadline.' },
   { phase: 'Notification of Acceptance', date: '15th October 2026', status: 'Upcoming', detail: 'Authors will be notified of paper acceptance decisions.' },
   { phase: 'Final Paper Submission Date', date: '22nd October 2026', status: 'Upcoming', detail: 'Final camera-ready papers must be uploaded before the deadline.' },
@@ -16,25 +15,37 @@ const reminders = [
 const ImportantDates = () => {
   return (
     <div className="space-y-6 xs:space-y-8 sm:space-y-10 md:space-y-12">
-      <MotionSection className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-[0_25px_80px_rgba(15,61,145,0.08)] xs:rounded-3xl xs:p-6 sm:rounded-[32px] sm:p-8 md:p-10">
-        <p className="eyebrow text-[10px] xs:text-xs">Important Dates</p>
-        <h1 className="mt-3 font-display text-2xl text-slate-900 xs:mt-4 xs:text-3xl sm:text-4xl">Stay aligned with the FESCIS cadence.</h1>
-        <p className="mt-4 text-sm text-slate-600 xs:mt-5 xs:text-base sm:text-lg">
-          The Technical Program Committee operates on a transparent, high-touch schedule so that authors, reviewers, and partners can
-          plan travel, visa, and production timelines in advance.
-        </p>
-      </MotionSection>
-
-      <MotionSection className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-[0_25px_80px_rgba(15,61,145,0.08)] xs:rounded-3xl xs:p-6 sm:rounded-[32px] sm:p-8 md:p-10">
+      <MotionSection className="rounded-2xl border border-smvit-primary/15 bg-gradient-to-br from-smvit-primary/8 via-white to-smvit-accent/8 p-4 shadow-[0_25px_80px_rgba(15,61,145,0.08)] xs:rounded-3xl xs:p-6 sm:rounded-[32px] sm:p-8 md:p-10">
         <CountdownTimer variant="page" />
       </MotionSection>
 
       <section className="grid gap-4 xs:gap-5 sm:gap-6 md:grid-cols-2">
-        {milestones.map((item) => (
-          <div key={item.phase} className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-5 sm:p-6">
+        {milestones.map((item, index) => (
+          <div
+            key={item.phase}
+            className={`rounded-2xl border p-4 xs:rounded-3xl xs:p-5 sm:p-6 ${
+              index % 2 === 0
+                ? 'border-smvit-primary/20 bg-gradient-to-br from-smvit-primary/10 to-white'
+                : 'border-smvit-accent/25 bg-gradient-to-br from-smvit-accent/10 to-white'
+            }`}
+          >
             <div className="flex flex-col gap-2 xs:flex-row xs:items-center xs:justify-between">
-              <p className="text-[10px] uppercase tracking-[0.25em] text-smvit-accent xs:text-xs xs:tracking-[0.35em]">{item.status}</p>
-              <span className="rounded-full border border-slate-200 px-2 py-1 text-[10px] text-slate-500 xs:px-3 xs:text-xs">{item.date}</span>
+              <p
+                className={`text-[10px] uppercase tracking-[0.25em] xs:text-xs xs:tracking-[0.35em] ${
+                  index % 2 === 0 ? 'text-smvit-primary' : 'text-smvit-accent'
+                }`}
+              >
+                {item.status}
+              </p>
+              <span
+                className={`rounded-full border px-2 py-1 text-[10px] xs:px-3 xs:text-xs ${
+                  index % 2 === 0
+                    ? 'border-smvit-primary/25 bg-smvit-primary/5 text-smvit-primaryDark'
+                    : 'border-smvit-accent/30 bg-smvit-accent/10 text-smvit-primaryDark'
+                }`}
+              >
+                {item.date}
+              </span>
             </div>
             <h3 className="mt-2 text-lg font-semibold text-slate-900 xs:mt-3 xs:text-xl">{item.phase}</h3>
             <p className="mt-1.5 text-xs text-slate-600 xs:mt-2 xs:text-sm">{item.detail}</p>

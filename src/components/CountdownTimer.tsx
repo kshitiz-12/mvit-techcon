@@ -57,7 +57,7 @@ const CountdownTimer = ({ variant = 'hero' }: CountdownTimerProps) => {
 
   const unitClass = isHero
     ? 'flex min-w-[4.5rem] flex-col items-center rounded-xl border border-white/35 bg-white/15 px-3 py-2.5 backdrop-blur-md shadow-[0_8px_24px_rgba(0,0,0,0.25)] xs:min-w-[5rem] xs:px-4 xs:py-3 sm:min-w-[5.5rem] sm:rounded-2xl sm:px-5 sm:py-4'
-    : 'flex min-w-[4.5rem] flex-col items-center rounded-xl border border-slate-200/80 bg-white px-3 py-2.5 shadow-premium xs:min-w-[5rem] xs:px-4 xs:py-3 sm:rounded-2xl sm:px-5 sm:py-4'
+    : 'flex min-w-[4.5rem] flex-col items-center rounded-xl border border-smvit-primary/20 bg-gradient-to-b from-smvit-primary/10 to-white px-3 py-2.5 shadow-premium xs:min-w-[5rem] xs:px-4 xs:py-3 sm:rounded-2xl sm:px-5 sm:py-4'
 
   const valueClass = isHero
     ? 'font-display text-2xl font-bold tabular-nums text-white xs:text-3xl sm:text-4xl'
@@ -83,7 +83,7 @@ const CountdownTimer = ({ variant = 'hero' }: CountdownTimerProps) => {
         {hasStarted ? 'The conference is underway' : 'Event begins in'}
       </p>
       <p className={subClass}>
-        {CONFERENCE_DATES} · {CONFERENCE_VENUE}
+        {isHero ? `${CONFERENCE_DATES} · ${CONFERENCE_VENUE}` : CONFERENCE_VENUE}
       </p>
 
       {!hasStarted && (

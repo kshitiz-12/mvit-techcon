@@ -54,7 +54,7 @@ const checkpoints = [
     detail:
       'All papers must be uploaded via Microsoft CMT. Authors are responsible for ensuring metadata accuracy and conflict declarations.',
     acknowledgement:
-      'Acknowledgement: The Microsoft CMT service is used to manage the peer-review process for this conference. Microsoft provides this service free of charge and covers all related operational expenses, including Azure cloud infrastructure, software development, and technical support.',
+      'The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.',
     portalPlaceholder: 'https://cmt3.research.microsoft.com/MVITTECHCON2026',
   },
   {

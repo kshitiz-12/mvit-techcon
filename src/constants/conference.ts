@@ -1,5 +1,8 @@
-export const CONFERENCE_FULL_NAME =
-  '2026 International Conference on Future Electronics, Sustainable Computing & Intelligent Systems'
+export const CONFERENCE_IEEE_ID = '#72647'
+
+export const CONFERENCE_TOPIC = 'Future Electronics, Sustainable Computing & Intelligent Systems'
+
+export const CONFERENCE_FULL_NAME = `2026 International Conference on ${CONFERENCE_TOPIC} ${CONFERENCE_IEEE_ID}`
 
 export const CONFERENCE_SHORT = 'FESCIS 2026'
 

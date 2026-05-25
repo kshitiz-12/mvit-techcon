@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import CountdownTimer from './CountdownTimer'
+import { CONFERENCE_IEEE_ID, CONFERENCE_TOPIC } from '../constants/conference'
 import { useReducedMotion } from '../hooks/useReducedMotion'
 
 const carouselImages = [
@@ -291,7 +292,9 @@ const HeroCarousel = () => {
           <div className="mt-3 text-xs font-medium leading-relaxed text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] [text-shadow:_0_1px_4px_rgba(0,0,0,0.8),_0_2px_8px_rgba(0,0,0,0.6)] xs:mt-4 xs:text-sm sm:mt-6 sm:text-base md:text-lg lg:text-xl xl:text-2xl">
             <p className="text-center">2026 International Conference</p>
             <p className="text-center">On</p>
-            <p className="text-center px-2">Future Electronics, Sustainable Computing & Intelligent Systems</p>
+            <p className="text-center px-2">
+              {CONFERENCE_TOPIC} {CONFERENCE_IEEE_ID}
+            </p>
           </div>
           <div className="mt-3 flex flex-col items-center gap-2 xs:mt-4 sm:mt-6 sm:gap-3">
             <div className="inline-flex items-center gap-1.5 rounded-lg border-2 border-white/40 bg-gradient-to-r from-smvit-primary/90 via-smvit-primaryDark/90 to-smvit-primary/90 px-3 py-1.5 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.4)] xs:gap-2 xs:rounded-xl xs:px-4 xs:py-2 sm:gap-3 sm:rounded-2xl sm:px-6 sm:py-3">

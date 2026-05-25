@@ -1,9 +1,32 @@
 import MotionSection from '../components/MotionSection'
 
-const contacts = [
-  { role: 'Conference Helpdesk', name: 'FESCIS Organizing Team', designation: 'Sir M. Visvesvaraya Institute of Technology, Bengaluru', email: 'fescis-ieee@sirmvit.edu', phone: '+91 XXX-XXX-XXXX' },
-  { role: 'Sponsorship & Demos', name: 'Dr. E. Kavitha', designation: 'Publicity Chair, Professor and Head, Dept. of ETE, Sir MVIT', email: 'sponsor@sirsmvit.edu', phone: '+91 XXX-XXX-XXXX' },
-  { role: 'Registration Desk', name: 'Dr. Jagadeesh H. S.', designation: 'Registration Chair, Professor Dept. of ECE, Sir MVIT', email: 'register@sirsmvit.edu', phone: '+91 XXX-XXX-XXXX' },
+type ContactEntry = {
+  role: string
+  name: string
+  designation: string
+  email?: string
+  phone?: string
+}
+
+const contacts: ContactEntry[] = [
+  {
+    role: 'Conference Helpdesk',
+    name: 'FESCIS Organizing Team',
+    designation: 'Sir M. Visvesvaraya Institute of Technology, Bengaluru',
+    email: 'fescis-ieee@sirmvit.edu',
+  },
+  {
+    role: 'Organizing Co-Chair',
+    name: 'Dr. Seema S.',
+    designation: 'Associate Professor, Dept. of ECE, Sir MVIT',
+    phone: '9986973260',
+  },
+  {
+    role: 'TPC Chair',
+    name: 'Dr. Sheetal Belaldavar',
+    designation: 'Associate Professor, Dept. of ECE, Sir MVIT',
+    phone: '9986853709',
+  },
 ]
 
 const Contact = () => {
@@ -84,10 +107,16 @@ const Contact = () => {
                 <p className="text-[10px] uppercase tracking-[0.2em] text-smvit-accent xs:text-xs xs:tracking-[0.3em]">{contact.role}</p>
                 <p className="mt-1.5 text-base font-semibold text-smvit-slate xs:mt-2 xs:text-lg">{contact.name}</p>
                 <p className="mt-1 text-xs text-slate-600 xs:text-sm">{contact.designation}</p>
-                <a href={`mailto:${contact.email}`} className="mt-1.5 block text-xs text-smvit-primary underline decoration-dotted xs:mt-2 xs:text-sm">
-                  {contact.email}
-                </a>
-                <p className="mt-1 text-xs text-slate-600 xs:text-sm">{contact.phone}</p>
+                {contact.email && (
+                  <a href={`mailto:${contact.email}`} className="mt-1.5 block text-xs text-smvit-primary underline decoration-dotted xs:mt-2 xs:text-sm">
+                    {contact.email}
+                  </a>
+                )}
+                {contact.phone && (
+                  <a href={`tel:${contact.phone}`} className="mt-1.5 block text-xs text-slate-600 xs:mt-2 xs:text-sm">
+                    {contact.phone}
+                  </a>
+                )}
               </div>
             ))}
           </div>

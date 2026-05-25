@@ -47,7 +47,7 @@ const checkpoints = [
   {
     title: 'Submission format',
     detail:
-      'Full-length original research or review papers up to six pages following the IEEE double-column conference template. Overlength manuscripts must include justification and may incur additional page charges.',
+      'Full-length papers of minimum 6 pages following the IEEE double-column conference template. Overlength manuscripts must include justification and may incur additional page charges.',
   },
   {
     title: 'Submission portal',
@@ -81,7 +81,7 @@ const PaperSubmission = () => {
         <p className="eyebrow text-[10px] xs:text-xs">Paper Submission</p>
         <h1 className="mt-3 font-display text-2xl text-slate-900 xs:mt-4 xs:text-3xl sm:text-4xl">Submit your work to FESCIS 2026.</h1>
         <p className="mt-4 text-sm text-slate-600 xs:mt-5 xs:text-base sm:text-lg">
-          We invite original research contributions, visionary case studies, and practice-led insights that align with the three
+          We invite original research contributions, visionary case studies, and practice-led insights that align with the ten
           flagship tracks. Interdisciplinary submissions that bridge multiple tracks are prioritized for plenary storytelling.
         </p>
         <div className="mt-4 rounded-xl border border-slate-200 bg-white/70 p-3 text-xs leading-relaxed text-slate-600 xs:mt-5 xs:rounded-2xl xs:p-4 xs:text-sm">

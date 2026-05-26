@@ -53,9 +53,6 @@ const checkpoints = [
     title: 'Submission portal',
     detail:
       'All papers must be uploaded via Microsoft CMT. Authors are responsible for ensuring metadata accuracy and conflict declarations.',
-    acknowledgement:
-      'The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.',
-    portalPlaceholder: 'https://cmt3.research.microsoft.com/MVITTECHCON2026',
   },
   {
     title: 'Review policy',
@@ -75,6 +72,9 @@ const checkpoints = [
       'All accepted, registered and presented papers will be submitted for possible publication in IEEE Xplore® Digital Library, through the IEEE Conference Publications Program (CPP)',
   },
 ]
+
+const cmtAcknowledgement =
+  'The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.'
 
 const PaperSubmission = () => {
   return (
@@ -101,39 +101,35 @@ const PaperSubmission = () => {
       </section>
 
       <section className="grid gap-4 xs:gap-5 sm:gap-6 md:grid-cols-2">
-        {checkpoints.map((item) => (
-          <div key={item.title} className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-5 sm:p-6">
-            <h3 className="text-base font-semibold text-slate-900 leading-tight xs:text-lg">{item.title}</h3>
-            {'points' in item && item.points ? (
-              <ul className="mt-2 list-disc list-inside space-y-1.5 text-xs leading-relaxed text-slate-600 marker:text-smvit-primary xs:mt-3 xs:text-sm">
-                {item.points.map((point) => (
-                  <li key={point} className="break-words">{point}</li>
-                ))}
-              </ul>
-            ) : 'portalPlaceholder' in item && item.portalPlaceholder ? (
-              <div className="mt-2 space-y-3 xs:mt-3 xs:space-y-4">
-                <p className="text-xs leading-relaxed text-slate-600 xs:text-sm">{item.detail}</p>
-                <div className="rounded-xl border border-dashed border-slate-300 bg-slate-50/90 p-3 xs:rounded-2xl xs:p-4">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-400 xs:text-xs">Submit via Microsoft CMT</p>
-                  <span className="mt-1.5 inline-block rounded-md bg-slate-200/80 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-slate-500">
-                    Coming soon
-                  </span>
-                  <p className="mt-2 break-all font-mono text-xs text-slate-400 xs:text-sm">
-                    {item.portalPlaceholder}
-                  </p>
-                  <p className="mt-1.5 text-[10px] text-slate-400 xs:text-xs">Submission portal link will be updated here.</p>
-                </div>
-                <p className="text-xs leading-relaxed text-slate-600 xs:text-sm">
-                  {item.acknowledgement}
-                </p>
+        {checkpoints.map((item) =>
+          item.title === 'Submission portal' ? (
+            <div key={item.title} className="flex flex-col gap-4 xs:gap-5 sm:gap-6">
+              <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-5 sm:p-6">
+                <h3 className="text-base font-semibold text-slate-900 leading-tight xs:text-lg">{item.title}</h3>
+                <p className="mt-2 text-xs leading-relaxed text-slate-600 break-words xs:mt-3 xs:text-sm">{item.detail}</p>
               </div>
-            ) : (
-              <p className="mt-2 text-xs leading-relaxed text-slate-600 break-words xs:mt-3 xs:text-sm">
-                {item.detail}
-              </p>
-            )}
-          </div>
-        ))}
+              <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-5 sm:p-6">
+                <h3 className="text-base font-semibold text-slate-900 leading-tight xs:text-lg">CMT acknowledgement</h3>
+                <p className="mt-2 text-xs leading-relaxed text-slate-600 break-words xs:mt-3 xs:text-sm">{cmtAcknowledgement}</p>
+              </div>
+            </div>
+          ) : (
+            <div key={item.title} className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-5 sm:p-6">
+              <h3 className="text-base font-semibold text-slate-900 leading-tight xs:text-lg">{item.title}</h3>
+              {'points' in item && item.points ? (
+                <ul className="mt-2 list-disc list-inside space-y-1.5 text-xs leading-relaxed text-slate-600 marker:text-smvit-primary xs:mt-3 xs:text-sm">
+                  {item.points.map((point) => (
+                    <li key={point} className="break-words">{point}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="mt-2 text-xs leading-relaxed text-slate-600 break-words xs:mt-3 xs:text-sm">
+                  {item.detail}
+                </p>
+              )}
+            </div>
+          ),
+        )}
       </section>
     </div>
   )

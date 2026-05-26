@@ -1,4 +1,6 @@
+import { useEffect } from 'react'
 import MotionSection from '../components/MotionSection'
+import { CMT_ACKNOWLEDGEMENT_TEXT } from '../constants/cmt'
 
 const tracks = [
   {
@@ -73,10 +75,15 @@ const checkpoints = [
   },
 ]
 
-const cmtAcknowledgement =
-  'The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.'
-
 const PaperSubmission = () => {
+  useEffect(() => {
+    const staticEl = document.getElementById('cmt-acknowledgement-static')
+    if (staticEl) staticEl.style.display = 'none'
+    return () => {
+      if (staticEl) staticEl.style.display = ''
+    }
+  }, [])
+
   return (
     <div className="space-y-6 xs:space-y-8 sm:space-y-10 md:space-y-12">
       <MotionSection className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-[0_25px_80px_rgba(15,61,145,0.08)] xs:rounded-3xl xs:p-6 sm:rounded-[32px] sm:p-8 md:p-10">
@@ -110,7 +117,9 @@ const PaperSubmission = () => {
               </div>
               <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-5 sm:p-6">
                 <h3 className="text-base font-semibold text-slate-900 leading-tight xs:text-lg">CMT acknowledgement</h3>
-                <p className="mt-2 text-xs leading-relaxed text-slate-600 break-words xs:mt-3 xs:text-sm">{cmtAcknowledgement}</p>
+                <p id="cmt-acknowledgement" className="mt-2 text-xs leading-relaxed text-slate-600 break-words xs:mt-3 xs:text-sm">
+                  {CMT_ACKNOWLEDGEMENT_TEXT}
+                </p>
               </div>
             </div>
           ) : (

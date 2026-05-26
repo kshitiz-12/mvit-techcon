@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import MotionSection from '../components/MotionSection'
 import { CMT_ACKNOWLEDGEMENT_TEXT } from '../constants/cmt'
 
@@ -76,14 +75,6 @@ const checkpoints = [
 ]
 
 const PaperSubmission = () => {
-  useEffect(() => {
-    const staticEl = document.getElementById('cmt-acknowledgement-static')
-    if (staticEl) staticEl.style.display = 'none'
-    return () => {
-      if (staticEl) staticEl.style.display = ''
-    }
-  }, [])
-
   return (
     <div className="space-y-6 xs:space-y-8 sm:space-y-10 md:space-y-12">
       <MotionSection className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-[0_25px_80px_rgba(15,61,145,0.08)] xs:rounded-3xl xs:p-6 sm:rounded-[32px] sm:p-8 md:p-10">

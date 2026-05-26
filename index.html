@@ -34,20 +34,16 @@
     
     <!-- Theme Color -->
     <meta name="theme-color" content="#0F3D91" />
+    <!-- Hidden from view; kept in HTML for Microsoft CMT crawler (does not run React). -->
+    <style>
+      #cmt-acknowledgement-static {
+        display: none;
+      }
+    </style>
   </head>
   <body>
-    <!-- Required by Microsoft CMT: plain text must exist in initial HTML (crawlers do not run React). -->
-    <p id="cmt-acknowledgement-static">
-      The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
-    </p>
+    <p id="cmt-acknowledgement-static">The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.</p>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script>
-      (function () {
-        var el = document.getElementById('cmt-acknowledgement-static')
-        if (!el || /\/paper-submission\/?$/.test(window.location.pathname)) return
-        el.style.display = 'none'
-      })()
-    </script>
   </body>
 </html>

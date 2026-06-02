@@ -37,6 +37,11 @@ const stats = [
   { label: 'University Ranks', value: '152+', detail: 'UG & PG Ranks' },
 ]
 
+const generalChairs = [
+  { name: 'Dr. M. N. Thippeswamy', role: 'General Chair', designation: 'Principal, Sir MVIT', image: '/Dr-M-N-Thippeswamy.png' },
+  { name: 'Dr. Bharathi Ganesh', role: 'General Co-Chair', designation: 'Vice Principal, Sir MVIT', image: '/Dr-Bharathi-Ganesh.png' },
+]
+
 const Home = () => {
   return (
     <>
@@ -200,6 +205,45 @@ const Home = () => {
                     {patron.role}
                   </p>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </MotionSection>
+
+      <MotionSection className="mt-8 xs:mt-10 sm:mt-16 md:mt-24">
+        <div className="relative overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-6 shadow-[0_25px_80px_rgba(15,61,145,0.08)] xs:rounded-3xl xs:p-8 sm:rounded-[32px] sm:p-10 md:p-12">
+          <div className="mb-8 text-center xs:mb-10 sm:mb-12">
+            <h2 className="font-display text-xl font-bold text-slate-900 xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl">GENERAL CHAIR(S)</h2>
+            <div className="mx-auto mt-3 h-1 w-20 bg-gradient-to-r from-transparent via-red-600 to-transparent xs:mt-4 xs:w-24"></div>
+          </div>
+
+          <div className="grid gap-5 sm:grid-cols-2 sm:gap-6 md:gap-8">
+            {generalChairs.map((chair) => (
+              <div
+                key={chair.role}
+                className="flex flex-col items-center rounded-2xl border border-slate-200/70 bg-gradient-to-br from-white to-slate-50 p-5 text-center shadow-[0_12px_35px_rgba(15,23,42,0.08)] xs:rounded-3xl xs:p-6 sm:p-8"
+              >
+                <div className="mb-4 h-28 w-28 overflow-hidden rounded-full border-2 border-slate-200 bg-slate-100 shadow-inner xs:h-32 xs:w-32 sm:h-36 sm:w-36">
+                  {'image' in chair && chair.image ? (
+                    <img
+                      src={chair.image}
+                      alt={chair.name}
+                      className="h-full w-full object-cover"
+                      width="144"
+                      height="144"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-3xl font-bold text-slate-400">
+                      BG
+                    </div>
+                  )}
+                </div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-smvit-accent xs:text-xs">{chair.role}</p>
+                <h3 className="mt-2 text-lg font-semibold text-slate-900 xs:text-xl">{chair.name}</h3>
+                <p className="mt-1 text-xs leading-relaxed text-slate-600 xs:text-sm">{chair.designation}</p>
               </div>
             ))}
           </div>

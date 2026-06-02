@@ -48,7 +48,7 @@ const checkpoints = [
   {
     title: 'Submission format',
     detail:
-      'Full-length papers of minimum 6 pages following the IEEE double-column conference template. Overlength manuscripts must include justification and may incur additional page charges.',
+      'Full-length papers of minimum 6 pages following the IEEE double-column conference template. Overlength manuscripts must include justification and each page exceeding the 6 page limit will incur a fee of ₹500 or $10 per page.',
   },
   {
     title: 'Submission portal',
@@ -89,55 +89,70 @@ const PaperSubmission = () => {
         </div>
       </MotionSection>
 
-      <section className="grid gap-4 rounded-2xl border border-slate-200 bg-white/80 p-4 xs:gap-5 xs:rounded-3xl xs:p-5 sm:gap-6 sm:rounded-[32px] sm:p-6 md:grid-cols-2 md:p-10">
+      <section className="space-y-4 rounded-2xl border border-slate-200 bg-white/80 p-4 xs:space-y-5 xs:rounded-3xl xs:p-5 sm:space-y-6 sm:rounded-[32px] sm:p-6 md:columns-2 md:gap-6 md:p-10">
         {tracks.map((track) => (
-          <div key={track.title} className="rounded-2xl border border-slate-200 bg-white/70 p-4 xs:rounded-3xl xs:p-5 sm:p-6">
+          <div key={track.title} className="mb-4 break-inside-avoid rounded-2xl border border-slate-200 bg-white/70 p-4 xs:mb-5 xs:rounded-3xl xs:p-5 sm:mb-6 sm:p-6">
             <h3 className="text-base font-semibold text-slate-900 leading-tight break-words xs:text-lg">{track.title}</h3>
             <p className="mt-2 text-xs leading-relaxed text-slate-600 xs:mt-3 xs:text-sm">{track.description}</p>
           </div>
         ))}
       </section>
 
-      <section className="grid gap-4 xs:gap-5 sm:gap-6 md:grid-cols-2">
-        {checkpoints.map((item) =>
-          item.title === 'Submission portal' ? (
-            <div key={item.title} className="flex flex-col gap-4 xs:gap-5 sm:gap-6">
-              <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-5 sm:p-6">
-                <h3 className="text-base font-semibold text-slate-900 leading-tight xs:text-lg">{item.title}</h3>
-                <p className="mt-2 text-xs leading-relaxed text-slate-600 break-words xs:mt-3 xs:text-sm">{item.detail}</p>
-                <a
-                  href="https://cmt3.research.microsoft.com/FESCIS2026"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex rounded-lg bg-smvit-primary px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-smvit-primaryDark xs:mt-4 xs:text-sm"
-                >
-                  Submit via Microsoft CMT
-                </a>
-              </div>
-              <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-5 sm:p-6">
-                <h3 className="text-base font-semibold text-slate-900 leading-tight xs:text-lg">CMT acknowledgement</h3>
-                <p id="cmt-acknowledgement" className="mt-2 text-xs leading-relaxed text-slate-600 break-words xs:mt-3 xs:text-sm">
-                  {CMT_ACKNOWLEDGEMENT_TEXT}
-                </p>
-              </div>
-            </div>
-          ) : (
-            <div key={item.title} className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-5 sm:p-6">
-              <h3 className="text-base font-semibold text-slate-900 leading-tight xs:text-lg">{item.title}</h3>
-              {'points' in item && item.points ? (
-                <ul className="mt-2 list-disc list-inside space-y-1.5 text-xs leading-relaxed text-slate-600 marker:text-smvit-primary xs:mt-3 xs:text-sm">
-                  {item.points.map((point) => (
-                    <li key={point} className="break-words">{point}</li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="mt-2 text-xs leading-relaxed text-slate-600 break-words xs:mt-3 xs:text-sm">
-                  {item.detail}
-                </p>
-              )}
-            </div>
-          ),
-        )}
+      <section className="grid gap-4 xs:gap-5 sm:gap-6 md:grid-cols-2 md:items-start">
+        <div className="flex flex-col gap-4 xs:gap-5 sm:gap-6">
+          <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-5 sm:p-6">
+            <h3 className="text-base font-semibold text-slate-900 leading-tight xs:text-lg">Submission format</h3>
+            <p className="mt-2 text-xs leading-relaxed text-slate-600 break-words xs:mt-3 xs:text-sm">{checkpoints[0].detail}</p>
+          </div>
+
+          <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-5 sm:p-6">
+            <h3 className="text-base font-semibold text-slate-900 leading-tight xs:text-lg">Submission portal</h3>
+            <p className="mt-2 text-xs leading-relaxed text-slate-600 break-words xs:mt-3 xs:text-sm">
+              All papers must be uploaded via{' '}
+              <a
+                href="https://cmt3.research.microsoft.com/FESCIS2026"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="break-all font-semibold text-smvit-primary underline hover:text-smvit-primaryDark"
+              >
+                https://cmt3.research.microsoft.com/FESCIS2026
+              </a>{' '}
+              portal. Authors are responsible for ensuring metadata accuracy and conflict declarations.
+            </p>
+            <a
+              href="https://cmt3.research.microsoft.com/FESCIS2026"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex rounded-lg bg-smvit-primary px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-smvit-primaryDark xs:mt-4 xs:text-sm"
+            >
+              Submit via Microsoft CMT
+            </a>
+          </div>
+
+          <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-5 sm:p-6">
+            <h3 className="text-base font-semibold text-slate-900 leading-tight xs:text-lg">Publication</h3>
+            <p className="mt-2 text-xs leading-relaxed text-slate-600 break-words xs:mt-3 xs:text-sm">{checkpoints[3].detail}</p>
+          </div>
+
+        </div>
+
+        <div className="flex flex-col gap-4 xs:gap-5 sm:gap-6">
+          <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-5 sm:p-6">
+            <h3 className="text-base font-semibold text-slate-900 leading-tight xs:text-lg">Review policy</h3>
+            <ul className="mt-2 list-disc list-inside space-y-1.5 text-xs leading-relaxed text-slate-600 marker:text-smvit-primary xs:mt-3 xs:text-sm">
+              {checkpoints[2].points?.map((point) => (
+                <li key={point} className="break-words">{point}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-5 sm:p-6">
+            <h3 className="text-base font-semibold text-slate-900 leading-tight xs:text-lg">CMT acknowledgement</h3>
+            <p id="cmt-acknowledgement" className="mt-2 text-xs leading-relaxed text-slate-600 break-words xs:mt-3 xs:text-sm">
+              {CMT_ACKNOWLEDGEMENT_TEXT}
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   )

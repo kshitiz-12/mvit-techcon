@@ -4,7 +4,7 @@ const feeRows = [
   { category: 'Academician', indianIeee: '₹6,000', indianNonIeee: '₹7,500', foreignIeee: '$120', foreignNonIeee: '$150' },
   { category: 'Research Scholars', indianIeee: '₹5,600', indianNonIeee: '₹7,000', foreignIeee: '$116', foreignNonIeee: '$145' },
   { category: 'Students', indianIeee: '₹5,000', indianNonIeee: '₹6,500', foreignIeee: '$104', foreignNonIeee: '$130' },
-  { category: 'Listener', indianIeee: '₹3,000', indianNonIeee: '₹4,000', foreignIeee: '$88', foreignNonIeee: '$110' },
+  { category: 'Attendees', indianIeee: '₹3,000', indianNonIeee: '₹4,000', foreignIeee: '$88', foreignNonIeee: '$110' },
 ]
 
 const inclusions = [

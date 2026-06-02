@@ -278,9 +278,9 @@ const HeroCarousel = () => {
       </div>
 
       {/* Content Overlay */}
-      <div className="absolute inset-0 z-[15] flex items-center px-3 sm:px-4 md:px-6">
+      <div className="pointer-events-none absolute inset-0 z-30 flex items-center px-3 sm:px-4 md:px-6">
         <motion.div
-          className="mx-auto w-full max-w-6xl text-center text-white"
+          className="pointer-events-auto mx-auto w-full max-w-6xl text-center text-white"
           style={{ transformPerspective: 1200, transformStyle: 'preserve-3d' }}
           initial={reduced ? false : { opacity: 0, y: 36, rotateX: 12 }}
           animate={reduced ? undefined : { opacity: 1, y: 0, rotateX: 0 }}

@@ -69,12 +69,12 @@ const AboutConference = () => {
 
       <MotionSection className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-6 sm:rounded-[32px] sm:p-8 md:p-10">
         <div>
-          <p className="eyebrow text-[10px] xs:text-xs">Conference tracks</p>
-          <ul className="mt-3 grid gap-3 space-y-2 text-slate-600 xs:mt-4 xs:space-y-3 sm:grid-cols-2">
+          <h3 className="text-lg font-semibold text-slate-900 xs:text-xl">Conference tracks</h3>
+          <ul className="mt-3 space-y-2 text-xs leading-relaxed text-slate-600 xs:mt-4 xs:space-y-3 xs:text-sm">
             {tracks.map((track) => (
-              <li key={track} className="flex items-start gap-2 rounded-xl border border-slate-200 bg-white/70 px-3 py-2 xs:gap-3 xs:rounded-2xl xs:px-4 xs:py-3">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-smvit-accent xs:h-2 xs:w-2"></span>
-                <span className="text-xs xs:text-sm">{track}</span>
+              <li key={track} className="flex items-start gap-3">
+                <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-smvit-accent"></span>
+                <span>{track}</span>
               </li>
             ))}
           </ul>

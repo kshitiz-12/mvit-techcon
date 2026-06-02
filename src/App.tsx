@@ -103,7 +103,9 @@ const AppContent = () => {
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-display text-base font-bold leading-tight tracking-tight xs:text-lg sm:text-xl lg:text-2xl">Sir MVIT</span>
+              <span className="font-display text-sm font-bold leading-tight tracking-tight xs:text-base sm:text-lg lg:text-xl">
+                Sir M. Visvesvaraya Institute of Technology
+              </span>
             </div>
           </Link>
           {/* Desktop Navigation - Direct children of nav */}

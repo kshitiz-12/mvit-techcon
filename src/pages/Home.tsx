@@ -32,9 +32,9 @@ const chiefPatrons = [
 const stats = [
   { label: 'Years of Excellence', value: '40+', detail: 'Academic heritage since 1986' },
   { label: 'Research Collaborations', value: '120+', detail: 'MoUs with industry & academia' },
-  { label: 'Innovation Studios', value: '8', detail: 'Immersive labs across campus' },
-  { label: 'Global Delegates', value: '25+', detail: 'Across 4 continents (2025 data)' },
-  { label: 'University Ranks', value: '114+', detail: 'Top ranked engineering institute' },
+  { label: 'Innovation Studios', value: '30', detail: 'Immersive labs across campus' },
+  { label: 'Startup Ecosystem', value: '15+', detail: 'In campus' },
+  { label: 'University Ranks', value: '152+', detail: 'UG & PG' },
 ]
 
 const Home = () => {
@@ -86,10 +86,10 @@ const Home = () => {
           <div className="grid gap-4 xs:gap-5 sm:gap-6 sm:gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-center">
             <div>
               <p className="text-xs leading-relaxed text-slate-700 xs:text-sm sm:text-base md:text-lg">
-                Sir M. Visvesvaraya Institute of Technology (SMVIT) was established in 1986 and has been a beacon of excellence in engineering education for over four decades. Located in the vibrant city of Bengaluru, the institute spans across a sprawling green campus and has established itself as a premier institution for technical education.
+                Sir M. Visvesvaraya Institute of Technology (Sir MVIT) was established in 1986 and has been a beacon of excellence in engineering education for over four decades. Located in the vibrant city of Bengaluru, the institute spans across a sprawling green campus and has established itself as a premier institution for technical education.
               </p>
               <p className="mt-3 text-xs leading-relaxed text-slate-700 xs:mt-4 xs:text-sm sm:text-base md:text-lg">
-                The institute offers a comprehensive range of undergraduate, postgraduate, and doctoral programs across various engineering disciplines. With state-of-the-art infrastructure, modern laboratories, and experienced faculty, SMVIT is committed to nurturing innovation, research, and academic excellence. The institute is recognized by AICTE, UGC, and NAAC accredited, ensuring the highest standards of education.
+                The institute offers a comprehensive range of undergraduate, postgraduate, and doctoral programs across various engineering disciplines. With state-of-the-art infrastructure, modern laboratories, and experienced faculty, Sir MVIT is committed to nurturing innovation, research, and academic excellence. The institute is recognized by AICTE, UGC, and NAAC accredited, ensuring the highest standards of education.
               </p>
             </div>
             

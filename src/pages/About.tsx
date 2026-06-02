@@ -29,10 +29,10 @@ const About = () => {
         <p className="eyebrow text-[10px] xs:text-xs">About Sir M. Visvesvaraya Institute of Technology</p>
         <h1 className="mt-3 font-display text-2xl text-smvit-slate xs:mt-4 xs:text-3xl sm:text-4xl">A heritage campus shaping future-ready engineers.</h1>
         <p className="mt-4 text-sm text-slate-600 xs:mt-5 xs:text-base sm:mt-6 sm:text-lg">
-          Established in 1986, Sir M. Visvesvaraya Institute of Technology (SMVIT) stands on the vision of Bharat Ratna Sir M.
+          Established in 1986, Sir M. Visvesvaraya Institute of Technology (Sir MVIT) stands on the vision of Bharat Ratna Sir M.
           Visvesvaraya—engineering excellence devoted to nation building. The institute is affiliated to Visvesvaraya Technological
           University, accredited by NAAC with A grade, and recognized by AICTE. With a 133-acre green campus near Kempegowda
-          International Airport, SMVIT blends heritage with a future-forward research culture.
+          International Airport, Sir MVIT blends heritage with a future-forward research culture.
         </p>
         <p className="mt-3 text-sm text-slate-600 xs:mt-4 xs:text-base sm:text-lg">
           FESCIS carries forward this spirit by convening researchers, practitioners, alumni founders, and
@@ -83,7 +83,7 @@ const About = () => {
             <p className="eyebrow text-[10px] xs:text-xs">Campus commitments</p>
             <h2 className="section-heading text-xl xs:text-2xl sm:text-3xl md:text-4xl">Formal, inclusive, and sustainability-first.</h2>
             <p className="mt-3 text-sm text-slate-600 xs:mt-4 xs:text-base">
-              SMVIT orchestrates IEEE-grade hospitality, accessibility desks, green mobility dashboards, and zero-waste experiences
+              Sir MVIT orchestrates IEEE-grade hospitality, accessibility desks, green mobility dashboards, and zero-waste experiences
               for every delegate. Formal protocol teams coordinate curated visits for dignitaries, start-up founders, and student
               innovators alike.
             </p>

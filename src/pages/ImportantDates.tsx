@@ -4,12 +4,12 @@ const milestones = [
   { phase: 'Full Paper Submission Date', date: '15th August 2026', status: 'Upcoming', detail: 'All papers must be submitted via the submission portal before the deadline.' },
   { phase: 'Notification of Acceptance', date: '15th October 2026', status: 'Upcoming', detail: 'Authors will be notified of paper acceptance decisions.' },
   { phase: 'Final Paper Submission Date', date: '22nd October 2026', status: 'Upcoming', detail: 'Final camera-ready papers must be uploaded before the deadline.' },
+  { phase: 'Final Registration Date', date: '22nd October 2026', status: 'Upcoming', detail: 'Authors and delegates must complete registration before the final deadline.' },
 ]
 
 const reminders = [
   'Workshops, tutorials, and demos follow the same submission timelines unless specified otherwise.',
   'Visa support letters will be issued within five working days after author registration is confirmed.',
-  'For special requests (accessibility, hardware shipments, poster printing) contact logistics@sirsmvit.edu.',
 ]
 
 const ImportantDates = () => {

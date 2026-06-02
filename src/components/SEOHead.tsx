@@ -21,7 +21,7 @@ const pageMetadata: Record<string, SEOHeadProps> = {
     description: conferenceDescription(
       '17th & 18th December 2026 at Sir M. Visvesvaraya Institute of Technology, Bengaluru. IEEE Xplore indexed.',
     ),
-    keywords: 'FESCIS 2026, IEEE conference, Future Electronics, Sustainable Computing, Intelligent Systems, Bengaluru, SMVIT',
+    keywords: 'FESCIS 2026, IEEE conference, Future Electronics, Sustainable Computing, Intelligent Systems, Bengaluru, Sir MVIT',
   },
   '/about-conference': {
     title: conferencePageTitle('About Conference'),

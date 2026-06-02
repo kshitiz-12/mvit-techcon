@@ -11,14 +11,13 @@ const inclusions = [
   'Access to all technical sessions and curated labs',
   'Conference kit, proceedings (digital), and souvenir',
   'Working lunches, refreshment ceremonies, and networking receptions',
-  'Hybrid badge with on-demand recordings for 30 days',
 ]
 
 const registrationNotes = [
   'All fees are inclusive of applicable taxes.',
   'At least one author of an accepted paper must register under the appropriate category.',
   'Registration confirmation along with payment receipt will be emailed within three working days.',
-  'For visa invitation letters, forward the payment proof to register@sirsmvit.edu.',
+  'For visa invitation letters, forward the payment proof to jagadeesh_ece@sirmvit.edu.',
 ]
 
 const RegistrationFees = () => {

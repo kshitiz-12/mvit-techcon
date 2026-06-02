@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { CONFERENCE_DATES, CONFERENCE_START_ISO, CONFERENCE_VENUE } from '../constants/conference'
+import { CONFERENCE_START_ISO, CONFERENCE_VENUE } from '../constants/conference'
 
 interface TimeLeft {
   days: number
@@ -82,9 +82,7 @@ const CountdownTimer = ({ variant = 'hero' }: CountdownTimerProps) => {
       <p className={headingClass}>
         {hasStarted ? 'The conference is underway' : 'Event begins in'}
       </p>
-      <p className={subClass}>
-        {isHero ? `${CONFERENCE_DATES} · ${CONFERENCE_VENUE}` : CONFERENCE_VENUE}
-      </p>
+      {!isHero && <p className={subClass}>{CONFERENCE_VENUE}</p>}
 
       {!hasStarted && (
         <div className="mt-3 flex flex-wrap justify-center gap-2 xs:mt-4 xs:gap-3 sm:gap-4">

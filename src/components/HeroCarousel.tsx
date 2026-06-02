@@ -254,7 +254,7 @@ const HeroCarousel = () => {
       </div>
 
       {/* Carousel Indicators */}
-      <div className="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 gap-2 sm:bottom-6">
+      <div className="pointer-events-none absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-2 sm:bottom-6">
         {carouselImages.map((img, index) => (
             <button
             key={img}
@@ -310,7 +310,7 @@ const HeroCarousel = () => {
             </p>
             <CountdownTimer variant="hero" />
           </div>
-          <div className="mt-4 flex flex-col items-center gap-2.5 xs:mt-5 sm:mt-6 sm:flex-row sm:justify-center sm:gap-4 sm:mt-8">
+          <div className="relative z-50 mt-4 flex flex-col items-center gap-2.5 xs:mt-5 sm:mt-6 sm:flex-row sm:justify-center sm:gap-4 sm:mt-8">
             <motion.div whileHover={reduced ? undefined : { scale: 1.04, translateZ: 8 }} whileTap={reduced ? undefined : { scale: 0.97 }}>
               <Link
                 to="/paper-submission"

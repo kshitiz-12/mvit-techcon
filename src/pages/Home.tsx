@@ -33,8 +33,8 @@ const stats = [
   { label: 'Years of Excellence', value: '40+', detail: 'Academic heritage since 1986' },
   { label: 'Research Collaborations', value: '120+', detail: 'MoUs with industry & academia' },
   { label: 'Innovation Studios', value: '30', detail: 'Immersive labs across campus' },
-  { label: 'Startup Ecosystem', value: '15+', detail: 'In campus' },
-  { label: 'University Ranks', value: '152+', detail: 'UG & PG' },
+  { label: 'Startup Ecosystem', value: '15+', detail: 'In campus Startups' },
+  { label: 'University Ranks', value: '152+', detail: 'UG & PG Ranks' },
 ]
 
 const Home = () => {

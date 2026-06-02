@@ -181,6 +181,17 @@ const AppContent = () => {
                 )}
               </AnimatePresence>
             </div>
+            <div className="hidden shrink-0 items-center rounded-lg border border-white/35 bg-white/95 px-1.5 py-1 shadow-lg backdrop-blur-sm transition-transform duration-300 hover:scale-105 xl:flex">
+              <img
+                src="/40-years-academic-excellence.png"
+                alt="40 years of academic excellence"
+                className="h-10 w-auto object-contain 2xl:h-11"
+                width="72"
+                height="50"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
           </div>
 
           {/* Mobile Hamburger Button */}

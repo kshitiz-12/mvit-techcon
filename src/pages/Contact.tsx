@@ -8,6 +8,14 @@ type ContactEntry = {
   phone?: string
 }
 
+const VENUE_NAME = 'Sir M. Visvesvaraya Institute of Technology'
+const VENUE_ADDRESS =
+  'Krishnadevaraya Nagar, Hunasamaranahalli, International Airport Road, Bengaluru 562157'
+const MAPS_EMBED_URL =
+  'https://maps.google.com/maps?q=Sir+M.+Visvesvaraya+Institute+of+Technology,+Bengaluru+562157&hl=en&z=14&output=embed'
+const MAPS_DIRECTIONS_URL =
+  'https://www.google.com/maps/dir/?api=1&destination=Sir+M.+Visvesvaraya+Institute+of+Technology,+Krishnadevaraya+Nagar,+Hunasamaranahalli,+International+Airport+Road,+Bengaluru,+Karnataka+562157'
+
 const contacts: ContactEntry[] = [
   {
     role: 'Conference Helpdesk',
@@ -185,6 +193,68 @@ const Contact = () => {
             </div>
           </div>
         </div>
+      </MotionSection>
+
+      <MotionSection className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-[0_25px_80px_rgba(15,61,145,0.08)] xs:rounded-3xl xs:p-5 sm:rounded-[32px] sm:p-6 md:p-8">
+        <h2 className="text-xl font-semibold text-smvit-slate xs:text-2xl">Conference venue & directions</h2>
+        <p className="mt-2 text-xs leading-relaxed text-slate-600 xs:mt-3 xs:text-sm sm:text-base">
+          {VENUE_NAME}, {VENUE_ADDRESS}
+        </p>
+        <ul className="mt-4 space-y-2 text-xs leading-relaxed text-slate-600 xs:mt-5 xs:text-sm">
+          <li className="flex items-start gap-2">
+            <svg className="mt-0.5 h-4 w-4 shrink-0 text-smvit-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            Approximately 18 km from Kempegowda International Airport, Bengaluru.
+          </li>
+          <li className="flex items-start gap-2">
+            <svg className="mt-0.5 h-4 w-4 shrink-0 text-smvit-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+            Approximately 20 km from Yelahanka Railway Station.
+          </li>
+          <li className="flex items-start gap-2">
+            <svg className="mt-0.5 h-4 w-4 shrink-0 text-smvit-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+            </svg>
+            BMTC bus services and cab facilities are readily available for convenient commuting.
+          </li>
+        </ul>
+
+        <a
+          href={MAPS_DIRECTIONS_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative mt-4 block overflow-hidden rounded-xl border border-slate-200 xs:mt-5 xs:rounded-2xl"
+          aria-label={`Open directions to ${VENUE_NAME} in Google Maps`}
+        >
+          <iframe
+            title={`Map showing ${VENUE_NAME}`}
+            src={MAPS_EMBED_URL}
+            className="pointer-events-none h-56 w-full border-0 xs:h-64 sm:h-72 md:h-80"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
+          <div className="absolute inset-0 flex items-center justify-center bg-smvit-primary/0 transition-colors group-hover:bg-smvit-primary/10">
+            <span className="rounded-lg bg-white/95 px-4 py-2 text-xs font-semibold text-smvit-primary shadow-md opacity-0 transition-opacity group-hover:opacity-100 xs:text-sm">
+              Click to get directions
+            </span>
+          </div>
+        </a>
+
+        <a
+          href={MAPS_DIRECTIONS_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-smvit-primary underline decoration-dotted hover:text-smvit-primaryDark xs:mt-5 xs:text-sm"
+        >
+          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+          </svg>
+          Get directions on Google Maps
+        </a>
       </MotionSection>
     </div>
   )

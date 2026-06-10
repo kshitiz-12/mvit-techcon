@@ -106,6 +106,32 @@ const PaperSubmission = () => {
           </div>
 
           <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-5 sm:p-6">
+            <h3 className="text-base font-semibold text-slate-900 leading-tight xs:text-lg">Template Download</h3>
+            <div className="mt-2 space-y-2 text-xs leading-relaxed text-slate-600 xs:mt-3 xs:text-sm">
+              <p>
+                Download paper template (Microsoft Word){' '}
+                <a
+                  href="/templates/FESCIS 2026 conference-template.docx"
+                  download="FESCIS 2026 conference-template.docx"
+                  className="font-semibold text-smvit-primary underline hover:text-smvit-primaryDark"
+                >
+                  [Click Here]
+                </a>
+              </p>
+              <p>
+                Download paper template (LaTeX){' '}
+                <a
+                  href="/templates/FESCIS 2026 conference-latex-template.zip"
+                  download="FESCIS 2026 conference-latex-template.zip"
+                  className="font-semibold text-smvit-primary underline hover:text-smvit-primaryDark"
+                >
+                  [Click Here]
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-slate-200 bg-white/80 p-4 xs:rounded-3xl xs:p-5 sm:p-6">
             <h3 className="text-base font-semibold text-slate-900 leading-tight xs:text-lg">Submission portal</h3>
             <p className="mt-2 text-xs leading-relaxed text-slate-600 break-words xs:mt-3 xs:text-sm">
               All papers must be uploaded via{' '}

@@ -100,8 +100,8 @@ const Home = () => {
             
             <div className="relative overflow-hidden rounded-xl aspect-[10/7] xs:rounded-2xl">
               <img
-                src="/Sirmvit-About-Header-img-500x350.jpg"
-                alt="Sir M. Visvesvaraya Institute of Technology Campus showing modern buildings and green spaces"
+                src="/sir-mvit-front-elevation.png"
+                alt="Sir M. Visvesvaraya Institute of Technology main building front elevation"
                 className="h-full w-full object-cover shadow-lg"
                 width="500"
                 height="350"
@@ -124,8 +124,8 @@ const Home = () => {
           <div className="grid gap-4 xs:gap-5 sm:gap-6 md:gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
             <div className="relative overflow-hidden rounded-xl aspect-[5/3] order-2 xs:rounded-2xl md:order-1">
               <img
-                src="/sir-m-visvesvaraya-institute-of-technology-mvit-bengaluru-500x300.jpg"
-                alt="Sir M. Visvesvaraya Institute of Technology campus entrance with architectural buildings"
+                src="/sir-mvit-library.png"
+                alt="Sir M. Visvesvaraya Institute of Technology library building and campus"
                 className="h-full w-full object-cover shadow-lg"
                 width="500"
                 height="300"

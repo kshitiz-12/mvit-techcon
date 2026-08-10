@@ -141,7 +141,7 @@ const HeroCarousel = () => {
   }, []) // Empty dependency array - interval created once
 
   return (
-    <div className="relative h-[85vh] w-full overflow-hidden" style={{ minHeight: '-webkit-fill-available' }}>
+    <div className="relative h-full w-full overflow-hidden">
       {/* Carousel Images */}
       <div className="relative h-full w-full">
         {carouselImages.map((img, index) => {
@@ -254,7 +254,7 @@ const HeroCarousel = () => {
       </div>
 
       {/* Carousel Indicators */}
-      <div className="pointer-events-none absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-2 sm:bottom-6">
+      <div className="pointer-events-none absolute bottom-3 left-1/2 z-10 flex -translate-x-1/2 gap-2 sm:bottom-5">
         {carouselImages.map((img, index) => (
             <button
             key={img}
@@ -278,7 +278,7 @@ const HeroCarousel = () => {
       </div>
 
       {/* Content Overlay */}
-      <div className="pointer-events-none absolute inset-0 z-30 flex items-center px-3 sm:px-4 md:px-6">
+      <div className="pointer-events-none absolute inset-0 z-30 flex items-start justify-center overflow-y-auto px-3 py-16 sm:items-center sm:overflow-hidden sm:px-4 sm:py-0 md:px-6">
         <motion.div
           className="pointer-events-auto mx-auto w-full max-w-6xl text-center text-white"
           style={{ transformPerspective: 1200, transformStyle: 'preserve-3d' }}
@@ -296,7 +296,7 @@ const HeroCarousel = () => {
               {CONFERENCE_TOPIC} {CONFERENCE_IEEE_ID}
             </p>
           </div>
-          <div className="mt-3 flex flex-col items-center gap-2 xs:mt-4 sm:mt-6 sm:gap-3">
+          <div className="mt-2 flex flex-col items-center gap-2 xs:mt-3 sm:mt-6 sm:gap-3">
             <div className="inline-flex items-center gap-1.5 rounded-lg border-2 border-white/40 bg-gradient-to-r from-smvit-primary/90 via-smvit-primaryDark/90 to-smvit-primary/90 px-3 py-1.5 backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.4)] xs:gap-2 xs:rounded-xl xs:px-4 xs:py-2 sm:gap-3 sm:rounded-2xl sm:px-6 sm:py-3">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 shrink-0 text-white xs:h-5 xs:w-5 sm:h-6 sm:w-6 lg:h-7 lg:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -310,7 +310,7 @@ const HeroCarousel = () => {
             </p>
             <CountdownTimer variant="hero" />
           </div>
-          <div className="relative z-50 mt-4 flex flex-col items-center gap-2.5 xs:mt-5 sm:mt-6 sm:flex-row sm:justify-center sm:gap-4 sm:mt-8">
+          <div className="relative z-50 mt-3 flex flex-col items-center gap-2 xs:mt-4 sm:mt-6 sm:flex-row sm:justify-center sm:gap-4 sm:mt-8">
             <motion.div whileHover={reduced ? undefined : { scale: 1.04, translateZ: 8 }} whileTap={reduced ? undefined : { scale: 0.97 }}>
               <Link
                 to="/paper-submission"

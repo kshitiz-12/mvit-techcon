@@ -259,6 +259,45 @@
     animation: hero-float 6s ease-in-out infinite;
   }
 
+  /* Hero + ticker: fill viewport below sticky header */
+  .hero-viewport {
+    height: calc(100svh - 3.75rem);
+    height: calc(100dvh - 3.75rem);
+  }
+
+  @media (min-width: 640px) {
+    .hero-viewport {
+      height: calc(100svh - 4.5rem);
+      height: calc(100dvh - 4.5rem);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-viewport {
+      height: calc(100svh - 5rem);
+      height: calc(100dvh - 5rem);
+    }
+  }
+
+  .text-carousel-track {
+    animation: text-carousel-scroll 40s linear infinite;
+  }
+
+  @keyframes text-carousel-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .text-carousel-track {
+      animation: none;
+    }
+  }
+
   .eyebrow {
     @apply text-xs font-semibold uppercase tracking-[0.4em] text-smvit-accent;
   }

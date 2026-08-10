@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react'
 import MotionSection from '../components/MotionSection'
 import HeroCarousel from '../components/HeroCarousel'
+import TextCarousel from '../components/TextCarousel'
 import AnimatedCounter from '../components/AnimatedCounter'
 import Scene3D from '../components/Scene3D'
 import TiltCard from '../components/TiltCard'
@@ -45,9 +46,13 @@ const generalChairs = [
 const Home = () => {
   return (
     <>
-      <section id="hero" className="relative h-screen w-full overflow-hidden" style={{ minHeight: '-webkit-fill-available' }}>
-        <HeroCarousel />
+      <section id="hero" className="hero-viewport relative flex w-full flex-col overflow-hidden">
+        <div className="relative min-h-0 flex-1 overflow-hidden">
+          <HeroCarousel />
+        </div>
+        <TextCarousel />
       </section>
+
       <div className="relative">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <Scene3D variant="page" />

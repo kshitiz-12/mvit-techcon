@@ -37,15 +37,27 @@ const ImportantDates = () => {
               >
                 {item.status}
               </p>
-              <span
-                className={`rounded-full border px-2 py-1 text-[10px] xs:px-3 xs:text-xs ${
-                  index % 2 === 0
-                    ? 'border-smvit-primary/25 bg-smvit-primary/5 text-smvit-primaryDark'
-                    : 'border-smvit-accent/30 bg-smvit-accent/10 text-smvit-primaryDark'
-                }`}
-              >
-                {item.date}
-              </span>
+              {index === 0 ? (
+          <div className="flex flex-col items-end leading-tight">
+              <span className="text-[10px] text-slate-700 line-through xs:text-xs">
+              {item.date}
+             </span>
+
+            <span className="text-[10px] font-semibold text-blue-600 xs:text-xs">
+            15th September 2026
+            </span>
+          </div>
+) : (
+  <span
+    className={`rounded-full border px-2 py-1 text-[10px] xs:px-3 xs:text-xs ${
+      index % 2 === 0
+        ? 'border-smvit-primary/25 bg-smvit-primary/5 text-smvit-primaryDark'
+        : 'border-smvit-accent/30 bg-smvit-accent/10 text-smvit-primaryDark'
+    }`}
+  >
+    {item.date}
+  </span>
+)}
             </div>
             <h3 className="mt-2 text-lg font-semibold text-slate-900 xs:mt-3 xs:text-xl">{item.phase}</h3>
             <p className="mt-1.5 text-xs text-slate-600 xs:mt-2 xs:text-sm">{item.detail}</p>

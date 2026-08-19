@@ -104,9 +104,14 @@ const AboutConference = () => {
               <span><strong>Conference mode:</strong> Offline only</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="mt-1 h-2 w-2 rounded-full bg-smvit-accent" />
-              <span><strong>Full Paper Submission:</strong> 15th August 2026</span>
-            </li>
+  <span className="mt-1 h-2 w-2 rounded-full bg-smvit-accent" />
+  <span>
+    <strong>Full Paper Submission:</strong>{" "}
+    <span className="line-through">15th August 2026</span>
+    <br />
+    <span className="text-blue-600">15th September 2026</span>
+  </span>
+</li>
             <li className="flex items-start gap-2">
               <span className="mt-1 h-2 w-2 rounded-full bg-smvit-accent" />
               <span><strong>Acceptance Notification:</strong> 15th October 2026</span>
